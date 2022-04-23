@@ -5,7 +5,7 @@ export default function Splash(props) {
   const { handleSession } = props;
 
   return (
-    <div className="text-center">
+    <div className="splash-container text-center">
       <div className="form-signin">
         <form className="text-center form-signin">
           <Logo style={{ fontSize: "64px" }} />
