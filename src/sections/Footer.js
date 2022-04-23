@@ -27,7 +27,11 @@ export default function Footer() {
             </a>
           </li>
           <li className="ms-3">
-            <a className="text-muted" href="index.html">
+            <a
+              className="text-muted"
+              href="https://github.com/Rimezin/advcte"
+              target="_blank"
+            >
               <i className="bi-github"></i>
             </a>
           </li>
