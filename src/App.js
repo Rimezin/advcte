@@ -3,6 +3,7 @@ import React from "react";
 // Layout Sections Import //
 import Splash from "./sections/Splash";
 import Header from "./sections/Header";
+import Footer from "./sections/Footer";
 
 // Pages import //
 import Home from "./pages/Home";
