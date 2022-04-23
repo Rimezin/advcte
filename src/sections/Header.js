@@ -112,7 +112,7 @@ export default function Header(props) {
             data-bs-toggle="dropdown"
             aria-expanded="false"
           >
-            <Logo style={{ width: "80%" }} />
+            <Logo session={session} />
           </a>
 
           {/* Left Dropdown Menu */}

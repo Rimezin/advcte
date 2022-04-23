@@ -2,13 +2,13 @@ import React from "react";
 import Logo from "../assets/Logo";
 
 export default function Splash(props) {
-  const { handleSession } = props;
+  const { session, handleSession } = props;
 
   return (
     <div className="splash-container text-center">
       <div className="form-signin">
         <form className="text-center form-signin">
-          <Logo style={{ fontSize: "64px" }} />
+          <Logo session={session} />
           <h1 className="h3 mb-3 fw-normal">Please sign in</h1>
 
           <div className="form-floating">
