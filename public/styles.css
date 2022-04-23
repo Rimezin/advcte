@@ -44,3 +44,7 @@ body {
 .no-select {
   user-select: none;
 }
+
+.hover-light:hover {
+  filter: brightness(150%);
+}

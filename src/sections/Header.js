@@ -107,7 +107,7 @@ export default function Header(props) {
           <a
             href="index.html"
             class={
-              "d-flex align-items-center col-lg-4 mb-2 mb-lg-0 text-decoration-none dropdown-toggle" +
+              "d-flex align-items-center col-lg-4 mb-2 mb-lg-0 text-decoration-none hover-light" +
               (session.experience.darkMode ? " link-light" : " link-dark")
             }
             id="dropdownNavLink"
@@ -150,7 +150,7 @@ export default function Header(props) {
             <a
               href="index.html"
               class={
-                "d-block text-decoration-none dropdown-toggle" +
+                "d-block text-decoration-none dropdown-toggle hover-light" +
                 (session.experience.darkMode ? " link-light" : " link-dark")
               }
               id="dropdownUser2"
