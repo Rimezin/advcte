@@ -63,3 +63,5 @@ export default function App() {
     </div>
   );
 }
+
+export { session, handleSession };
