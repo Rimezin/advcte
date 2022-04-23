@@ -29,7 +29,7 @@ export default function App() {
     },
     experience: {
       language: "english",
-      darkMode: false,
+      darkMode: true,
     },
   });
 
