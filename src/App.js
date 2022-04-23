@@ -77,7 +77,7 @@ export default function App() {
 
   //// Rendering ////
   return (
-    <div id="advcte" className="container-sm-12">
+    <div id="advcte" className="container-sm-12" style={{ height: "100%" }}>
       {/* Splash Page */}
       {!session.loggedOn && (
         <Splash session={session} handleSession={handleSession} />

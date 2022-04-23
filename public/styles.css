@@ -2,10 +2,6 @@
   transition: 0.25s;
 }
 
-html {
-  height: 100%;
-}
-
 body {
   font-family: "Nunito", sans-serif;
 }
