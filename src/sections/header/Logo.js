@@ -5,7 +5,7 @@ export default function Logo(props) {
 
   return (
     <div id="advcte-header-logo" className="col-1">
-      <p>Logo</p>
+      <span class="advcte-logo">Advcte</span>
     </div>
   );
 }
