@@ -1,3 +1,7 @@
+* {
+  transition: 0.25s;
+}
+
 body {
   font-family: "Nunito", sans-serif;
 }

@@ -142,7 +142,7 @@ export default function Header(props) {
               href="index.html"
               class={
                 "d-block text-decoration-none dropdown-toggle" +
-                (session.experience.darkMode ? " link-dark" : " link-light")
+                (session.experience.darkMode ? " link-light" : " link-dark")
               }
               id="dropdownUser2"
               data-bs-toggle="dropdown"
