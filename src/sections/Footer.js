@@ -8,7 +8,7 @@ export default function Footer(props) {
       <div id="advcte-footer-chat" className="col-2 border">
         Chat
       </div>
-      <div id="advcte-footer-status" className="col-8 border">
+      <div id="advcte-footer-status" className="col-10 border">
         Status Bar
       </div>
     </div>
