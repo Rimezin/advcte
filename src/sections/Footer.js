@@ -32,6 +32,7 @@ export default function Footer(props) {
               className="text-muted"
               href="https://github.com/Rimezin/advcte"
               target="_blank"
+              rel="noopener noreferrer"
             >
               <i className="bi-github"></i>
             </a>
