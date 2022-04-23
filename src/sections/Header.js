@@ -2,6 +2,8 @@ import React from "react";
 import Logo from "./header/Logo";
 import Menu from "./header/Menu";
 import UserAction from "./header/UserAction";
+import Nav from "./header/Nav";
+import Breadcrumb from "./header/Breadcrumb";
 
 export default function Header(props) {
   const { session, handleSession } = props;
