@@ -40,14 +40,14 @@ export default function Header(props) {
   const renderProfileLinks = profileLinks.map((link) => {
     return (
       <li>
-        <a
+        <button
           id={link.id}
           class="dropdown-item d-flex gap-2 align-items-center"
           onClick={link.action}
         >
           <i class={link.icon}></i>
           {link.label}
-        </a>
+        </button>
       </li>
     );
   });
