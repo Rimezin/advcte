@@ -41,7 +41,7 @@ export default function App() {
       setSession((sessionObj) => ({
         ...sessionObj,
         experience: {
-          ...experience,
+          ...sessionObj.experience,
           darkMode: !sessionObj.experience.darkMode,
         },
       }));
