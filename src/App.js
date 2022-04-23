@@ -3,6 +3,7 @@ import React from "react";
 // Layout Sections Import //
 import Splash from "./sections/Splash";
 import Header from "./sections/Header";
+import Main from "./sections/Main";
 import Footer from "./sections/Footer";
 
 // Pages import //
@@ -66,16 +67,6 @@ export default function App() {
     }
   }
 
-  // Switch Page Function //
-  function renderPage(param) {
-    switch (param.toLowerCase()) {
-      case "home":
-        return <Home session={session} />;
-      default:
-        return <div>Placeholder</div>;
-    }
-  }
-
   //// Rendering ////
   return (
     <div id="advcte" className="container-sm-12" style={{ height: "100%" }}>
@@ -92,7 +83,9 @@ export default function App() {
           setPage={setPage}
         />
       )}
-      {session.loggedOn && renderPage(page)}
+      {session.loggedOn && (
+        <Main page={page} setPage={setPage} session={session} />
+      )}
       {session.loggedOn && <Footer session={session} />}
     </div>
   );
