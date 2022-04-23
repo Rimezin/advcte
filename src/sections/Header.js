@@ -101,8 +101,9 @@ export default function Header(props) {
         class="container-fluid d-grid gap-3 align-items-center"
         style={{ gridTemplateColumns: "1fr 2fr" }}
       >
-        {/* Logo & Main Menu */}
+        {/* Left Side Container */}
         <div class="dropdown">
+          {/* Logo */}
           <a
             href="index.html"
             class={
@@ -115,6 +116,8 @@ export default function Header(props) {
           >
             <Logo session={session} />
           </a>
+
+          {/* Left Dropdown Menu */}
           <ul
             class={
               "dropdown-menu mx-0 border-0 shadow" +
@@ -126,12 +129,16 @@ export default function Header(props) {
           </ul>
         </div>
 
+        {/* Right-Side Container */}
         <div class="d-flex align-items-center">
           {/* Search Box */}
           <form class="w-100 me-3">
             <input
               type="search"
-              class="form-control"
+              class={
+                "form-control" +
+                (session.experience.darkMode ? " form-control-dark" : "")
+              }
               placeholder="Search..."
               aria-label="Search"
             />
@@ -139,6 +146,7 @@ export default function Header(props) {
 
           {/* Right-hand Profile Dropdown */}
           <div class="flex-shrink-0 dropdown">
+            {/* Profile Icon + Arrow */}
             <a
               href="index.html"
               class={
@@ -151,6 +159,8 @@ export default function Header(props) {
             >
               <i class="bi-person-circle" style={{ fontSize: "32px" }}></i>
             </a>
+
+            {/* Right Dropdown Items */}
             <ul
               class={
                 "dropdown-menu mx-0 border-0 shadow" +
@@ -158,7 +168,6 @@ export default function Header(props) {
               }
               aria-labelledby="dropdownUser2"
             >
-              {/* Profile Links from Array */}
               {renderMenuItems(profileLinks)}
             </ul>
           </div>
