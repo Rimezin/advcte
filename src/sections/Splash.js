@@ -8,7 +8,7 @@ export default function Splash(props) {
     <div className="splash-container text-center">
       <div className="form-signin">
         <form className="text-center form-signin">
-          <Logo session={session} />
+          <Logo logoClass="logo-large" />
           <h1 className="h3 mb-3 fw-normal">Please sign in</h1>
 
           <div className="form-floating">

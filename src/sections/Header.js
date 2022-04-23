@@ -112,7 +112,7 @@ export default function Header(props) {
             data-bs-toggle="dropdown"
             aria-expanded="false"
           >
-            <Logo session={session} />
+            <Logo logoClass="logo-medium" />
           </a>
 
           {/* Left Dropdown Menu */}
