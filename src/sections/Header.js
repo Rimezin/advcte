@@ -21,6 +21,20 @@ export default function Header(props) {
         alert("Settings clicked");
       },
     },
+    {
+      label: session.experience.darkMode ? "Light Mode" : "Dark Mode",
+      icon: session.experience.darkMode ? "bi-sun-fill" : "bi-moon-fill",
+      id: "darkToggle",
+      action: handleSession,
+    },
+    {
+      label: "Logout",
+      icon: "bi-door-open",
+      id: "header-logout-link",
+      action: () => {
+        alert("Settings clicked");
+      },
+    },
   ];
 
   const renderProfileLinks = profileLinks.map((link) => {
@@ -129,30 +143,6 @@ export default function Header(props) {
             >
               {/* Profile Links from Array */}
               {renderProfileLinks}
-
-              {/* Dark Mode Toggle */}
-              <li>
-                <div class="dropdown-item d-flex gap-2 align-items-center form-check form-switch">
-                  <label class="form-check-label no-select" for="darkToggle">
-                    {session.experience.darkMode ? "Light Mode" : "Dark Mode"}
-                  </label>
-                  <input
-                    class="form-check-input secondary"
-                    type="checkbox"
-                    role="switch"
-                    id="darkToggle"
-                    onClick={handleSession}
-                  />
-                </div>
-              </li>
-              <li>
-                <hr class="dropdown-divider" />
-              </li>
-              <li>
-                <a class="dropdown-item" href="index.html">
-                  Sign out
-                </a>
-              </li>
             </ul>
           </div>
         </div>
