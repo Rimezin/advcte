@@ -10,7 +10,7 @@ import Home from "./pages/Home";
 export default function App() {
   // State to hold session details for the user. //
   const [session, setSession] = React.useState({
-    loggedOn: true,
+    loggedOn: false,
     user: {
       firstName: null,
       lastName: null,
