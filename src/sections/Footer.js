@@ -8,7 +8,7 @@ export default function Footer(props) {
       <footer
         className={
           "d-flex flex-wrap justify-content-between align-items-center gap-3 py-3 my-4 border-top shadow-top" +
-          (session.experience.darkMode ? " bg-dark text-white" : "bg-light")
+          (session.experience.darkMode ? " bg-dark text-white" : " bg-light")
         }
       >
         <div className="col-md-4 d-flex align-items-center">
