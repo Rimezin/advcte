@@ -145,7 +145,7 @@ export default function Header(props) {
           </form>
 
           {/* Right-hand Profile Dropdown */}
-          <div className="flex-shrink-0 dropdown">
+          <div className="dropdown">
             {/* Profile Icon + Arrow */}
             <a
               href="index.html"

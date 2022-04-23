@@ -7,7 +7,7 @@ export default function Footer(props) {
     <div className="container-sm-12 footer">
       <footer
         className={
-          "d-flex flex-wrap justify-content-between align-items-center px-3 py-3 my-4 shadow-top" +
+          "d-flex flex-wrap justify-content-between align-items-center px-3 py-3 shadow-top" +
           (session.experience.darkMode
             ? " bg-dark text-white border-top-dark"
             : " bg-light border-top")
