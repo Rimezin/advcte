@@ -17,7 +17,7 @@ export default function ActionBar(props) {
         <li class="nav-item">
           <a href="#" class="nav-link active" aria-current="page">
             <svg class="bi me-2" width="16" height="16">
-              <use xlink:href="#home" />
+              <i class="bi-alarm"></i>
             </svg>
             Home
           </a>
@@ -31,7 +31,7 @@ export default function ActionBar(props) {
             }
           >
             <svg class="bi me-2" width="16" height="16">
-              <use xlink:href="#speedometer2" />
+              <i class="bi-alarm"></i>
             </svg>
             Dashboard
           </a>
@@ -45,7 +45,7 @@ export default function ActionBar(props) {
             }
           >
             <svg class="bi me-2" width="16" height="16">
-              <use xlink:href="#table" />
+              <i class="bi-alarm"></i>
             </svg>
             Orders
           </a>
@@ -59,7 +59,7 @@ export default function ActionBar(props) {
             }
           >
             <svg class="bi me-2" width="16" height="16">
-              <use xlink:href="#grid" />
+              <i class="bi-alarm"></i>
             </svg>
             Products
           </a>
@@ -73,7 +73,7 @@ export default function ActionBar(props) {
             }
           >
             <svg class="bi me-2" width="16" height="16">
-              <use xlink:href="#people-circle" />
+              <i class="bi-alarm"></i>
             </svg>
             Customers
           </a>
