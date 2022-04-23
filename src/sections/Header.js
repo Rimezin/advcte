@@ -1,5 +1,5 @@
 import React from "react";
-import Logo from "./header/Logo";
+import Logo from "../assets/Logo";
 
 export default function Header(props) {
   const { session, handleSession, setPage } = props;
@@ -65,7 +65,7 @@ export default function Header(props) {
       icon: "bi-door-open",
       id: "header-logout-link",
       action: () => {
-        alert("Logged Out!");
+        handleSession();
       },
       divideAbove: true,
     },
@@ -114,7 +114,7 @@ export default function Header(props) {
             data-bs-toggle="dropdown"
             aria-expanded="false"
           >
-            <Logo session={session} />
+            <Logo style={{ width: "80%" }} />
           </a>
 
           {/* Left Dropdown Menu */}

@@ -1,10 +1,10 @@
 import React from "react";
 
 export default function Logo(props) {
-  //const { session } = props;
+  const { styleObj } = props;
 
   return (
-    <div id="advcte-header-logo" className="w-80 center">
+    <div id="advcte-header-logo" className="center" style={styleObj}>
       <span class="advcte-logo">Advcte</span>
     </div>
   );

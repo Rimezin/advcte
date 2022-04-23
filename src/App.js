@@ -37,7 +37,7 @@ export default function App() {
   });
 
   // State to hold current page in main content //
-  const [page, setPage] = React.useState("");
+  const [page, setPage] = React.useState("home");
   //// Functions ////
 
   // Handle the session //
@@ -50,12 +50,24 @@ export default function App() {
           darkMode: !sessionObj.experience.darkMode,
         },
       }));
+    } else if (event.target.id === "header-logout-link") {
+      // Logout //
+      setSession((sessionObj) => ({
+        ...sessionObj,
+        loggedOn: false,
+      }));
+    } else if (event.target.id === "splash-signin") {
+      // Login //
+      setSession((sessionObj) => ({
+        ...sessionObj,
+        loggedOn: true,
+      }));
     }
   }
 
   // Switch Page Function //
-  function switchPage(param) {
-    switch (param) {
+  function renderPage(param) {
+    switch (param.toLowerCase()) {
       case "home":
         return <Home session={session} />;
       default:
@@ -79,7 +91,7 @@ export default function App() {
           setPage={setPage}
         />
       )}
-      {session.loggedOn && switchPage(page)}
+      {session.loggedOn && renderPage(page)}
     </div>
   );
 }
