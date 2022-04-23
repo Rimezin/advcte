@@ -11,11 +11,11 @@ export default function ActionBar(props) {
           ? "text-white bg-dark"
           : "text-black bg-light")
       }
-      style="width: 280px;"
+      style={{ width: "280px" }}
     >
       <ul class="nav nav-pills flex-column mb-auto">
         <li class="nav-item">
-          <a href="#" class="nav-link active" aria-current="page">
+          <a href="index.html" class="nav-link active" aria-current="page">
             <svg class="bi me-2" width="16" height="16">
               <i class="bi-alarm"></i>
             </svg>
@@ -24,7 +24,7 @@ export default function ActionBar(props) {
         </li>
         <li>
           <a
-            href="#"
+            href="index.html"
             class={
               "nav-link" +
               (session.experience.darkMode ? "text-white" : "text-black")
@@ -38,7 +38,7 @@ export default function ActionBar(props) {
         </li>
         <li>
           <a
-            href="#"
+            href="index.html"
             class={
               "nav-link" +
               (session.experience.darkMode ? "text-white" : "text-black")
@@ -52,7 +52,7 @@ export default function ActionBar(props) {
         </li>
         <li>
           <a
-            href="#"
+            href="index.html"
             class={
               "nav-link" +
               (session.experience.darkMode ? "text-white" : "text-black")
@@ -66,7 +66,7 @@ export default function ActionBar(props) {
         </li>
         <li>
           <a
-            href="#"
+            href="index.html"
             class={
               "nav-link" +
               (session.experience.darkMode ? "text-white" : "text-black")

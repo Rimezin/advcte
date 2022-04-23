@@ -7,7 +7,7 @@ export default function UserAction(props) {
     <div id="advcte-header-useraction" className="col-2 border">
       <div class="dropdown">
         <a
-          href="#"
+          href="index.html"
           class="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
           id="dropdownUser1"
           data-bs-toggle="dropdown"
@@ -27,17 +27,17 @@ export default function UserAction(props) {
           aria-labelledby="dropdownUser1"
         >
           <li>
-            <a class="dropdown-item" href="#">
+            <a class="dropdown-item" href="index.html">
               New project...
             </a>
           </li>
           <li>
-            <a class="dropdown-item" href="#">
+            <a class="dropdown-item" href="index.html">
               Settings
             </a>
           </li>
           <li>
-            <a class="dropdown-item" href="#">
+            <a class="dropdown-item" href="index.html">
               Profile
             </a>
           </li>
@@ -45,7 +45,7 @@ export default function UserAction(props) {
             <hr class="dropdown-divider" />
           </li>
           <li>
-            <a class="dropdown-item" href="#">
+            <a class="dropdown-item" href="index.html">
               Sign out
             </a>
           </li>
