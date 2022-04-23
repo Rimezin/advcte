@@ -187,6 +187,7 @@ export default function Header(props) {
               }
               style={{
                 fontSize: "32px",
+                pointerEvents: "none",
               }}
             ></i>
           </button>
