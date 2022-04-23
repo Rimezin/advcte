@@ -43,12 +43,12 @@ export default function App() {
 
   //// Rendering ////
   return (
-    <div id="advcte">
+    <div id="advcte" className="container">
       {/* Splash: Login Page, Password page, etc. */}
-      <Splash session={session} setSession={handleSession} />
+      <Splash session={session} handleSession={handleSession} />
 
       {/* Header: logo, menu, user info */}
-      <Header session={session} setSession={handleSession} />
+      <Header session={session} handleSession={handleSession} />
 
       {/* Sub-header: nav buttons, breadcrumb */}
       <SubHeader session={session} />
