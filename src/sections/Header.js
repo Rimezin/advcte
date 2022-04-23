@@ -100,14 +100,14 @@ export default function Header(props) {
         </div>
 
         <div class="d-flex align-items-center">
-          {/* <form class="w-100 me-3">
+          <form class="w-100 me-3">
             <input
               type="search"
               class="form-control"
               placeholder="Search..."
               aria-label="Search"
             />
-          </form> */}
+          </form>
 
           <div class="flex-shrink-0 dropdown">
             <a
@@ -118,7 +118,7 @@ export default function Header(props) {
               aria-expanded="false"
               data-bs-auto-close="outside"
             >
-              <i class="bi-person-circle" width="32" height="32"></i>
+              <i class="bi-person-circle" style={{ fontSize: "32px" }}></i>
             </a>
             <ul
               class={
