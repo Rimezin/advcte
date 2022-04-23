@@ -82,6 +82,7 @@ export default function Header(props) {
               id="dropdownUser2"
               data-bs-toggle="dropdown"
               aria-expanded="false"
+              data-bs-auto-close="outside"
             >
               <img
                 src="https://github.com/mdo.png"
@@ -113,6 +114,9 @@ export default function Header(props) {
               {/* Dark Mode Toggle */}
               <li>
                 <div class="dropdown-item form-check form-switch">
+                  <label class="form-check-label" for="darkToggle">
+                    {session.experience.darkMode ? "Light Mode" : "Dark Mode"}
+                  </label>
                   <input
                     class="form-check-input"
                     type="checkbox"
@@ -120,9 +124,6 @@ export default function Header(props) {
                     id="darkToggle"
                     onClick={handleSession}
                   />
-                  <label class="form-check-label" for="darkToggle">
-                    {session.experience.darkMode ? "Light Mode" : "Dark Mode"}
-                  </label>
                 </div>
               </li>
               <li>
