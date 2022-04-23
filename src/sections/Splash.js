@@ -2,7 +2,7 @@ import React from "react";
 import Logo from "../assets/Logo";
 
 export default function Splash(props) {
-  const { session, handleSession } = props;
+  const { handleSession } = props;
 
   return (
     <div className="splash-container text-center">
