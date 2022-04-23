@@ -92,6 +92,7 @@ export default function App() {
         />
       )}
       {session.loggedOn && renderPage(page)}
+      {session.loggedOn && <Footer session={session} />}
     </div>
   );
 }

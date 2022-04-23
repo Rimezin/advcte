@@ -1,7 +1,8 @@
 import React from "react";
 import Logo from "../assets/Logo";
 
-export default function Footer() {
+export default function Footer(props) {
+  //const { session } = props;
   return (
     <div className="container">
       <footer className="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
