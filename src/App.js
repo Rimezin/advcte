@@ -1,7 +1,6 @@
 import React from "react";
 import Splash from "./sections/Splash";
 import Header from "./sections/Header";
-import SubHeader from "./sections/SubHeader";
 import Main from "./sections/Main";
 import Footer from "./sections/Footer";
 
@@ -10,7 +9,7 @@ export default function App() {
   /* session: [object] Holds session details for the user.
    */
   const [session, setSession] = React.useState({
-    loggedOn: false,
+    loggedOn: true,
     user: {
       firstName: null,
       lastName: null,
@@ -45,19 +44,16 @@ export default function App() {
   return (
     <div id="advcte" className="container-fluid">
       {/* Splash: Login Page, Password page, etc. */}
-      <Splash session={session} handleSession={handleSession} />
+      {!session.loggedOn && (
+        <Splash session={session} handleSession={handleSession} />
+      )}
 
-      {/* Header: logo, menu, user info */}
-      <Header session={session} handleSession={handleSession} />
-
-      {/* Sub-header: nav buttons, breadcrumb */}
-      <SubHeader session={session} />
-
-      {/* Main Section: action bar & main content */}
-      <Main session={session} />
-
-      {/* Footer: Chat & Status Bar */}
-      <Footer session={session} />
+      {/* Non-splash */}
+      {session.loggedOn && (
+        <Header session={session} handleSession={handleSession} />
+      )}
+      {session.loggedOn && <Main session={session} />}
+      {session.loggedOn && <Footer session={session} />}
     </div>
   );
 }
