@@ -49,6 +49,7 @@ export default function Header(props) {
           id={link.id}
           class="dropdown-item d-flex gap-2 align-items-center"
           onClick={link.action}
+          data-bs-auto-close="outside"
         >
           <i class={link.icon}></i>
           {link.label}
@@ -139,11 +140,10 @@ export default function Header(props) {
           <div class="flex-shrink-0 dropdown">
             <a
               href="index.html"
-              class="d-block link-dark text-decoration-none dropdown-toggle"
+              class="d-block text-decoration-none dropdown-toggle"
               id="dropdownUser2"
               data-bs-toggle="dropdown"
               aria-expanded="false"
-              data-bs-auto-close="outside"
             >
               <i class="bi-person-circle" style={{ fontSize: "32px" }}></i>
             </a>
