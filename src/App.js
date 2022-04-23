@@ -1,5 +1,6 @@
 import React from "react";
-//import Splash from "./sections/Splash";
+import Splash from "./sections/Splash";
+import Header from "./sections/Header";
 
 export default function App() {
   //// Master States ////

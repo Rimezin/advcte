@@ -1,4 +1,5 @@
 import React from "react";
+import Logo from "./header/Logo";
 
 export default function Header(props) {
   const { session, handleSession } = props;
