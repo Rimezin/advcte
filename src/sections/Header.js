@@ -1,5 +1,4 @@
 import React from "react";
-import { NoEmitOnErrorsPlugin } from "webpack";
 import Logo from "../assets/Logo";
 
 export default function Header(props) {
@@ -177,6 +176,7 @@ export default function Header(props) {
             style={{
               backgroundColor: "transparent",
               border: "none",
+              outline: "none",
             }}
           >
             <i
