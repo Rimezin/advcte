@@ -19,7 +19,7 @@ export default function Main(props) {
   return (
     <main
       className={
-        session.experience.darkMode ? "bg-dark text-white" : "bg-white"
+        session.experience.darkMode ? "bg-secondary text-white" : "bg-white"
       }
     >
       {session.loggedOn && renderPage(page)}
