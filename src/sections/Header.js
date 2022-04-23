@@ -54,13 +54,6 @@ export default function Header(props) {
       divideAbove: false,
     },
     {
-      label: session.experience.darkMode ? "Light Mode" : "Dark Mode",
-      icon: session.experience.darkMode ? "bi-sun-fill" : "bi-moon-fill",
-      id: "darkToggle",
-      action: handleSession,
-      divideAbove: false,
-    },
-    {
       label: "Logout",
       icon: "bi-door-open",
       id: "header-logout-link",
@@ -171,6 +164,20 @@ export default function Header(props) {
               {renderMenuItems(profileLinks)}
             </ul>
           </div>
+
+          {/* Dark Mode Toggle */}
+          <button id="darkToggle" onClick={handleSession}>
+            <i
+              className={
+                session.experience.darkMode
+                  ? "bi-sun-fill"
+                  : "bi-moon-stars-fill"
+              }
+              style={{
+                fontSize: "32px",
+              }}
+            ></i>
+          </button>
         </div>
       </div>
     </header>
