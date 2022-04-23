@@ -2,7 +2,7 @@ import React from "react";
 import Logo from "./header/Logo";
 
 export default function Header(props) {
-  const { session } = props;
+  const { session, handleSession } = props;
 
   return (
     <header id="advcte-header" class="py-3 mb-3 border-bottom">
@@ -10,6 +10,7 @@ export default function Header(props) {
         class="container-fluid d-grid gap-3 align-items-center"
         style={{ gridTemplateColumns: "1fr 2fr" }}
       >
+        {/* Logo & Main Menu */}
         <div class="dropdown">
           <a
             href="index.html"
@@ -108,6 +109,21 @@ export default function Header(props) {
                 <a class="dropdown-item" href="index.html">
                   Profile
                 </a>
+              </li>
+              {/* Dark Mode Toggle */}
+              <li>
+                <div class="dropdown-item form-check form-switch">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    role="switch"
+                    id="darkToggle"
+                    onClick={handleSession}
+                  />
+                  <label class="form-check-label" for="darkToggle">
+                    {session.experience.darkMode ? "Light Mode" : "Dark Mode"}
+                  </label>
+                </div>
               </li>
               <li>
                 <hr class="dropdown-divider" />

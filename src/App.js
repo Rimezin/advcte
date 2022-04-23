@@ -36,8 +36,16 @@ export default function App() {
   //// Functions ////
 
   // Handle the session //
-  function handleSession() {
-    setSession(!session);
+  function handleSession(event) {
+    if (event.target.id === "darkToggle") {
+      setSession((sessionObj) => ({
+        ...sessionObj,
+        experience: {
+          ...experience,
+          darkMode: !sessionObj.experience.darkMode,
+        },
+      }));
+    }
   }
 
   //// Rendering ////

@@ -3,7 +3,7 @@
 const navDefinitions = [
   {
     name: "Home",
-    id: nanoId(),
+    //id: nanoId(),
   },
 ];
 
