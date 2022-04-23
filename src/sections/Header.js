@@ -9,7 +9,7 @@ export default function Header(props) {
   const { session, handleSession } = props;
 
   return (
-    <div id="advcte-header">
+    <div id="advcte-header" className="fixed-top">
       <div id="advcte-header-top" className="row border">
         <Logo session={session} />
         <Menu session={session} />
