@@ -73,13 +73,13 @@ export default function Header(props) {
     return itemsArray.map((link) => {
       return (
         <li>
-          {link.divideAbove && <hr class="dropdown-divider" />}
+          {link.divideAbove && <hr className="dropdown-divider" />}
           <button
             id={link.id}
-            class="dropdown-item d-flex gap-2 align-items-center"
+            className="dropdown-item d-flex gap-2 align-items-center"
             onClick={link.action}
           >
-            <i class={link.icon}></i>
+            <i className={link.icon}></i>
             {link.label}
           </button>
         </li>
@@ -90,21 +90,21 @@ export default function Header(props) {
   return (
     <header
       id="advcte-header"
-      class={
+      className={
         "py-3 mb-3 border-bottom shadow" +
         (session.experience.darkMode ? " bg-dark text-white" : "")
       }
     >
       <div
-        class="container-fluid d-grid gap-3 align-items-center"
+        className="container-fluid d-grid gap-3 align-items-center"
         style={{ gridTemplateColumns: "1fr 2fr" }}
       >
         {/* Left Side Container */}
-        <div class="dropdown">
+        <div className="dropdown">
           {/* Logo */}
           <a
             href="index.html"
-            class={
+            className={
               "d-flex align-items-center col-lg-4 mb-2 mb-lg-0 text-decoration-none hover-light" +
               (session.experience.darkMode ? " link-light" : " link-dark")
             }
@@ -117,7 +117,7 @@ export default function Header(props) {
 
           {/* Left Dropdown Menu */}
           <ul
-            class={
+            className={
               "dropdown-menu mx-0 border-0 shadow" +
               (session.experience.darkMode ? " dropdown-menu-dark" : "")
             }
@@ -128,12 +128,12 @@ export default function Header(props) {
         </div>
 
         {/* Right-Side Container */}
-        <div class="d-flex align-items-center">
+        <div className="d-flex align-items-center">
           {/* Search Box */}
-          <form class="w-100 me-3">
+          <form className="w-100 me-3">
             <input
               type="search"
-              class={
+              className={
                 "form-control" +
                 (session.experience.darkMode ? " form-control-dark" : "")
               }
@@ -143,11 +143,11 @@ export default function Header(props) {
           </form>
 
           {/* Right-hand Profile Dropdown */}
-          <div class="flex-shrink-0 dropdown">
+          <div className="flex-shrink-0 dropdown">
             {/* Profile Icon + Arrow */}
             <a
               href="index.html"
-              class={
+              className={
                 "d-block text-decoration-none dropdown-toggle hover-blue" +
                 (session.experience.darkMode ? " link-light" : " link-dark")
               }
@@ -155,12 +155,12 @@ export default function Header(props) {
               data-bs-toggle="dropdown"
               aria-expanded="false"
             >
-              <i class="bi-person-circle" style={{ fontSize: "32px" }}></i>
+              <i className="bi-person-circle" style={{ fontSize: "32px" }}></i>
             </a>
 
             {/* Right Dropdown Items */}
             <ul
-              class={
+              className={
                 "dropdown-menu mx-0 border-0 shadow" +
                 (session.experience.darkMode ? " dropdown-menu-dark" : "")
               }
