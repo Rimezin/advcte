@@ -21,8 +21,10 @@ export default function App() {
       userName: null,
       userId: null,
       security: {
-        role: null,
-        view: null,
+        roleId: null,
+        rolePermissions: null,
+        navId: null,
+        navViews: null,
       },
     },
     experience: {

@@ -4,7 +4,7 @@ export default function Logo(props) {
   //const { session } = props;
 
   return (
-    <div id="advcte-header-logo" className="col-2 border center">
+    <div id="advcte-header-logo" className="w-80 center">
       <span class="advcte-logo">Advcte</span>
     </div>
   );
