@@ -6,9 +6,6 @@ import Header from "./sections/Header";
 import Main from "./sections/Main";
 import Footer from "./sections/Footer";
 
-// Pages import //
-import Home from "./pages/Home";
-
 export default function App() {
   // State to hold session details for the user. //
   const [session, setSession] = React.useState({
