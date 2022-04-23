@@ -37,4 +37,5 @@ const profileLinks = [
   },
 ];
 
-export { profileLinks, handleSession };
+export default profileLinks;
+export { handleSession };
