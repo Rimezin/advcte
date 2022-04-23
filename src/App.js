@@ -32,21 +32,21 @@ const [session, setSession] = React.useState({
   },
 });
 
+// Handle the session //
+function handleSession(event) {
+  if (event.target.id === "darkToggle") {
+    setSession((sessionObj) => ({
+      ...sessionObj,
+      experience: {
+        ...sessionObj.experience,
+        darkMode: !sessionObj.experience.darkMode,
+      },
+    }));
+  }
+}
+
 export default function App() {
   //// Functions ////
-
-  // Handle the session //
-  function handleSession(event) {
-    if (event.target.id === "darkToggle") {
-      setSession((sessionObj) => ({
-        ...sessionObj,
-        experience: {
-          ...sessionObj.experience,
-          darkMode: !sessionObj.experience.darkMode,
-        },
-      }));
-    }
-  }
 
   //// Rendering ////
   return (
