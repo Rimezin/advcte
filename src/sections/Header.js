@@ -94,7 +94,7 @@ export default function Header(props) {
         "py-3 mb-3 shadow" +
         (session.experience.darkMode
           ? " bg-dark text-white border-bottom-dark"
-          : "bg-light border-bottom")
+          : " bg-light border-bottom")
       }
     >
       <div
