@@ -171,7 +171,7 @@ export default function Header(props) {
             id="darkToggle"
             onClick={handleSession}
             className={
-              "darkToggle hover-blue no-select" +
+              "hover-blue no-select" +
               (session.experience.darkMode ? " text-white" : "")
             }
             style={{
