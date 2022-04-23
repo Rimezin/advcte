@@ -93,7 +93,7 @@ export default function Header(props) {
     <header
       id="advcte-header"
       class={
-        "py-3 mb-3 border-bottom" +
+        "py-3 mb-3 border-bottom shadow" +
         (session.experience.darkMode ? " bg-dark text-white" : "")
       }
     >
@@ -150,7 +150,7 @@ export default function Header(props) {
             <a
               href="index.html"
               class={
-                "d-block text-decoration-none dropdown-toggle hover-light" +
+                "d-block text-decoration-none dropdown-toggle hover-blue" +
                 (session.experience.darkMode ? " link-light" : " link-dark")
               }
               id="dropdownUser2"

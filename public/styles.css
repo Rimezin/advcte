@@ -48,3 +48,7 @@ body {
 .hover-light:hover {
   filter: brightness(150%);
 }
+
+.hover-blue:hover {
+  color: #00bfff;
+}
