@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Splash() {
+export default function Splash(props) {
   const { session, setSession } = props;
 
   return (
