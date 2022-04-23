@@ -50,7 +50,7 @@ export default function App() {
 
   //// Rendering ////
   return (
-    <div id="advcte" className="container-fluid">
+    <div id="advcte" className="container-md">
       {!session.loggedOn && (
         <Splash session={session} handleSession={handleSession} />
       )}

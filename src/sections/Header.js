@@ -1,62 +1,28 @@
 import React from "react";
 import Logo from "./header/Logo";
+import navLinks from "../configuration/navLinks";
+import profileLinks from "../configuration/profileLinks";
 
 export default function Header(props) {
   const { session, handleSession } = props;
 
-  const profileLinks = [
-    {
-      label: "Profile",
-      icon: "bi-person-badge-fill",
-      id: "header-profile-link",
-      action: () => {
-        alert("Profile clicked");
-      },
-      divideAbove: false,
-    },
-    {
-      label: "Settings",
-      icon: "bi-gear-fill",
-      id: "header-settings-link",
-      action: () => {
-        alert("Settings clicked");
-      },
-      divideAbove: false,
-    },
-    {
-      label: session.experience.darkMode ? "Light Mode" : "Dark Mode",
-      icon: session.experience.darkMode ? "bi-sun-fill" : "bi-moon-fill",
-      id: "darkToggle",
-      action: handleSession,
-      divideAbove: false,
-    },
-    {
-      label: "Logout",
-      icon: "bi-door-open",
-      id: "header-logout-link",
-      action: () => {
-        alert("Logged Out!");
-      },
-      divideAbove: true,
-    },
-  ];
-
-  const renderProfileLinks = profileLinks.map((link) => {
-    return (
-      <li>
-        {link.divideAbove && <hr class="dropdown-divider" />}
-        <button
-          id={link.id}
-          class="dropdown-item d-flex gap-2 align-items-center"
-          onClick={link.action}
-          data-bs-auto-close="outside"
-        >
-          <i class={link.icon}></i>
-          {link.label}
-        </button>
-      </li>
-    );
-  });
+  function renderMenuItems(itemsArray) {
+    return itemsArray.map((link) => {
+      return (
+        <li>
+          {link.divideAbove && <hr class="dropdown-divider" />}
+          <button
+            id={link.id}
+            class="dropdown-item d-flex gap-2 align-items-center"
+            onClick={link.action}
+          >
+            <i class={link.icon}></i>
+            {link.label}
+          </button>
+        </li>
+      );
+    });
+  }
 
   return (
     <header
@@ -74,7 +40,10 @@ export default function Header(props) {
         <div class="dropdown">
           <a
             href="index.html"
-            class="d-flex align-items-center col-lg-4 mb-2 mb-lg-0 link-dark text-decoration-none dropdown-toggle"
+            class={
+              "d-flex align-items-center col-lg-4 mb-2 mb-lg-0 text-decoration-none dropdown-toggle" +
+              (session.experience.darkMode ? " link-light" : " link-dark")
+            }
             id="dropdownNavLink"
             data-bs-toggle="dropdown"
             aria-expanded="false"
@@ -82,58 +51,25 @@ export default function Header(props) {
             <Logo session={session} />
           </a>
           <ul
-            class="dropdown-menu text-small shadow"
+            class={
+              "dropdown-menu mx-0 border-0 shadow" +
+              (session.experience.darkMode ? " dropdown-menu-dark" : "")
+            }
             aria-labelledby="dropdownNavLink"
           >
-            <li>
-              <a
-                class="dropdown-item active"
-                href="index.html"
-                aria-current="page"
-              >
-                Overview
-              </a>
-            </li>
-            <li>
-              <a class="dropdown-item" href="index.html">
-                Inventory
-              </a>
-            </li>
-            <li>
-              <a class="dropdown-item" href="index.html">
-                Customers
-              </a>
-            </li>
-            <li>
-              <a class="dropdown-item" href="index.html">
-                Products
-              </a>
-            </li>
-            <li>
-              <hr class="dropdown-divider" />
-            </li>
-            <li>
-              <a class="dropdown-item" href="index.html">
-                Reports
-              </a>
-            </li>
-            <li>
-              <a class="dropdown-item" href="index.html">
-                Analytics
-              </a>
-            </li>
+            {renderMenuItems(navLinks)}
           </ul>
         </div>
 
         <div class="d-flex align-items-center">
           {/* Search Box */}
           <form class="w-100 me-3">
-            {/* <input
+            <input
               type="search"
               class="form-control"
               placeholder="Search..."
               aria-label="Search"
-            /> */}
+            />
           </form>
 
           {/* Right-hand Profile Dropdown */}
@@ -158,7 +94,7 @@ export default function Header(props) {
               aria-labelledby="dropdownUser2"
             >
               {/* Profile Links from Array */}
-              {renderProfileLinks}
+              {renderMenuItems(profileLinks)}
             </ul>
           </div>
         </div>
