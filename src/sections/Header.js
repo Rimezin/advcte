@@ -92,7 +92,7 @@ export default function Header(props) {
       id="advcte-header"
       className={
         "py-3 mb-3 border-bottom shadow navbar-fixed-top" +
-        (session.experience.darkMode ? " bg-dark text-white" : "")
+        (session.experience.darkMode ? " bg-dark text-white" : "bg-light")
       }
     >
       <div

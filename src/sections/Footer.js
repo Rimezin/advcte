@@ -2,10 +2,15 @@ import React from "react";
 import Logo from "../assets/Logo";
 
 export default function Footer(props) {
-  //const { session } = props;
+  const { session } = props;
   return (
     <div className="container-sm-12 footer">
-      <footer className="d-flex flex-wrap justify-content-between align-items-center gap-3 py-3 my-4 border-top">
+      <footer
+        className={
+          "d-flex flex-wrap justify-content-between align-items-center gap-3 py-3 my-4 border-top shadow-top" +
+          (session.experience.darkMode ? " bg-dark text-white" : "bg-light")
+        }
+      >
         <div className="col-md-4 d-flex align-items-center">
           <a
             href="index.html"
