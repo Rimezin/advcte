@@ -4,7 +4,7 @@ import navLinks from "../configuration/navLinks";
 import profileLinks from "../configuration/profileLinks";
 
 export default function Header(props) {
-  const { session, handleSession } = props;
+  const { session } = props;
 
   function renderMenuItems(itemsArray) {
     return itemsArray.map((link) => {
