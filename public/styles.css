@@ -36,3 +36,7 @@ body {
 .dropdown-toggle {
   outline: 0;
 }
+
+.no-select {
+  user-select: none;
+}
