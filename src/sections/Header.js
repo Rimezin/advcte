@@ -4,6 +4,7 @@ import Menu from "./header/Menu";
 import UserAction from "./header/UserAction";
 import Nav from "./header/Nav";
 import Breadcrumb from "./header/Breadcrumb";
+import Search from "./header/Search";
 
 export default function Header(props) {
   const { session, handleSession } = props;
@@ -18,6 +19,7 @@ export default function Header(props) {
       <div id="advcte-header-bottom" className="row border">
         <Nav session={session} />
         <Breadcrumb session={session} />
+        <Search session={session} />
       </div>
     </div>
   );
