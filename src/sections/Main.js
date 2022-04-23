@@ -1,7 +1,10 @@
 import React from "react";
 
+// Pages import //
+import Home from "./pages/Home";
+
 export default function Main(props) {
-  const { session } = props;
+  const { session, page } = props;
 
   // Switch Page Function //
   function renderPage(param) {
