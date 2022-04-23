@@ -2,7 +2,7 @@ import React from "react";
 import Logo from "./header/Logo";
 
 export default function Header(props) {
-  const { session, handleSession } = props;
+  const { session, handleSession, setPage } = props;
 
   const navLinks = [
     {
@@ -10,7 +10,7 @@ export default function Header(props) {
       icon: "bi-house-fill",
       id: "header-nav-home",
       action: () => {
-        alert("Home clicked");
+        setPage("home");
       },
       divideAbove: false,
     },

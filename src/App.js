@@ -1,11 +1,14 @@
 import React from "react";
+
+// Layout Sections Import //
 import Splash from "./sections/Splash";
 import Header from "./sections/Header";
 
+// Pages import //
+import Home from "./pages/Home";
+
 export default function App() {
-  //// Master States ////
-  /* session: [object] Holds session details for the user.
-   */
+  // State to hold session details for the user. //
   const [session, setSession] = React.useState({
     loggedOn: true,
     user: {
@@ -29,10 +32,12 @@ export default function App() {
     },
     experience: {
       language: "english",
-      darkMode: true,
+      darkMode: false,
     },
   });
 
+  // State to hold current page in main content //
+  const [page, setPage] = React.useState("");
   //// Functions ////
 
   // Handle the session //
@@ -48,18 +53,33 @@ export default function App() {
     }
   }
 
+  // Switch Page Function //
+  function switchPage(param) {
+    switch (param) {
+      case "home":
+        return <Home session={session} />;
+      default:
+        return <div>Placeholder</div>;
+    }
+  }
+
   //// Rendering ////
   return (
     <div id="advcte" className="container-sm-12">
+      {/* Splash Page */}
       {!session.loggedOn && (
         <Splash session={session} handleSession={handleSession} />
       )}
 
+      {/* Logged-in Items */}
       {session.loggedOn && (
-        <Header session={session} handleSession={handleSession} />
-        // Placeholder
-        // Placeholder
+        <Header
+          session={session}
+          handleSession={handleSession}
+          setPage={setPage}
+        />
       )}
+      {session.loggedOn && switchPage(page)}
     </div>
   );
 }
