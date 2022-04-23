@@ -12,6 +12,7 @@ export default function Header(props) {
       action: () => {
         alert("Profile clicked");
       },
+      divideAbove: false,
     },
     {
       label: "Settings",
@@ -20,26 +21,30 @@ export default function Header(props) {
       action: () => {
         alert("Settings clicked");
       },
+      divideAbove: false,
     },
     {
       label: session.experience.darkMode ? "Light Mode" : "Dark Mode",
       icon: session.experience.darkMode ? "bi-sun-fill" : "bi-moon-fill",
       id: "darkToggle",
       action: handleSession,
+      divideAbove: false,
     },
     {
       label: "Logout",
       icon: "bi-door-open",
       id: "header-logout-link",
       action: () => {
-        alert("Settings clicked");
+        alert("Logged Out!");
       },
+      divideAbove: true,
     },
   ];
 
   const renderProfileLinks = profileLinks.map((link) => {
     return (
       <li>
+        {link.divideAbove && <hr class="dropdown-divider" />}
         <button
           id={link.id}
           class="dropdown-item d-flex gap-2 align-items-center"
@@ -53,7 +58,13 @@ export default function Header(props) {
   });
 
   return (
-    <header id="advcte-header" class="py-3 mb-3 border-bottom">
+    <header
+      id="advcte-header"
+      class={
+        "py-3 mb-3 border-bottom" +
+        (session.experience.darkMode ? " bg-dark text-white" : "")
+      }
+    >
       <div
         class="container-fluid d-grid gap-3 align-items-center"
         style={{ gridTemplateColumns: "1fr 2fr" }}
@@ -114,15 +125,17 @@ export default function Header(props) {
         </div>
 
         <div class="d-flex align-items-center">
+          {/* Search Box */}
           <form class="w-100 me-3">
-            <input
+            {/* <input
               type="search"
               class="form-control"
               placeholder="Search..."
               aria-label="Search"
-            />
+            /> */}
           </form>
 
+          {/* Right-hand Profile Dropdown */}
           <div class="flex-shrink-0 dropdown">
             <a
               href="index.html"
@@ -137,7 +150,7 @@ export default function Header(props) {
             <ul
               class={
                 "dropdown-menu mx-0 border-0 shadow" +
-                (session.experience.darkMode ? "dropdown-menu-dark" : "")
+                (session.experience.darkMode ? " dropdown-menu-dark" : "")
               }
               aria-labelledby="dropdownUser2"
             >
