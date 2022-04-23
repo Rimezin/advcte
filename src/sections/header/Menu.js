@@ -7,7 +7,7 @@ export default function Menu(props) {
     <div id="advcte-header-menu" className="col-8 border">
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
-          <a class="navbar-brand" href="advcte.netlify.app">
+          <a class="navbar-brand" href="index.html">
             Navbar
           </a>
           <button
@@ -27,20 +27,20 @@ export default function Menu(props) {
                 <a
                   class="nav-link active"
                   aria-current="page"
-                  href="advcte.netlify.app"
+                  href="index.html"
                 >
                   Home
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="advcte.netlify.app">
+                <a class="nav-link" href="index.html">
                   Link
                 </a>
               </li>
               <li class="nav-item dropdown">
                 <a
                   class="nav-link dropdown-toggle"
-                  href="advcte.netlify.app"
+                  href="index.html"
                   id="navbarDropdown"
                   role="button"
                   data-bs-toggle="dropdown"
@@ -50,12 +50,12 @@ export default function Menu(props) {
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <li>
-                    <a class="dropdown-item" href="advcte.netlify.app">
+                    <a class="dropdown-item" href="index.html">
                       Action
                     </a>
                   </li>
                   <li>
-                    <a class="dropdown-item" href="advcte.netlify.app">
+                    <a class="dropdown-item" href="index.html">
                       Another action
                     </a>
                   </li>
@@ -63,7 +63,7 @@ export default function Menu(props) {
                     <hr class="dropdown-divider" />
                   </li>
                   <li>
-                    <a class="dropdown-item" href="advcte.netlify.app">
+                    <a class="dropdown-item" href="index.html">
                       Something else here
                     </a>
                   </li>
@@ -72,7 +72,7 @@ export default function Menu(props) {
               <li class="nav-item">
                 <a
                   class="nav-link disabled"
-                  href="advcte.netlify.app"
+                  href="index.html"
                   tabindex="-1"
                   aria-disabled="true"
                 >
