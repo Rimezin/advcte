@@ -1,8 +1,5 @@
 import React from "react";
-import Splash from "./sections/Splash";
-import Header from "./sections/Header";
-import Main from "./sections/Main";
-import Footer from "./sections/Footer";
+//import Splash from "./sections/Splash";
 
 export default function App() {
   //// Master States ////
@@ -40,20 +37,19 @@ export default function App() {
     setSession(!session);
   }
 
+  // Render the main components //
+  function renderPage() {
+    if (!session.loggedOn) {
+      return <Splash session={session} handleSession={handleSession} />;
+    } else {
+      return <Header session={session} handleSession={handleSession} />;
+    }
+  }
+
   //// Rendering ////
   return (
     <div id="advcte" className="container-fluid">
-      {/* Splash: Login Page, Password page, etc. */}
-      {!session.loggedOn && (
-        <Splash session={session} handleSession={handleSession} />
-      )}
-
-      {/* Non-splash */}
-      {session.loggedOn && (
-        <Header session={session} handleSession={handleSession} />
-      )}
-      {session.loggedOn && <Main session={session} />}
-      {session.loggedOn && <Footer session={session} />}
+      {renderPage}
     </div>
   );
 }
