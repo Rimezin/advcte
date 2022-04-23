@@ -166,7 +166,7 @@ export default function Header(props) {
           </div>
 
           {/* Dark Mode Toggle */}
-          <button id="darkToggle" onClick={handleSession}>
+          <div id="darkToggle" onClick={handleSession}>
             <i
               className={
                 session.experience.darkMode
@@ -177,7 +177,7 @@ export default function Header(props) {
                 fontSize: "32px",
               }}
             ></i>
-          </button>
+          </div>
         </div>
       </div>
     </header>
