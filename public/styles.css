@@ -133,3 +133,8 @@ main {
   bottom: 0;
   width: 100%;
 }
+
+/* Transition Override */
+.no-transition {
+  transition: none;
+}

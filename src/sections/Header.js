@@ -120,7 +120,7 @@ export default function Header(props) {
           {/* Left Dropdown Menu */}
           <ul
             className={
-              "dropdown-menu mx-0 border-0 shadow" +
+              "dropdown-menu mx-0 border-0 shadow no-transition" +
               (session.experience.darkMode ? " dropdown-menu-dark" : "")
             }
             aria-labelledby="dropdownNavLink"
@@ -163,7 +163,7 @@ export default function Header(props) {
             {/* Right Dropdown Items */}
             <ul
               className={
-                "dropdown-menu mx-0 border-0 shadow dropdown-menu-end" +
+                "dropdown-menu mx-0 border-0 shadow dropdown-menu-end no-transition" +
                 (session.experience.darkMode ? " dropdown-menu-dark" : "")
               }
               aria-labelledby="dropdownUser2"
