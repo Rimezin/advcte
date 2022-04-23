@@ -1,7 +1,7 @@
 import React from "react";
 
 // Pages import //
-import Home from "./pages/Home";
+import Home from "../pages/Home";
 
 export default function Main(props) {
   const { session, page } = props;
