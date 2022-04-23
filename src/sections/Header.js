@@ -1,10 +1,75 @@
 import React from "react";
 import Logo from "./header/Logo";
-import navLinks from "../configuration/navLinks";
-import profileLinks from "../configuration/profileLinks";
 
 export default function Header(props) {
-  const { session } = props;
+  const { session, handleSession } = props;
+
+  const navLinks = [
+    {
+      label: "Home",
+      icon: "bi-house-fill",
+      id: "header-nav-home",
+      action: () => {
+        alert("Home clicked");
+      },
+      divideAbove: false,
+    },
+    {
+      label: "Messages",
+      icon: "bi-chat-dots-fill",
+      id: "header-nav-chat",
+      action: () => {
+        alert("Messages clicked");
+      },
+      divideAbove: false,
+    },
+    {
+      label: "Admin",
+      icon: "bi-sliders",
+      id: "header-nav-admin",
+      action: () => {
+        alert("Admin clicked");
+      },
+      divideAbove: true,
+    },
+  ];
+
+  const profileLinks = [
+    {
+      label: "Profile",
+      icon: "bi-person-badge-fill",
+      id: "header-profile-link",
+      action: () => {
+        alert("Profile clicked");
+      },
+      divideAbove: false,
+    },
+    {
+      label: "Settings",
+      icon: "bi-gear-fill",
+      id: "header-settings-link",
+      action: () => {
+        alert("Settings clicked");
+      },
+      divideAbove: false,
+    },
+    {
+      label: session.experience.darkMode ? "Light Mode" : "Dark Mode",
+      icon: session.experience.darkMode ? "bi-sun-fill" : "bi-moon-fill",
+      id: "darkToggle",
+      action: handleSession,
+      divideAbove: false,
+    },
+    {
+      label: "Logout",
+      icon: "bi-door-open",
+      id: "header-logout-link",
+      action: () => {
+        alert("Logged Out!");
+      },
+      divideAbove: true,
+    },
+  ];
 
   function renderMenuItems(itemsArray) {
     return itemsArray.map((link) => {
