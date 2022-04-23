@@ -4,8 +4,8 @@ import Logo from "../assets/Logo";
 export default function Footer(props) {
   //const { session } = props;
   return (
-    <div className="container">
-      <footer className="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+    <div className="container-sm-12 footer">
+      <footer className="d-flex flex-wrap justify-content-between align-items-center gap-3 py-3 my-4 border-top">
         <div className="col-md-4 d-flex align-items-center">
           <a
             href="index.html"
