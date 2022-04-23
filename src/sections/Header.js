@@ -1,4 +1,5 @@
 import React from "react";
+import { NoEmitOnErrorsPlugin } from "webpack";
 import Logo from "../assets/Logo";
 
 export default function Header(props) {
@@ -166,7 +167,18 @@ export default function Header(props) {
           </div>
 
           {/* Dark Mode Toggle */}
-          <div id="darkToggle" onClick={handleSession}>
+          <button
+            id="darkToggle"
+            onClick={handleSession}
+            className={
+              "darkToggle hover-blue no-select" +
+              (session.experience.darkMode ? " text-white" : "")
+            }
+            style={{
+              backgroundColor: "transparent",
+              border: "none",
+            }}
+          >
             <i
               className={
                 session.experience.darkMode
@@ -177,7 +189,7 @@ export default function Header(props) {
                 fontSize: "32px",
               }}
             ></i>
-          </div>
+          </button>
         </div>
       </div>
     </header>
