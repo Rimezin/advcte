@@ -64,9 +64,7 @@ export default function Header(props) {
       label: "Logout",
       icon: "bi-door-open",
       id: "header-logout-link",
-      action: () => {
-        handleSession();
-      },
+      action: handleSession,
       divideAbove: true,
     },
   ];
