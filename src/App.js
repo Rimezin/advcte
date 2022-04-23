@@ -38,19 +38,18 @@ export default function App() {
     setSession(!session);
   }
 
-  // Render the main components //
-  function renderPage() {
-    if (!session.loggedOn) {
-      return <Splash session={session} handleSession={handleSession} />;
-    } else {
-      return <Header session={session} handleSession={handleSession} />;
-    }
-  }
-
   //// Rendering ////
   return (
     <div id="advcte" className="container-fluid">
-      {renderPage}
+      {!session.loggedOn && (
+        <Splash session={session} handleSession={handleSession} />
+      )}
+
+      {session.loggedOn && (
+        <Header session={session} handleSession={handleSession} />
+        // Placeholder
+        // Placeholder
+      )}
     </div>
   );
 }
