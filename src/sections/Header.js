@@ -140,7 +140,10 @@ export default function Header(props) {
           <div class="flex-shrink-0 dropdown">
             <a
               href="index.html"
-              class="d-block text-decoration-none dropdown-toggle"
+              class={
+                "d-block text-decoration-none dropdown-toggle" +
+                (session.experience.darkMode ? " link-dark" : " link-light")
+              }
               id="dropdownUser2"
               data-bs-toggle="dropdown"
               aria-expanded="false"
