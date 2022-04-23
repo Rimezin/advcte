@@ -43,7 +43,7 @@ export default function App() {
 
   //// Rendering ////
   return (
-    <div id="advcte" className="container">
+    <div id="advcte" className="container-fluid">
       {/* Splash: Login Page, Password page, etc. */}
       <Splash session={session} handleSession={handleSession} />
 
