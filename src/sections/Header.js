@@ -145,7 +145,7 @@ export default function Header(props) {
           </form>
 
           {/* Right-hand Profile Dropdown */}
-          <div className="dropdown">
+          <div className="flex-shrink-0 dropdown">
             {/* Profile Icon + Arrow */}
             <a
               href="index.html"
@@ -163,7 +163,7 @@ export default function Header(props) {
             {/* Right Dropdown Items */}
             <ul
               className={
-                "dropdown-menu mx-0 border-0 shadow" +
+                "dropdown-menu mx-0 border-0 shadow dropdown-menu-end" +
                 (session.experience.darkMode ? " dropdown-menu-dark" : "")
               }
               aria-labelledby="dropdownUser2"
