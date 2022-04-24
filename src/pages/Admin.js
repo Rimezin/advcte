@@ -7,7 +7,9 @@ export default function Admin(props) {
     {
       label: "Home",
       icon: "bi-chevron-left",
-      action: setPage("home"),
+      action: () => {
+        setPage("home");
+      },
     },
     {
       label: "Users",

@@ -28,7 +28,9 @@ export default function Home(props) {
     {
       label: "Admin",
       icon: "bi-sliders",
-      action: setPage("admin"),
+      action: () => {
+        setPage("admin");
+      },
     },
   ];
 
