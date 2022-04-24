@@ -32,7 +32,7 @@ export default function Waves() {
             xlinkHref="#gentle-wave"
             x="48"
             y="3"
-            fill="whitesmoke"
+            fill="#cbf2ff"
             opacity="50%"
           />
           <use
