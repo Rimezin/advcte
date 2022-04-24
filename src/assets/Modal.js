@@ -24,7 +24,7 @@ export default function Modal(props) {
   return (
     <div
       id="advcte-modal"
-      class={`${
+      class={`transition-25 ${
         modal.scrollable ? "modal-dialog modal-dialog-scrollable" : "modal fade"
       }`}
       tabindex="-1"

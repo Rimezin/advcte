@@ -3,7 +3,7 @@ import React from "react";
 export default function Footer(props) {
   const { session } = props;
   return (
-    <div className="container-sm-12 footer">
+    <div className="container-sm-12 footer transition-25">
       <footer
         className={
           "d-flex flex-wrap justify-content-between align-items-center px-3 py-3 shadow-top" +

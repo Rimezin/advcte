@@ -19,7 +19,7 @@ export default function Main(props) {
 
   return (
     <main
-      className={`row gx-0 ${
+      className={`row gx-0 transition-25 ${
         session.experience.darkMode ? "bg-secondary text-white" : "bg-white"
       }`}
     >
