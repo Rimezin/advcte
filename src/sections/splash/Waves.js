@@ -25,19 +25,28 @@ export default function Waves() {
             xlinkHref="#gentle-wave"
             x="48"
             y="0"
-            fill="rgba(0, 191, 255 , 0.7"
+            style={{
+              fill: "rgb(0, 191, 255)",
+              opacity: "70%",
+            }}
           />
           <use
             xlinkHref="#gentle-wave"
             x="48"
             y="3"
-            fill="rgba(0, 149, 255 , 0.5)"
+            style={{
+              fill: "rgb(0, 149, 255)",
+              opacity: "50%",
+            }}
           />
           <use
             xlinkHref="#gentle-wave"
             x="48"
             y="5"
-            fill="rgba(0, 191, 255 , 0.3)"
+            style={{
+              fill: "rgb(0, 191, 255)",
+              opacity: "30%",
+            }}
           />
           <use xlinkHref="#gentle-wave" x="48" y="7" fill="rgb(0, 149, 255)" />
         </g>
