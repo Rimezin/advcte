@@ -72,7 +72,7 @@ export default function Header(props) {
           title: "Logout?",
           content: (
             <p>
-              Are you sure you want to log-out? You may loose any unsaved
+              Are you sure you want to log-out? You may lose any unsaved
               changes.
             </p>
           ),
