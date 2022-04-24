@@ -5,7 +5,7 @@ import React from "react";
 
 export default function Waves() {
   return (
-    <div className="waves-container no-transition">
+    <div className="waves-container">
       <svg
         className="waves"
         xmlns="http://www.w3.org/2000/svg"
@@ -32,7 +32,7 @@ export default function Waves() {
             xlinkHref="#gentle-wave"
             x="48"
             y="3"
-            fill="#00bfff"
+            fill="whitesmoke"
             opacity="50%"
           />
           <use
