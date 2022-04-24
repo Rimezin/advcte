@@ -16,6 +16,7 @@ body {
   font-family: "Nunito", sans-serif;
   height: 100%;
   font-size: var(--bs-body-font-size);
+  overflow-x: clip;
 }
 
 header {
