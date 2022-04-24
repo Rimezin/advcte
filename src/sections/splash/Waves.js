@@ -9,7 +9,7 @@ export default function Waves() {
       <svg
         className="waves"
         xmlns="http://www.w3.org/2000/svg"
-        xmlns:xlink="http://www.w3.org/1999/xlink"
+        xmlnsXlink="http://www.w3.org/1999/xlink"
         viewBox="0 24 150 28"
         preserveAspectRatio="none"
         shape-rendering="auto"
@@ -22,24 +22,24 @@ export default function Waves() {
         </defs>
         <g className="waves-parallax">
           <use
-            xlink:href="#gentle-wave"
+            xlinkHref="#gentle-wave"
             x="48"
             y="0"
             fill="rgba(0, 191, 255 ,0.7"
           />
           <use
-            xlink:href="#gentle-wave"
+            xlinkHref="#gentle-wave"
             x="48"
             y="3"
             fill="rgba(0, 149, 255 ,0.5)"
           />
           <use
-            xlink:href="#gentle-wave"
+            xlinkHref="#gentle-wave"
             x="48"
             y="5"
             fill="rgba(0, 191, 255 ,0.3)"
           />
-          <use xlink:href="#gentle-wave" x="48" y="7" fill="rgb(0, 149, 255)" />
+          <use xlinkHref="#gentle-wave" x="48" y="7" fill="rgb(0, 149, 255)" />
         </g>
       </svg>
     </div>
