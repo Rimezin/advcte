@@ -45,7 +45,7 @@ export default function ActionBar(props) {
         <button
           onClick={(event) => {
             event.preventDefault();
-            action.action;
+            action.action();
           }}
           className={`nav-link no-select ${
             session.experience.darkMode ? "link-light" : "link-dark"
