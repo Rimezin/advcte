@@ -13,14 +13,14 @@ export default function Footer(props) {
             : " bg-light border-top")
         }
       >
-        <div className="col-md-4 d-flex align-items-center">
-          <a
+        <div className="col-md-4 d-flex align-items-center no-select">
+          <button
             href="index.html"
-            className="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1"
+            className="mb-3 me-2 mb-md-0 text-decoration-none lh-1"
           >
-            <Logo logoClass="logo-small" />
-          </a>
-          <span className="text-muted">© 2022 Advcte</span>
+            <i className="bi-chat-dots-fill"></i>
+            Messages
+          </button>
         </div>
 
         <ul className="nav col-md-4 justify-content-end list-unstyled d-flex">
@@ -43,6 +43,9 @@ export default function Footer(props) {
             >
               <i className="bi-github"></i>
             </a>
+          </li>
+          <li className="ms-3">
+            <span className="text-muted">© 2022 Advcte</span>
           </li>
         </ul>
       </footer>
