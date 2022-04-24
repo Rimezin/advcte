@@ -18,7 +18,7 @@ export default function ActionBar(props) {
 
   let renderActions = actions.map((action) => {
     return (
-      <li className={panel.expanded ? "" : "panel-item-shrunk"}>
+      <li>
         <a
           href="/"
           onClick={action.action}
@@ -27,8 +27,12 @@ export default function ActionBar(props) {
             (session.experience.darkMode ? " link-light" : " link-dark")
           }
         >
-          <i className={action.icon}></i>
-          {action.label}
+          <i
+            className={`${action.icon} ${panel.expanded ? "" : "font-grow"}`}
+          ></i>
+          <span className={panel.expanded ? "" : "font-shrink"}>
+            {action.label}
+          </span>
         </a>
       </li>
     );
@@ -47,7 +51,10 @@ export default function ActionBar(props) {
       className={`d-flex flex-column flex-shrink-0 shadow ${
         panel.expanded ? "p-3" : ""
       } ${session.experience.darkMode ? "bg-dark" : "bg-light"}`}
-      style={{ width: panel.expanded ? "280px" : "4.5rem", height: "100%" }}
+      style={{
+        width: panel.expanded ? "280px" : "4.5rem",
+        height: "100%",
+      }}
     >
       <a
         href="/"
@@ -55,7 +62,14 @@ export default function ActionBar(props) {
           session.experience.darkMode ? "link-light" : "link-dark"
         }`}
       >
-        <button onClick={handlePanel}>
+        <button
+          onClick={handlePanel}
+          style={{
+            backgroundColor: "transparent",
+            outline: "none",
+            border: "none",
+          }}
+        >
           <i
             className={
               panel.expanded
@@ -65,8 +79,6 @@ export default function ActionBar(props) {
             style={{
               fontSize: "32px",
               pointerEvents: "none",
-              backgroundColor: "transparent",
-              outline: "none",
               userSelect: "none",
             }}
           ></i>

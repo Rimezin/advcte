@@ -141,8 +141,12 @@ main {
 }
 
 /* Panel CSS */
-.panel-item-shrunk {
+.font-shrink {
   font-size: 0px;
+}
+
+.font-grow {
+  font-size: 32px;
 }
 
 .nav-flush .nav-link {
