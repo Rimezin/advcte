@@ -1,5 +1,4 @@
 import React from "react";
-import Logo from "../assets/Logo";
 
 export default function Footer(props) {
   const { session } = props;
