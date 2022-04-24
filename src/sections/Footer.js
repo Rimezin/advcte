@@ -22,7 +22,7 @@ export default function Footer(props) {
               background: "none",
               outline: "none",
               border: "none",
-              fontSize: "20px",
+              fontSize: "18px",
             }}
           >
             <i className="bi-chat-dots-fill no-select hover-blue"></i>

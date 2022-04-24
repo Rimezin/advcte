@@ -74,12 +74,12 @@ export default function Header(props) {
               background: "transparent",
               outline: "none",
               border: "none",
-              fontSize: "20px",
+              fontSize: "18px",
             }}
           >
             <i className={`no-select ${link.icon}`}></i>
             <span
-              className={`no-select ${
+              className={`no-select p-2 hover-blue ${
                 session.experience.darkMode ? "text-white" : "text-dark"
               }`}
             >
