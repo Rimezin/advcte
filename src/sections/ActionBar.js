@@ -43,17 +43,14 @@ export default function ActionBar(props) {
         <a
           href="/"
           onClick={action.action}
-          className={
-            "nav-link" +
-            (session.experience.darkMode ? " link-light" : " link-dark")
-          }
+          className={`nav-link ${
+            session.experience.darkMode ? "link-light" : "link-dark"
+          } hover-blue`}
         >
           <i
             className={`${action.icon} ${panel.expanded ? "" : "font-grow"}`}
           ></i>
-          <span
-            className={`${panel.expanded ? "" : "font-shrink"} p-2 hover-blue`}
-          >
+          <span className={`${panel.expanded ? "" : "font-shrink"} p-2`}>
             {action.label}
           </span>
         </a>
