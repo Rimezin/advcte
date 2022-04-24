@@ -38,17 +38,37 @@ export default function Modal(props) {
               : "bg-light text-dark"
           }`}
         >
-          <div class="modal-header">
+          <div
+            class="modal-header"
+            style={
+              session.experience.darkMode
+                ? {
+                    borderBottom: "1px solid black",
+                  }
+                : {}
+            }
+          >
             <h5 class="modal-title">{modal.title}</h5>
             <button
               type="button"
-              class="btn-close"
+              class={`btn-close ${
+                session.experience.darkMode ? "text-white hover-blue" : ""
+              }`}
               data-bs-dismiss="modal"
               aria-label="Close"
             ></button>
           </div>
           <div class="modal-body">{modal.content}</div>
-          <div class="modal-footer">
+          <div
+            class="modal-footer"
+            style={
+              session.experience.darkMode
+                ? {
+                    borderTop: "1px solid black",
+                  }
+                : {}
+            }
+          >
             <button
               type="button"
               id={modal.button2 !== null ? modal.button2.id : "modal-button-2"}

@@ -67,7 +67,10 @@ export default function App() {
           darkMode: !sessionObj.experience.darkMode,
         },
       }));
-    } else if (event.target.id === "header-logout-link") {
+    } else if (
+      event.target.id === "header-logout-link" ||
+      event.target.id === "modal-logout-confirm"
+    ) {
       // Logout //
       setSession((sessionObj) => ({
         ...sessionObj,
