@@ -70,6 +70,11 @@ export default function Header(props) {
             id={link.id}
             className={`nav-link px-2`}
             onClick={link.action}
+            style={{
+              background: "none",
+              border: "none",
+              outline: "none",
+            }}
           >
             <i className={`hover-blue no-select ${link.icon}`}></i>
             <span
@@ -113,112 +118,94 @@ export default function Header(props) {
           : " shadow bg-light border-bottom")
       }
     >
-      <div
-        className="container-fluid d-grid gap-3 align-items-center"
-        style={{ gridTemplateColumns: "1fr 2fr" }}
-      >
+      <div className="container-fluid d-grid gap-3 align-items-center">
         {/* Left Side Container */}
-        <div className="dropdown">
+        <div className="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
           {/* Logo */}
           <a
             href="index.html"
-            className={
-              "d-flex align-items-center col-lg-4 mb-2 mb-lg-0 text-decoration-none hover-light" +
-              (session.experience.darkMode ? " link-light" : " link-dark")
-            }
-            id="dropdownNavLink"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
+            className={`d-flex align-items-center mb-2 mb-lg-0 text-decoration-none hover-light ${
+              session.experience.darkMode ? "text-light" : "text-dark"
+            }`}
+            id="header-logo-main"
           >
             <Logo logoClass="logo-medium" />
           </a>
 
-          {/* Left Dropdown Menu */}
+          {/* Primary Menu */}
           <ul className="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
             {renderHeaderMenu(navLinks)}
           </ul>
-
-          {/* <ul
-            className={
-              "dropdown-menu mx-0 border-0 shadow no-transition" +
-              (session.experience.darkMode ? " dropdown-menu-dark" : "")
-            }
-            aria-labelledby="dropdownNavLink"
-          >
-            {renderMenuItems(navLinks)}
-          </ul> */}
         </div>
 
         {/* Right-Side Container */}
-        <div className="d-flex align-items-center">
-          {/* Search Box */}
-          <form className="w-100 me-3">
-            <input
-              type="search"
-              className={
-                "form-control" +
-                (session.experience.darkMode ? " form-control-dark" : "")
-              }
-              placeholder="Search..."
-              aria-label="Search"
-            />
-          </form>
-
-          {/* Right-hand Profile Dropdown */}
-          <div className="flex-shrink-0 dropdown">
-            {/* Profile Icon + Arrow */}
-            <a
-              href="index.html"
-              className={
-                "d-block text-decoration-none dropdown-toggle hover-blue" +
-                (session.experience.darkMode ? " link-light" : " link-dark")
-              }
-              id="dropdownUser2"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
-              <i className="bi-person-circle" style={{ fontSize: "32px" }}></i>
-            </a>
-
-            {/* Right Dropdown Items */}
-            <ul
-              className={
-                "dropdown-menu mx-0 border-0 shadow dropdown-menu-end no-transition" +
-                (session.experience.darkMode ? " dropdown-menu-dark" : "")
-              }
-              aria-labelledby="dropdownUser2"
-            >
-              {renderMenuItems(profileLinks)}
-            </ul>
-          </div>
-
-          {/* Dark Mode Toggle */}
-          <button
-            id="darkToggle"
-            onClick={handleSession}
+        {/* <div className="d-flex align-items-center"> */}
+        {/* Search Box */}
+        <form className="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
+          <input
+            type="search"
             className={
-              "no-select hover-blue" +
-              (session.experience.darkMode ? " text-white" : "")
+              "form-control" +
+              (session.experience.darkMode ? " form-control-dark" : "")
+            }
+            placeholder="Search..."
+            aria-label="Search"
+          />
+        </form>
+
+        {/* Right-hand Profile Dropdown */}
+        <div className="flex-shrink-0 dropdown">
+          {/* Profile Icon + Arrow */}
+          <a
+            href="index.html"
+            className={
+              "d-block text-decoration-none dropdown-toggle hover-blue" +
+              (session.experience.darkMode ? " link-light" : " link-dark")
+            }
+            id="dropdownUser2"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <i className="bi-person-circle" style={{ fontSize: "32px" }}></i>
+          </a>
+
+          {/* Right Dropdown Items */}
+          <ul
+            className={
+              "dropdown-menu mx-0 border-0 shadow dropdown-menu-end no-transition" +
+              (session.experience.darkMode ? " dropdown-menu-dark" : "")
+            }
+            aria-labelledby="dropdownUser2"
+          >
+            {renderMenuItems(profileLinks)}
+          </ul>
+        </div>
+
+        {/* Dark Mode Toggle */}
+        <button
+          id="darkToggle"
+          onClick={handleSession}
+          className={
+            "no-select hover-blue" +
+            (session.experience.darkMode ? " text-white" : "")
+          }
+          style={{
+            backgroundColor: "transparent",
+            border: "none",
+            outline: "none",
+          }}
+        >
+          <i
+            className={
+              session.experience.darkMode ? "bi-sun-fill" : "bi-moon-stars-fill"
             }
             style={{
-              backgroundColor: "transparent",
-              border: "none",
-              outline: "none",
+              fontSize: "32px",
+              pointerEvents: "none",
             }}
-          >
-            <i
-              className={
-                session.experience.darkMode
-                  ? "bi-sun-fill"
-                  : "bi-moon-stars-fill"
-              }
-              style={{
-                fontSize: "32px",
-                pointerEvents: "none",
-              }}
-            ></i>
-          </button>
-        </div>
+          ></i>
+        </button>
+        {/* </div> */}
       </div>
     </header>
   );
