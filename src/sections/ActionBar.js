@@ -51,7 +51,9 @@ export default function ActionBar(props) {
           <i
             className={`${action.icon} ${panel.expanded ? "" : "font-grow"}`}
           ></i>
-          <span className={panel.expanded ? "p-2" : "font-shrink p-2"}>
+          <span
+            className={`${panel.expanded ? "" : "font-shrink"} p-2 hover-blue`}
+          >
             {action.label}
           </span>
         </a>
@@ -114,7 +116,13 @@ export default function ActionBar(props) {
         </button>
       </a>
       <hr />
-      <ul className="nav nav-pills flex-column mb-auto">{renderActions}</ul>
+      <ul
+        className={`nav nav-pills flex-column mb-auto ${
+          panel.expanded ? "" : "nav-flush text-center"
+        }`}
+      >
+        {renderActions}
+      </ul>
       <hr />
       <div>Words here?</div>
     </div>
