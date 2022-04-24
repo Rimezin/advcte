@@ -10,6 +10,7 @@ html {
 body {
   font-family: "Nunito", sans-serif;
   height: 100%;
+  font-size: var(--bs-body-font-size);
 }
 
 header {
@@ -44,7 +45,7 @@ main {
 }
 
 .logo-large {
-  font-size: 64px;
+  font-size: 72px;
 }
 
 /* Shadow extension */
@@ -137,4 +138,13 @@ main {
 /* Transition Override */
 .no-transition {
   transition: none;
+}
+
+/* Panel CSS */
+.panel-item-shrunk {
+  font-size: 0px;
+}
+
+.nav-flush .nav-link {
+  border-radius: 0;
 }

@@ -170,7 +170,8 @@ export default function Header(props) {
             id="darkToggle"
             onClick={handleSession}
             className={
-              "no-select" + (session.experience.darkMode ? " text-white" : "")
+              "no-select hover-blue" +
+              (session.experience.darkMode ? " text-white" : "")
             }
             style={{
               backgroundColor: "transparent",
@@ -181,8 +182,8 @@ export default function Header(props) {
             <i
               className={
                 session.experience.darkMode
-                  ? "bi-sun-fill hover-blue"
-                  : "bi-moon-stars-fill hover-blue"
+                  ? "bi-sun-fill"
+                  : "bi-moon-stars-fill"
               }
               style={{
                 fontSize: "32px",

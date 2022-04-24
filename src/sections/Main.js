@@ -1,4 +1,5 @@
 import React from "react";
+import ActionBar from "./ActionBar";
 
 // Pages import //
 import Home from "../pages/Home";
@@ -22,6 +23,7 @@ export default function Main(props) {
         session.experience.darkMode ? "bg-secondary text-white" : "bg-white"
       }
     >
+      {session.loggedOn && <ActionBar session={session} />}
       {session.loggedOn && renderPage(page)}
     </main>
   );
