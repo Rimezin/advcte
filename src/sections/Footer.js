@@ -22,9 +22,10 @@ export default function Footer(props) {
               background: "none",
               outline: "none",
               border: "none",
+              fontSize: "28px",
             }}
           >
-            <i className="bi-chat-dots-fill no-select f-4"></i>
+            <i className="bi-chat-dots-fill no-select"></i>
             <span className="p-3">Messages</span>
           </button>
         </div>
