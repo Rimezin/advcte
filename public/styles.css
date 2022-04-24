@@ -256,6 +256,8 @@ main {
   animation-name: fly-right-one;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
+  filter: invert(69%) sepia(45%) saturate(7186%) hue-rotate(164deg)
+    brightness(107%) contrast(106%);
 }
 
 /*@media screen and (max-width: 800px) {*/
