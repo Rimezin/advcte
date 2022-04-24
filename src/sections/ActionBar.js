@@ -30,7 +30,7 @@ export default function ActionBar(props) {
           <i
             className={`${action.icon} ${panel.expanded ? "" : "font-grow"}`}
           ></i>
-          <span className={panel.expanded ? "" : "font-shrink"}>
+          <span className={panel.expanded ? "p-3" : "font-shrink p-3"}>
             {action.label}
           </span>
         </a>
@@ -50,7 +50,7 @@ export default function ActionBar(props) {
     <div
       className={`d-flex flex-column flex-shrink-0 shadow ${
         panel.expanded ? "p-3" : ""
-      } ${session.experience.darkMode ? "bg-dark" : "bg-light"}`}
+      } ${session.experience.darkMode ? "bg-gray" : "bg-light"}`}
       style={{
         width: panel.expanded ? "280px" : "4.5rem",
         height: "100%",
@@ -69,6 +69,9 @@ export default function ActionBar(props) {
             outline: "none",
             border: "none",
           }}
+          className={`hover-blue ${
+            session.experience.darkMode ? "text-white" : "text-dark"
+          }`}
         >
           <i
             className={
@@ -82,7 +85,9 @@ export default function ActionBar(props) {
               userSelect: "none",
             }}
           ></i>
-          {panel.expanded && <span className="fs-4">Actions</span>}
+          <span className={`fs-4 ${panel.expanded ? "" : "font-shrink"}`}>
+            Actions
+          </span>
         </button>
       </a>
       <hr />
