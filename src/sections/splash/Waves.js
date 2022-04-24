@@ -26,7 +26,7 @@ export default function Waves() {
             x="48"
             y="0"
             style={{
-              fill: "rgb(0, 191, 255)",
+              fill: "#0095ff",
               opacity: "70%",
             }}
           />
@@ -35,7 +35,7 @@ export default function Waves() {
             x="48"
             y="3"
             style={{
-              fill: "rgb(0, 149, 255)",
+              fill: "#00bfff",
               opacity: "50%",
             }}
           />
@@ -44,11 +44,11 @@ export default function Waves() {
             x="48"
             y="5"
             style={{
-              fill: "rgb(0, 191, 255)",
+              fill: "#0095ff",
               opacity: "30%",
             }}
           />
-          <use xlinkHref="#gentle-wave" x="48" y="7" fill="rgb(0, 149, 255)" />
+          <use xlinkHref="#gentle-wave" x="48" y="7" fill="#00bfff" />
         </g>
       </svg>
     </div>
