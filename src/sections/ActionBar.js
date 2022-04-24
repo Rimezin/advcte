@@ -82,6 +82,7 @@ export default function ActionBar(props) {
       style={{
         width: panel.expanded ? "230px" : "4.5rem",
         height: "100%",
+        paddingRight: "0px",
       }}
     >
       {/* Top button */}

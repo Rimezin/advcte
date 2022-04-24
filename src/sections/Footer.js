@@ -15,10 +15,17 @@ export default function Footer(props) {
         <div className="col-md-4 d-flex align-items-center no-select">
           <button
             href="index.html"
-            className="mb-3 me-2 mb-md-0 text-decoration-none lh-1 no-select"
+            className={`mb-3 me-2 mb-md-0 text-decoration-none lh-1 no-select hover-blue ${
+              session.experience.darkMode ? "text-white" : "text-dark"
+            }`}
+            style={{
+              background: "none",
+              outline: "none",
+              border: "none",
+            }}
           >
-            <i className="bi-chat-dots-fill no-select"></i>
-            Messages
+            <i className="bi-chat-dots-fill no-select f-4"></i>
+            <span className="p-3">Messages</span>
           </button>
         </div>
 
