@@ -21,31 +21,6 @@ export default function Modal(props) {
   }
 */
 
-  function renderButton1() {
-    return (
-      <button
-        type="button"
-        class={`"btn btn-primary" ${modal.button1 === null ? "hidden" : ""}`}
-        onClick={modal.button1.action !== null ? modal.button1.action : ""}
-      >
-        {modal.button1.label}
-      </button>
-    );
-  }
-
-  function renderButton2() {
-    return (
-      <button
-        type="button"
-        class={`"btn btn-secondary" ${modal.button2 === null ? "hidden" : ""}`}
-        data-bs-dismiss="modal"
-        onClick={modal.button2.action !== null ? modal.button2.action : ""}
-      >
-        {modal.button2.label}
-      </button>
-    );
-  }
-
   return (
     <div
       id="advcte-modal"
@@ -68,8 +43,29 @@ export default function Modal(props) {
           </div>
           <div class="modal-body">{modal.content}</div>
           <div class="modal-footer">
-            {renderButton2}
-            {renderButton1}
+            <button
+              type="button"
+              class={`"btn btn-secondary" ${
+                modal.button2 === null ? "hidden" : ""
+              }`}
+              data-bs-dismiss="modal"
+              onClick={
+                modal.button2.action !== null ? modal.button2.action : ""
+              }
+            >
+              {modal.button2.label}
+            </button>
+            <button
+              type="button"
+              class={`"btn btn-primary" ${
+                modal.button1 === null ? "hidden" : ""
+              }`}
+              onClick={
+                modal.button1.action !== null ? modal.button1.action : ""
+              }
+            >
+              {modal.button1.label}
+            </button>
           </div>
         </div>
       </div>
