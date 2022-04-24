@@ -1,5 +1,10 @@
-* {
+/* * {
   transition: 0.25s;
+} */
+
+/* Transition Override */
+.no-transition {
+  transition: none;
 }
 
 html {
@@ -134,11 +139,6 @@ main {
   position: absolute;
   bottom: 0;
   width: 100%;
-}
-
-/* Transition Override */
-.no-transition {
-  transition: none;
 }
 
 /* Panel CSS */
