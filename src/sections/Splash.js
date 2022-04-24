@@ -1,6 +1,7 @@
 import React from "react";
 import Logo from "../assets/Logo";
 import Waves from "./splash/Waves";
+import Birds from "./splash/Birds";
 
 export default function Splash(props) {
   const { handleSession } = props;
@@ -47,6 +48,7 @@ export default function Splash(props) {
           <p className="mt-5 mb-3 text-muted">Under Development</p>
         </form>
       </div>
+      <Birds />
       <Waves />
     </div>
   );
