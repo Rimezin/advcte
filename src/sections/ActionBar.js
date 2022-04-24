@@ -3,9 +3,10 @@ import React from "react";
 export default function ActionBar(props) {
   const { session } = props;
   const [panel, setPanel] = React.useState({
-    expanded: true,
+    expanded: false,
   });
 
+  // Actions Listing //
   const actions = [
     {
       label: "Save",
@@ -37,6 +38,7 @@ export default function ActionBar(props) {
     },
   ];
 
+  // Actions Mapping //
   let renderActions = actions.map((action) => {
     return (
       <li>
@@ -50,9 +52,7 @@ export default function ActionBar(props) {
           <i
             className={`${action.icon} ${panel.expanded ? "" : "font-grow"}`}
           ></i>
-          <span
-            className={`${panel.expanded ? "font-grow" : "font-shrink"} p-2`}
-          >
+          <span className={`${panel.expanded ? "" : "font-shrink"} p-2`}>
             {action.label}
           </span>
         </a>
@@ -60,6 +60,7 @@ export default function ActionBar(props) {
     );
   });
 
+  // Function to handle panel expansion //
   function handlePanel(event) {
     event.preventDefault();
     setPanel((currentState) => ({
@@ -68,16 +69,18 @@ export default function ActionBar(props) {
     }));
   }
 
+  // Panel rendering //
   return (
     <div
       className={`d-flex flex-column flex-shrink-0 shadow ${
         panel.expanded ? "p-3" : ""
       } ${session.experience.darkMode ? "bg-dark" : "bg-light"}`}
       style={{
-        width: panel.expanded ? "280px" : "4.5rem",
+        width: panel.expanded ? "230px" : "4.5rem",
         height: "100%",
       }}
     >
+      {/* Top button */}
       <a
         href="/"
         className={`${
@@ -115,6 +118,8 @@ export default function ActionBar(props) {
         </button>
       </a>
       <hr />
+
+      {/* Actions rendering */}
       <ul
         className={`nav nav-pills flex-column mb-auto ${
           panel.expanded ? "" : "nav-flush text-center"
