@@ -2,7 +2,7 @@ import React from "react";
 import Logo from "../assets/Logo";
 
 export default function Header(props) {
-  const { session, handleSession, setPage, modal, setModal } = props;
+  const { session, handleSession, setPage, setModal } = props;
 
   const navLinks = [
     {
