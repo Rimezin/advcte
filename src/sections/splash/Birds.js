@@ -11,41 +11,49 @@ const bird = (
   >
     <g fill="none" fill-rule="evenodd">
       <g>
-        <path class="cell-container" stroke="none" d="M.5.5h359v509H.5z" />
-        <path class="cell-container" stroke="none" d="M359.5.5h359v509h-359z" />
-        <path class="cell-container" stroke="none" d="M718.5.5h359v509h-359z" />
+        <path className="cell-container" stroke="none" d="M.5.5h359v509H.5z" />
         <path
-          class="cell-container"
+          className="cell-container"
+          stroke="none"
+          d="M359.5.5h359v509h-359z"
+        />
+        <path
+          className="cell-container"
+          stroke="none"
+          d="M718.5.5h359v509h-359z"
+        />
+        <path
+          className="cell-container"
           stroke="none"
           d="M1077.5.5h370v509h-370z"
         />
         <path
-          class="cell-container"
+          className="cell-container"
           stroke="none"
           d="M1448.5.5h370v509h-370z"
         />
         <path
-          class="cell-container"
+          className="cell-container"
           stroke="none"
           d="M1818.5.5h370v509h-370z"
         />
         <path
-          class="cell-container"
+          className="cell-container"
           stroke="none"
           d="M2189.5.5h370v509h-370z"
         />
         <path
-          class="cell-container"
+          className="cell-container"
           stroke="none"
           d="M2559.5.5h370v509h-370z"
         />
         <path
-          class="cell-container"
+          className="cell-container"
           stroke="none"
           d="M2930.5.5h370v509h-370z"
         />
         <path
-          class="cell-container"
+          className="cell-container"
           stroke="none"
           d="M3300.5.5h370v509h-370z"
         />
