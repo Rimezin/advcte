@@ -30,7 +30,7 @@ export default function ActionBar(props) {
           <i
             className={`${action.icon} ${panel.expanded ? "" : "font-grow"}`}
           ></i>
-          <span className={panel.expanded ? "p-3" : "font-shrink p-3"}>
+          <span className={panel.expanded ? "p-2" : "font-shrink p-2"}>
             {action.label}
           </span>
         </a>
@@ -58,7 +58,8 @@ export default function ActionBar(props) {
     >
       <a
         href="/"
-        className={`d-flex align-items-center mb-3 mb-md-0 me-md-auto text-decoration-none ${
+        className={`${
+          panel.expanded ? "d-flex align-items-center mb-3 mb-md-0 me-md-auto text-decoration-none" : "d-block p-3 text-decoration-none"} ${
           session.experience.darkMode ? "link-light" : "link-dark"
         }`}
       >
