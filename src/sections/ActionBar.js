@@ -14,6 +14,27 @@ export default function ActionBar(props) {
         alert("Save clicked!");
       },
     },
+    {
+      label: "Cancel",
+      icon: "bi-x-circle",
+      action: () => {
+        alert("Cancel clicked!");
+      },
+    },
+    {
+      label: "Delete",
+      icon: "bi-trash3",
+      action: () => {
+        alert("Delete clicked!");
+      },
+    },
+    {
+      label: "Refresh",
+      icon: "bi-arrow-repeat",
+      action: () => {
+        alert("Refresh clicked!");
+      },
+    },
   ];
 
   let renderActions = actions.map((action) => {
@@ -50,7 +71,7 @@ export default function ActionBar(props) {
     <div
       className={`d-flex flex-column flex-shrink-0 shadow ${
         panel.expanded ? "p-3" : ""
-      } ${session.experience.darkMode ? "bg-gray" : "bg-light"}`}
+      } ${session.experience.darkMode ? "bg-dark" : "bg-light"}`}
       style={{
         width: panel.expanded ? "280px" : "4.5rem",
         height: "100%",
@@ -87,7 +108,7 @@ export default function ActionBar(props) {
               userSelect: "none",
             }}
           ></i>
-          <span className={panel.expanded ? "fs-4" : "font-shrink"}>
+          <span className={panel.expanded ? "fs-4 p-3" : "font-shrink"}>
             Actions
           </span>
         </button>
