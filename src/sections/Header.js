@@ -124,7 +124,7 @@ export default function Header(props) {
         style={{ gridTemplateColumns: "1fr 2fr" }}
       >
         {/* Left Side Container */}
-        <div className="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+        <div className="d-flex align-items-center justify-content-center justify-content-lg-start">
           {/* Logo */}
           <div
             className={
