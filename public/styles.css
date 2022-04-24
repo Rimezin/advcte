@@ -155,6 +155,12 @@ main {
 }
 
 /* Waves */
+.waves-container {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
 .waves {
   position: relative;
   width: 100%;
