@@ -2,7 +2,7 @@ import React from "react";
 import Logo from "../assets/Logo";
 
 export default function Header(props) {
-  const { session, handleSession, setPage } = props;
+  const { session, handleSession, setPage, modal, setModal } = props;
 
   const navLinks = [
     {
@@ -13,6 +13,8 @@ export default function Header(props) {
         setPage("home");
       },
       divideAbove: false,
+      bsToggle: null,
+      bsTarget: null,
     },
     {
       label: "Messages",
@@ -22,6 +24,8 @@ export default function Header(props) {
         alert("Messages clicked");
       },
       divideAbove: false,
+      bsToggle: null,
+      bsTarget: null,
     },
     {
       label: "Admin",
@@ -31,6 +35,8 @@ export default function Header(props) {
         alert("Admin clicked");
       },
       divideAbove: true,
+      bsToggle: null,
+      bsTarget: null,
     },
   ];
 
@@ -43,6 +49,8 @@ export default function Header(props) {
         alert("Profile clicked");
       },
       divideAbove: false,
+      bsToggle: null,
+      bsTarget: null,
     },
     {
       label: "Settings",
@@ -52,13 +60,39 @@ export default function Header(props) {
         alert("Settings clicked");
       },
       divideAbove: false,
+      bsToggle: null,
+      bsTarget: null,
     },
     {
       label: "Logout",
       icon: "bi-door-open",
-      id: "header-logout-link",
-      action: handleSession,
+      id: "header-logout-modal",
+      action: () => {
+        setModal({
+          title: "Logout?",
+          content: (
+            <p>
+              Are you sure you want to log-out? You may loose any unsaved
+              changes.
+            </p>
+          ),
+          button1: {
+            label: "Confirm",
+            id: "modal-logout-confirm",
+            action: handleSession,
+          },
+          button2: {
+            label: "Cancel",
+            id: "modal-logout-cancel",
+            action: null,
+          },
+          static: true,
+          scrollable: false,
+        });
+      },
       divideAbove: true,
+      bsToggle: "modal",
+      bsTarget: "#advcte-modal",
     },
   ];
 
@@ -71,6 +105,8 @@ export default function Header(props) {
             id={link.id}
             className="dropdown-item d-flex gap-2 align-items-center"
             onClick={link.action}
+            data-bs-toggle={link.bsToggle} //For modals
+            data-bs-target={link.bsTarget} //For modal id: "#advcte-modal"
           >
             <i className={link.icon}></i>
             {link.label}

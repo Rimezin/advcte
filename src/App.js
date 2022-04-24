@@ -1,4 +1,5 @@
 import React from "react";
+import Modal from "./assets/Modal";
 
 // Layout Sections Import //
 import Splash from "./sections/Splash";
@@ -37,7 +38,24 @@ export default function App() {
 
   // State to hold current page in main content //
   const [page, setPage] = React.useState("home");
-  //// Functions ////
+
+  // State to hold modal properties //
+  const [modal, setModal] = React.useState({
+    title: "Title goes here",
+    content: <p>A cool message here.</p>,
+    button1: {
+      label: "Confirm",
+      id: "modal-confirm",
+      action: null,
+    },
+    button2: {
+      label: "Cancel",
+      id: "modal-cancel",
+      action: null,
+    },
+    static: true,
+    scrollable: false,
+  });
 
   // Handle the session //
   function handleSession(event) {
@@ -67,9 +85,16 @@ export default function App() {
   //// Rendering ////
   return (
     <div id="advcte" className="container-sm-12" style={{ height: "100%" }}>
+      {/* Modal */}
+      <Modal modal={modal} session={session} />
+
       {/* Splash Page */}
       {!session.loggedOn && (
-        <Splash session={session} handleSession={handleSession} />
+        <Splash
+          session={session}
+          handleSession={handleSession}
+          setModal={setModal}
+        />
       )}
 
       {/* Logged-in Items */}
@@ -78,12 +103,18 @@ export default function App() {
           session={session}
           handleSession={handleSession}
           setPage={setPage}
+          setModal={setModal}
         />
       )}
       {session.loggedOn && (
-        <Main page={page} setPage={setPage} session={session} />
+        <Main
+          page={page}
+          setPage={setPage}
+          session={session}
+          setModal={setModal}
+        />
       )}
-      {session.loggedOn && <Footer session={session} />}
+      {session.loggedOn && <Footer session={session} setModal={setModal} />}
     </div>
   );
 }
