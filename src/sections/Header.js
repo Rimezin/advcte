@@ -62,35 +62,6 @@ export default function Header(props) {
     },
   ];
 
-  function renderHeaderMenu(itemsArray) {
-    return itemsArray.map((link) => {
-      return (
-        <li>
-          <button
-            id={link.id}
-            className={`nav-link px-2 hover-blue`}
-            onClick={link.action}
-            style={{
-              background: "transparent",
-              outline: "none",
-              border: "none",
-              fontSize: "18px",
-            }}
-          >
-            <i className={`no-select ${link.icon}`}></i>
-            <span
-              className={`no-select p-2 hover-blue ${
-                session.experience.darkMode ? "text-white" : "text-dark"
-              }`}
-            >
-              {link.label}
-            </span>
-          </button>
-        </li>
-      );
-    });
-  }
-
   function renderMenuItems(itemsArray) {
     return itemsArray.map((link) => {
       return (
@@ -124,31 +95,37 @@ export default function Header(props) {
         style={{ gridTemplateColumns: "1fr 2fr" }}
       >
         {/* Left Side Container */}
-        <div className="d-flex align-items-center justify-content-center justify-content-lg-start">
+        <div className="dropdown">
           {/* Logo */}
-          <div
+          <a
+            href="index.html"
             className={
               "d-flex align-items-center col-lg-4 mb-2 mb-lg-0 text-decoration-none hover-light" +
               (session.experience.darkMode ? " link-light" : " link-dark")
             }
-            id="logo-header-main"
+            id="dropdownNavLink"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
           >
             <Logo logoClass="logo-medium" />
-          </div>
+          </a>
 
-          {/* Left Menu */}
-          <ul className="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-            {renderHeaderMenu(navLinks)}
+          {/* Left Dropdown Menu */}
+          <ul
+            className={
+              "dropdown-menu mx-0 border-0 shadow no-transition" +
+              (session.experience.darkMode ? " dropdown-menu-dark" : "")
+            }
+            aria-labelledby="dropdownNavLink"
+          >
+            {renderMenuItems(navLinks)}
           </ul>
         </div>
 
         {/* Right-Side Container */}
-        <div
-          className="d-flex align-items-center"
-          style={{ justifyContent: "right" }}
-        >
+        <div className="d-flex align-items-center">
           {/* Search Box */}
-          <form className="me-lg-3 col-12 col-lg-auto mb-3 mb-lg-0">
+          <form className="w-100 me-3">
             <input
               type="search"
               className={
