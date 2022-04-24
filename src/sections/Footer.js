@@ -16,9 +16,9 @@ export default function Footer(props) {
         <div className="col-md-4 d-flex align-items-center no-select">
           <button
             href="index.html"
-            className="mb-3 me-2 mb-md-0 text-decoration-none lh-1"
+            className="mb-3 me-2 mb-md-0 text-decoration-none lh-1 no-select"
           >
-            <i className="bi-chat-dots-fill"></i>
+            <i className="bi-chat-dots-fill no-select"></i>
             Messages
           </button>
         </div>

@@ -54,7 +54,9 @@ export default function ActionBar(props) {
           <i
             className={`${action.icon} ${panel.expanded ? "" : "font-grow"}`}
           ></i>
-          <span className={`${panel.expanded ? "" : "font-shrink"} p-2`}>
+          <span
+            className={`${panel.expanded ? "" : "font-shrink"} no-select p-2`}
+          >
             {action.label}
           </span>
         </button>
@@ -109,7 +111,9 @@ export default function ActionBar(props) {
             pointerEvents: "none",
           }}
         ></i>
-        <span className={`${panel.expanded ? "fs-4 p-3" : "font-shrink"}`}>
+        <span
+          className={`no-select ${panel.expanded ? "fs-4 p-3" : "font-shrink"}`}
+        >
           Actions
         </span>
       </button>
