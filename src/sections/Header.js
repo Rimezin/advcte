@@ -62,6 +62,29 @@ export default function Header(props) {
     },
   ];
 
+  function renderHeaderMenu(itemsArray) {
+    return itemsArray.map((link) => {
+      return (
+        <li>
+          <button
+            id={link.id}
+            className={`nav-link px-2`}
+            onClick={link.action}
+          >
+            <i className={`hover-blue no-select ${link.icon}`}></i>
+            <span
+              className={`hover-blue no-select ${
+                session.experience.darkMode ? "link-white" : "link-dark"
+              }`}
+            >
+              {link.label}
+            </span>
+          </button>
+        </li>
+      );
+    });
+  }
+
   function renderMenuItems(itemsArray) {
     return itemsArray.map((link) => {
       return (
@@ -111,7 +134,11 @@ export default function Header(props) {
           </a>
 
           {/* Left Dropdown Menu */}
-          <ul
+          <ul className="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+            {renderHeaderMenu(navLinks)}
+          </ul>
+
+          {/* <ul
             className={
               "dropdown-menu mx-0 border-0 shadow no-transition" +
               (session.experience.darkMode ? " dropdown-menu-dark" : "")
@@ -119,7 +146,7 @@ export default function Header(props) {
             aria-labelledby="dropdownNavLink"
           >
             {renderMenuItems(navLinks)}
-          </ul>
+          </ul> */}
         </div>
 
         {/* Right-Side Container */}

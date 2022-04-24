@@ -93,7 +93,7 @@ export default function ActionBar(props) {
           outline: "none",
           border: "none",
         }}
-        className={`hover-blue no-select ${
+        className={`no-select ${
           session.experience.darkMode ? "text-white" : "text-dark"
         } ${
           panel.expanded
@@ -102,18 +102,20 @@ export default function ActionBar(props) {
         } ${session.experience.darkMode ? "link-light" : "link-dark"}`}
       >
         <i
-          className={
+          className={`hover-blue ${
             panel.expanded
               ? "bi-arrow-left-circle-fill"
               : "bi-arrow-right-circle-fill"
-          }
+          }`}
           style={{
             fontSize: "32px",
             pointerEvents: "none",
           }}
         ></i>
         <span
-          className={`no-select ${panel.expanded ? "fs-4 p-3" : "font-shrink"}`}
+          className={`no-select hover-blue ${
+            panel.expanded ? "fs-4 p-3" : "font-shrink"
+          }`}
         >
           Actions
         </span>
