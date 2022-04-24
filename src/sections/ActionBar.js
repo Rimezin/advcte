@@ -76,7 +76,7 @@ export default function ActionBar(props) {
   // Panel rendering //
   return (
     <div
-      className={`d-flex flex-column flex-shrink-0 shadow ${
+      className={`d-flex flex-column flex-shrink-0 shadow col ${
         panel.expanded ? "p-3" : ""
       } ${session.experience.darkMode ? "bg-dark" : "bg-light"}`}
       style={{

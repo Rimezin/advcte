@@ -13,18 +13,18 @@ export default function Main(props) {
       case "home":
         return <Home session={session} />;
       default:
-        return <div>Placeholder</div>;
+        return <div className="col">Placeholder</div>;
     }
   }
 
   return (
     <main
-      className={
+      className={`row ${
         session.experience.darkMode ? "bg-secondary text-white" : "bg-white"
-      }
+      }`}
     >
-      {session.loggedOn && <ActionBar session={session} />}
-      {session.loggedOn && renderPage(page)}
+      <ActionBar session={session} />
+      {renderPage(page)}
     </main>
   );
 }
