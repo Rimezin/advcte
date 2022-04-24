@@ -1,35 +1,9 @@
 import React from "react";
 
 export default function ActionBar(props) {
-  const { session, actions } = props;
+  const { session, renderActions } = props;
   const [panel, setPanel] = React.useState({
     expanded: false,
-  });
-
-  // Actions Mapping //
-  let renderActions = actions.map((action) => {
-    return (
-      <li>
-        <button
-          onClick={(event) => {
-            event.preventDefault();
-            action.action();
-          }}
-          className={`nav-link no-select ${
-            session.experience.darkMode ? "link-light" : "link-dark"
-          } hover-blue`}
-        >
-          <i
-            className={`${action.icon} ${panel.expanded ? "" : "font-grow"}`}
-          ></i>
-          <span
-            className={`${panel.expanded ? "" : "font-shrink"} no-select p-2`}
-          >
-            {action.label}
-          </span>
-        </button>
-      </li>
-    );
   });
 
   // Function to handle panel expansion //
