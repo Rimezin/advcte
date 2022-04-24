@@ -42,10 +42,12 @@ export default function ActionBar(props) {
   let renderActions = actions.map((action) => {
     return (
       <li>
-        <a
-          href="/"
-          onClick={action.action}
-          className={`nav-link ${
+        <button
+          onClick={(event) => {
+            event.preventDefault();
+            action.action;
+          }}
+          className={`nav-link no-select ${
             session.experience.darkMode ? "link-light" : "link-dark"
           } hover-blue`}
         >
@@ -55,7 +57,7 @@ export default function ActionBar(props) {
           <span className={`${panel.expanded ? "" : "font-shrink"} p-2`}>
             {action.label}
           </span>
-        </a>
+        </button>
       </li>
     );
   });
@@ -88,7 +90,7 @@ export default function ActionBar(props) {
           outline: "none",
           border: "none",
         }}
-        className={`hover-blue ${
+        className={`hover-blue no-select ${
           session.experience.darkMode ? "text-white" : "text-dark"
         } ${
           panel.expanded
@@ -105,10 +107,9 @@ export default function ActionBar(props) {
           style={{
             fontSize: "32px",
             pointerEvents: "none",
-            userSelect: "none",
           }}
         ></i>
-        <span className={panel.expanded ? "fs-4 p-3" : "font-shrink"}>
+        <span className={`${panel.expanded ? "fs-4 p-3" : "font-shrink"}`}>
           Actions
         </span>
       </button>
