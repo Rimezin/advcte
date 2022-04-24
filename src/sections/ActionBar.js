@@ -98,7 +98,6 @@ export default function ActionBar(props) {
         <ul
           className="dropdown-menu text-small shadow"
           aria-labelledby="dropdownUser2"
-          style=""
         >
           <li>
             <a className="dropdown-item" href="/">
