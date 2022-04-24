@@ -93,7 +93,7 @@ export default function ActionBar(props) {
           outline: "none",
           border: "none",
         }}
-        className={`no-select ${
+        className={`no-select transition-25 ${
           session.experience.darkMode ? "text-white" : "text-dark"
         } ${
           panel.expanded
@@ -113,7 +113,7 @@ export default function ActionBar(props) {
           }}
         ></i>
         <span
-          className={`no-select hover-blue ${
+          className={`no-select transition-25 hover-blue ${
             panel.expanded ? "fs-4 p-3" : "font-shrink"
           }`}
         >

@@ -15,7 +15,7 @@ export default function Footer(props) {
         <div className="col-md-4 d-flex align-items-center no-select">
           <button
             href="index.html"
-            className={`mb-3 me-2 mb-md-0 text-decoration-none lh-1 no-select ${
+            className={`mb-3 me-2 mb-md-0 text-decoration-none lh-1 no-select transition-25 hover-blue ${
               session.experience.darkMode ? "text-white" : "text-dark"
             }`}
             style={{
@@ -25,12 +25,12 @@ export default function Footer(props) {
               fontSize: "18px",
             }}
           >
-            <i className="bi-chat-dots-fill no-select hover-blue"></i>
-            <span className="p-2 hover-blue">Messages</span>
+            <i className="bi-chat-dots-fill no-select"></i>
+            <span className="p-2 transition-25 hover-blue">Messages</span>
           </button>
         </div>
 
-        <ul className="nav col-md-4 justify-content-end list-unstyled d-flex">
+        <ul className="nav col-md-4 justify-content-end list-unstyled d-flex transition-25">
           <li className="ms-3">
             <a className="text-muted" href="index.html">
               <i className="bi-twitter"></i>
@@ -41,7 +41,7 @@ export default function Footer(props) {
               <i className="bi-instagram"></i>
             </a>
           </li>
-          <li className="ms-3">
+          <li className="ms-3 hover-blue">
             <a
               className="text-muted"
               href="https://github.com/Rimezin/advcte"

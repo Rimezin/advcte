@@ -135,7 +135,7 @@ export default function Header(props) {
           <a
             href="index.html"
             className={
-              "d-flex align-items-center col-lg-4 mb-2 mb-lg-0 text-decoration-none hover-light" +
+              "transition-25 d-flex align-items-center col-lg-4 mb-2 mb-lg-0 text-decoration-none hover-light" +
               (session.experience.darkMode ? " link-light" : " link-dark")
             }
             id="dropdownNavLink"
@@ -178,7 +178,7 @@ export default function Header(props) {
             <a
               href="index.html"
               className={
-                "d-block text-decoration-none dropdown-toggle hover-blue" +
+                "transition-25 d-block text-decoration-none dropdown-toggle hover-blue" +
                 (session.experience.darkMode ? " link-light" : " link-dark")
               }
               id="dropdownUser2"
@@ -191,7 +191,7 @@ export default function Header(props) {
             {/* Right Dropdown Items */}
             <ul
               className={
-                "dropdown-menu mx-0 border-0 shadow dropdown-menu-end no-transition" +
+                "transition-25 dropdown-menu mx-0 border-0 shadow dropdown-menu-end no-transition" +
                 (session.experience.darkMode ? " dropdown-menu-dark" : "")
               }
               aria-labelledby="dropdownUser2"
@@ -205,7 +205,7 @@ export default function Header(props) {
             id="darkToggle"
             onClick={handleSession}
             className={
-              "no-select hover-blue" +
+              "no-select hover-blue transition-25" +
               (session.experience.darkMode ? " text-white" : "")
             }
             style={{
