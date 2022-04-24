@@ -59,9 +59,10 @@ export default function ActionBar(props) {
       <a
         href="/"
         className={`${
-          panel.expanded ? "d-flex align-items-center mb-3 mb-md-0 me-md-auto text-decoration-none" : "d-block p-3 text-decoration-none"} ${
-          session.experience.darkMode ? "link-light" : "link-dark"
-        }`}
+          panel.expanded
+            ? "d-flex align-items-center mb-3 mb-md-0 me-md-auto text-decoration-none"
+            : "d-block p-3 text-decoration-none"
+        } ${session.experience.darkMode ? "link-light" : "link-dark"}`}
       >
         <button
           onClick={handlePanel}
@@ -86,7 +87,7 @@ export default function ActionBar(props) {
               userSelect: "none",
             }}
           ></i>
-          <span className={`fs-4 ${panel.expanded ? "" : "font-shrink"}`}>
+          <span className={panel.expanded ? "fs-4" : "font-shrink"}>
             Actions
           </span>
         </button>
