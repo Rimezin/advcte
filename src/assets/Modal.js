@@ -1,7 +1,7 @@
 import React from "react";
 
 export default function Modal(props) {
-  const { modal } = props;
+  const { modal, session } = props;
 
   /* {
     title: "Title goes here",
@@ -31,7 +31,13 @@ export default function Modal(props) {
       data-bs-backdrop={modal.static ? "static" : ""}
     >
       <div class="modal-dialog">
-        <div class="modal-content">
+        <div
+          class={`modal-content ${
+            session.experience.darkMode
+              ? "bg-dark text-white"
+              : "bg-light text-dark"
+          }`}
+        >
           <div class="modal-header">
             <h5 class="modal-title">{modal.title}</h5>
             <button
@@ -45,7 +51,8 @@ export default function Modal(props) {
           <div class="modal-footer">
             <button
               type="button"
-              class={`"btn btn-secondary" ${
+              id={modal.button2 !== null ? modal.button2.id : "modal-button-2"}
+              class={`btn btn-secondary ${
                 modal.button2 === null ? "hidden" : ""
               }`}
               data-bs-dismiss="modal"
@@ -53,18 +60,19 @@ export default function Modal(props) {
                 modal.button2.action !== null ? modal.button2.action : ""
               }
             >
-              {modal.button2.label}
+              {modal.button2 !== null ? modal.button2.label : "Cancel"}
             </button>
             <button
               type="button"
-              class={`"btn btn-primary" ${
+              id={modal.button1 !== null ? modal.button1.id : "modal-button-1"}
+              class={`btn btn-primary ${
                 modal.button1 === null ? "hidden" : ""
               }`}
               onClick={
                 modal.button1.action !== null ? modal.button1.action : ""
               }
             >
-              {modal.button1.label}
+              {modal.button1 !== null ? modal.button1.label : "Confirm"}
             </button>
           </div>
         </div>
