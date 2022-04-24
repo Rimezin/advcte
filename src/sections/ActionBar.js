@@ -1,42 +1,10 @@
 import React from "react";
 
 export default function ActionBar(props) {
-  const { session } = props;
+  const { session, actions } = props;
   const [panel, setPanel] = React.useState({
     expanded: false,
   });
-
-  // Actions Listing //
-  const actions = [
-    {
-      label: "Save",
-      icon: "bi-save",
-      action: () => {
-        alert("Save clicked!");
-      },
-    },
-    {
-      label: "Cancel",
-      icon: "bi-x-circle",
-      action: () => {
-        alert("Cancel clicked!");
-      },
-    },
-    {
-      label: "Delete",
-      icon: "bi-trash3",
-      action: () => {
-        alert("Delete clicked!");
-      },
-    },
-    {
-      label: "Refresh",
-      icon: "bi-arrow-repeat",
-      action: () => {
-        alert("Refresh clicked!");
-      },
-    },
-  ];
 
   // Actions Mapping //
   let renderActions = actions.map((action) => {
