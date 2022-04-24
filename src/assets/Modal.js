@@ -52,7 +52,9 @@ export default function Modal(props) {
             <button
               type="button"
               class={`btn-close ${
-                session.experience.darkMode ? "text-white hover-blue" : ""
+                session.experience.darkMode
+                  ? "text-white!important hover-blue!important"
+                  : ""
               }`}
               data-bs-dismiss="modal"
               aria-label="Close"
@@ -88,6 +90,7 @@ export default function Modal(props) {
               class={`btn btn-primary ${
                 modal.button1 === null ? "hidden" : ""
               }`}
+              data-bs-dismiss="modal"
               onClick={
                 modal.button1.action !== null ? modal.button1.action : ""
               }
