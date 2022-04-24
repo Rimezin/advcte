@@ -81,42 +81,37 @@ export default function ActionBar(props) {
       }}
     >
       {/* Top button */}
-      <a
-        href="/"
-        className={`${
+      <button
+        onClick={handlePanel}
+        style={{
+          backgroundColor: "transparent",
+          outline: "none",
+          border: "none",
+        }}
+        className={`hover-blue ${
+          session.experience.darkMode ? "text-white" : "text-dark"
+        } ${
           panel.expanded
             ? "d-flex align-items-center mb-3 mb-md-0 me-md-auto text-decoration-none"
             : "d-block p-3 text-decoration-none"
         } ${session.experience.darkMode ? "link-light" : "link-dark"}`}
       >
-        <button
-          onClick={handlePanel}
+        <i
+          className={
+            panel.expanded
+              ? "bi-arrow-left-circle-fill"
+              : "bi-arrow-right-circle-fill"
+          }
           style={{
-            backgroundColor: "transparent",
-            outline: "none",
-            border: "none",
+            fontSize: "32px",
+            pointerEvents: "none",
+            userSelect: "none",
           }}
-          className={`hover-blue ${
-            session.experience.darkMode ? "text-white" : "text-dark"
-          }`}
-        >
-          <i
-            className={
-              panel.expanded
-                ? "bi-arrow-left-circle-fill"
-                : "bi-arrow-right-circle-fill"
-            }
-            style={{
-              fontSize: "32px",
-              pointerEvents: "none",
-              userSelect: "none",
-            }}
-          ></i>
-          <span className={panel.expanded ? "fs-4 p-3" : "font-shrink"}>
-            Actions
-          </span>
-        </button>
-      </a>
+        ></i>
+        <span className={panel.expanded ? "fs-4 p-3" : "font-shrink"}>
+          Actions
+        </span>
+      </button>
       <hr />
 
       {/* Actions rendering */}
