@@ -103,7 +103,7 @@ export default function Header(props) {
           {link.divideAbove && <hr className="dropdown-divider" />}
           <button
             id={link.id}
-            className="dropdown-item d-flex gap-2 align-items-center"
+            className="dropdown-item d-flex gap-2 align-items-center transition-25"
             onClick={link.action}
             data-bs-toggle={link.bsToggle} //For modals
             data-bs-target={link.bsTarget} //For modal id: "#advcte-modal"
