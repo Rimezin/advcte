@@ -34,6 +34,13 @@ export default function ActionBar(props) {
     );
   });
 
+  function handlePanel() {
+    setPanel((currentState) => ({
+      ...currentState,
+      expanded: !currentState.expanded,
+    }));
+  }
+
   return (
     <div
       className={
