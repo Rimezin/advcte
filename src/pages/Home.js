@@ -1,7 +1,7 @@
 import React from "react";
 
 export default function Home(props) {
-  const { setActions, page } = props;
+  const { setActions, page, setPage } = props;
   // session
   React.useEffect(() => {
     setActions([
@@ -27,14 +27,14 @@ export default function Home(props) {
         },
       },
       {
-        label: "Refresh",
+        label: "Admin",
         icon: "bi-arrow-repeat",
         action: () => {
-          alert("Refresh clicked!");
+          setPage("admin");
         },
       },
     ]);
-  }, [page, setActions]);
+  }, [page, setActions, setPage]);
 
   return <div className="col transition-25">Placeholder Home</div>;
 }

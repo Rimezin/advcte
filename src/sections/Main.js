@@ -19,10 +19,10 @@ export default function Main(props) {
   // Switch Page Function //
   function renderPage(param) {
     switch (param.toLowerCase()) {
-      case "home":
-        return <Home session={session} setActions={setActions} page={page} />;
+      case "admin":
+        return <Admin session={session} setActions={setActions} page={page} />;
       default:
-        return <div className="col">Placeholder</div>;
+        return <Home session={session} setActions={setActions} page={page} />;
     }
   }
 

@@ -1,33 +1,33 @@
 import React from "react";
 
-export default function Admin(props) {
-  const { setActions, setPage } = props;
-  //setModal, session
-  const actions = [
-    {
-      label: "Home",
-      icon: "bi-chevron-left",
-      action: () => {
-        setPage("home");
+export default function Home(props) {
+  const { setActions, page, setPage } = props;
+  // session
+  React.useEffect(() => {
+    setActions([
+      {
+        label: "Home",
+        icon: "bi-chevron-left",
+        action: () => {
+          setPage("home");
+        },
       },
-    },
-    {
-      label: "Users",
-      icon: "bi-people",
-      action: () => {
-        alert("Users clicked!");
+      {
+        label: "Users",
+        icon: "bi-people",
+        action: () => {
+          alert("Users clicked!");
+        },
       },
-    },
-    {
-      label: "Global Settings",
-      icon: "bi-sliders",
-      action: () => {
-        alert("Settings clicked!");
+      {
+        label: "Global Settings",
+        icon: "bi-sliders",
+        action: () => {
+          alert("Settings clicked!");
+        },
       },
-    },
-  ];
+    ]);
+  }, [page, setActions, setPage]);
 
-  setActions(actions);
-
-  return <div className="col transition-25">Placeholder Admin</div>;
+  return <div className="col transition-25">Placeholder Home</div>;
 }
