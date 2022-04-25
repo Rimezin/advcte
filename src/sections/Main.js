@@ -7,7 +7,7 @@ import Admin from "../pages/Admin";
 
 // Main Render //
 export default function Main(props) {
-  const { session, page } = props;
+  const { session, page, setPage } = props;
   const [actions, setActions] = React.useState([
     {
       label: "Placeholder",
@@ -34,7 +34,7 @@ export default function Main(props) {
         session.experience.darkMode ? "bg-secondary text-white" : "bg-white"
       }`}
     >
-      <ActionBar session={session} actions={actions} />
+      <ActionBar session={session} actions={actions} setPage={setPage} />
       {renderPage(page)}
     </main>
   );
