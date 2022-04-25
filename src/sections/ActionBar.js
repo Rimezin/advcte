@@ -7,13 +7,13 @@ export default function ActionBar(props) {
   });
 
   // Handle Actions //
-  handleAction = (actionId) => {
+  function handleAction(actionId) {
     if (actionId === "admin-link") {
-      setPage("admin");
+      return setPage("admin");
     } else {
-      alert(actionId);
+      return alert(actionId);
     }
-  };
+  }
 
   // Actions Mapping //
   let renderActions = actions.map((action) => {
