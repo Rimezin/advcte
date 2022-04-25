@@ -2,7 +2,7 @@ import React from "react";
 import Logo from "../assets/Logo";
 import Waves from "./splash/Waves";
 import Birds from "./splash/Birds";
-import Toast from "../assets/Toast";
+import CornerToast from "../assets/Toast";
 
 export default function Splash(props) {
   const { session, handleSession } = props;
@@ -64,7 +64,7 @@ export default function Splash(props) {
         </form>
       </div>
       {/* Toast */}
-      <Toast
+      <CornerToast
         toast={toast}
         setToast={setToast}
         message="Dark mode activated based on your system settings."

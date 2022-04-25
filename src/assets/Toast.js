@@ -1,7 +1,7 @@
 import React from "react";
 import Toast from "react-bootstrap";
 
-export default function Toast(props) {
+export default function CornerToast(props) {
   const { message, icon, title, time, toast, setToast } = props;
 
   return (
