@@ -10,20 +10,18 @@ export default function Splash(props) {
   // setModal
 
   // Toasts //
-  React.useEffect(() => {
-    if (session.experience.darkMode) {
-      setToast([
-        {
-          message: "Dark Mode is enabled based on your browser settings.",
-          icon: "bi-moon-stars-fill",
-          title: "Advcte",
-          time: "just now",
-          delay: "10000",
-          autoHide: "true",
-        },
-      ]);
-    }
-  }, [toast, setToast, session.experience.darkMode]);
+  if (session.experience.darkMode) {
+    setToast([
+      {
+        message: "Dark Mode is enabled based on your browser settings.",
+        icon: "bi-moon-stars-fill",
+        title: "Advcte",
+        time: "just now",
+        delay: "10000",
+        autoHide: "true",
+      },
+    ]);
+  }
 
   function renderToasts() {
     if (toast.length > 0) {
