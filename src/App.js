@@ -80,6 +80,19 @@ export default function App() {
     scrollable: false,
   });
 
+  //   // Toast //
+  //   const [toast, setToast] = React.useState(false);
+
+  //   {/* Toast */}
+  //   <Toast
+  //   toast={toast}
+  //   setToast={setToast}
+  //   message=""
+  //   icon=""
+  //   title=""
+  //   time=""
+  // />
+
   // Handle the session //
   function handleSession(event) {
     if (event.target.id === "darkToggle") {

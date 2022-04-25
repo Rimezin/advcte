@@ -2,10 +2,21 @@ import React from "react";
 import Logo from "../assets/Logo";
 import Waves from "./splash/Waves";
 import Birds from "./splash/Birds";
+import Toast from "../assets/Toast";
 
 export default function Splash(props) {
   const { session, handleSession } = props;
   // setModal
+
+  // Toast //
+  const [toast, setToast] = React.useState(false);
+
+  React.useEffect(() => {
+    if (session.experience.darkMode) {
+      setToast(true);
+    }
+  }, []);
+
   return (
     <div
       className={`splash-container text-center ${
@@ -52,6 +63,15 @@ export default function Splash(props) {
           <p className="mt-5 mb-3 text-muted">Under Development</p>
         </form>
       </div>
+      {/* Toast */}
+      <Toast
+        toast={toast}
+        setToast={setToast}
+        message="Dark mode activated based on your system settings."
+        icon="bi-moon-stars-fill"
+        title="Advcte"
+        time="just now"
+      />
       <Birds />
       <Waves />
     </div>
