@@ -23,7 +23,7 @@ export default function Splash(props) {
         },
       ]);
     }
-  }, [toast, setToast]);
+  }, [toast, setToast, session.experience.darkMode]);
 
   function renderToasts() {
     if (toast.length > 0) {
