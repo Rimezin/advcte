@@ -1,7 +1,7 @@
 import React from "react";
 
 export default function ActionBar(props) {
-  const { session, actions, setPage } = props;
+  const { session, actions } = props;
   const [panel, setPanel] = React.useState({
     expanded: false,
   });
