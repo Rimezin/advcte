@@ -8,31 +8,10 @@ export default function Main(props) {
   const { session, page } = props;
   const [actions, setActions] = React.useState([
     {
-      label: "Save",
-      icon: "bi-save",
+      label: "Placeholder",
+      icon: "bi-info-circle",
       action: () => {
-        alert("Save clicked!");
-      },
-    },
-    {
-      label: "Cancel",
-      icon: "bi-x-circle",
-      action: () => {
-        alert("Cancel clicked!");
-      },
-    },
-    {
-      label: "Delete",
-      icon: "bi-trash3",
-      action: () => {
-        alert("Delete clicked!");
-      },
-    },
-    {
-      label: "Refresh",
-      icon: "bi-arrow-repeat",
-      action: () => {
-        alert("Refresh clicked!");
+        alert("This is just a placeholder, settle down.");
       },
     },
   ]);
