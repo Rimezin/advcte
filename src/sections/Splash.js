@@ -9,18 +9,18 @@ export default function Splash(props) {
   // setModal
 
   function renderToasts() {
-    if (session.experience.darkMode) {
-      return (
-        <Toast
-          message="Dark Mode is enabled based on your browser settings."
-          icon="bi-moon-stars-fill"
-          title="Advcte"
-          time="just now"
-          delay="10000"
-          autoHide="true"
-        />
-      );
-    }
+    // if (session.experience.darkMode) {
+    return (
+      <Toast
+        message="Dark Mode is enabled based on your browser settings."
+        icon="bi-moon-stars-fill"
+        title="Advcte"
+        time="just now"
+        delay="10000"
+        autoHide="true"
+      />
+    );
+    // }
   }
 
   return (
