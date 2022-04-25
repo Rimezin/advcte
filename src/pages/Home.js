@@ -1,40 +1,32 @@
 import React from "react";
 
 export default function Home(props) {
-  const { setActions, page, setPage } = props;
+  const { setActions, page } = props;
   // session
   React.useEffect(() => {
     setActions([
       {
         label: "Save",
         icon: "bi-save",
-        action: () => {
-          alert("Save clicked!");
-        },
+        id: "save-enc",
       },
       {
         label: "Cancel",
         icon: "bi-x-circle",
-        action: () => {
-          alert("Cancel clicked!");
-        },
+        id: "cancel-enc",
       },
       {
         label: "Delete",
         icon: "bi-trash3",
-        action: () => {
-          alert("Delete clicked!");
-        },
+        id: "delete-enc",
       },
       {
         label: "Admin",
         icon: "bi-arrow-repeat",
-        action: () => {
-          setPage("admin");
-        },
+        id: "admin-link",
       },
     ]);
-  }, [page, setActions, setPage]);
+  }, [page, setActions]);
 
   return <div className="col transition-25">Placeholder Home</div>;
 }

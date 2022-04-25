@@ -1,10 +1,19 @@
 import React from "react";
 
 export default function ActionBar(props) {
-  const { session, actions } = props;
+  const { session, actions, setPage } = props;
   const [panel, setPanel] = React.useState({
     expanded: false,
   });
+
+  // Handle Actions //
+  function handleAction(actionId) {
+    if (actionId === "admin-link") {
+      setPage("admin");
+    } else {
+      alert(actionId);
+    }
+  }
 
   // Actions Mapping //
   let renderActions = actions.map((action) => {
@@ -13,7 +22,7 @@ export default function ActionBar(props) {
         <button
           onClick={(event) => {
             event.preventDefault();
-            action.action();
+            handleAction(action.id);
           }}
           className={`nav-link no-select ${
             session.experience.darkMode ? "link-light" : "link-dark"
