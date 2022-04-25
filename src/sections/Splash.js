@@ -6,33 +6,18 @@ import Toast from "../assets/Toast";
 
 export default function Splash(props) {
   const { session, handleSession } = props;
-  const [toast, setToast] = React.useState([]);
   // setModal
 
-  // Toasts //
-  if (session.experience.darkMode) {
-    setToast([
-      {
-        message: "Dark Mode is enabled based on your browser settings.",
-        icon: "bi-moon-stars-fill",
-        title: "Advcte",
-        time: "just now",
-        delay: "10000",
-        autoHide: "true",
-      },
-    ]);
-  }
-
   function renderToasts() {
-    if (toast.length > 0) {
+    if (session.experience.darkMode) {
       return (
         <Toast
-          message={toast[0].message}
-          icon={toast[0].icon}
-          title={toast[0].title}
-          time={toast[0].time}
-          delay={toast[0].delay}
-          autoHide={toast[0].autoHide}
+          message="Dark Mode is enabled based on your browser settings."
+          icon="bi-moon-stars-fill"
+          title="Advcte"
+          time="just now"
+          delay="10000"
+          autoHide="true"
         />
       );
     }
