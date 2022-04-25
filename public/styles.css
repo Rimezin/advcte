@@ -145,6 +145,7 @@ main {
 /* Panel CSS */
 .font-shrink {
   font-size: 0px;
+  display: none;
 }
 
 .font-grow {

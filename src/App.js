@@ -32,9 +32,32 @@ export default function App() {
     },
     experience: {
       language: "english",
-      darkMode: false,
+      darkMode:
+        window.matchMedia &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches
+          ? true
+          : false,
     },
   });
+
+  // Watch for darkMode //
+  React.useEffect(() => {
+    const modeMe = (e) => {
+      setSession((session) => ({
+        ...session,
+        experience: {
+          ...session.experience,
+          darkMode: e.matches ? true : false,
+        },
+      }));
+    };
+    window
+      .matchMedia("(prefers-color-scheme: dark)")
+      .addEventListener("change", modeMe);
+    return window
+      .matchMedia("(prefers-color-scheme: dark)")
+      .removeListener(modeMe);
+  }, []);
 
   // State to hold current page in main content //
   const [page, setPage] = React.useState("home");
