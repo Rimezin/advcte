@@ -46,7 +46,13 @@ export default function Splash(props) {
         session.experience.darkMode ? "bg-dark text-white" : ""
       }`}
     >
-      {renderToasts}
+      <div
+        aria-live="polite"
+        aria-atomic="true"
+        style="position: relative; min-height: 200px;"
+      >
+        <div style="position: absolute; top: 0; right: 0;">{renderToasts}</div>
+      </div>
       <div className="form-signin">
         <form className="text-center form-signin">
           <Logo logoClass="logo-large" />
