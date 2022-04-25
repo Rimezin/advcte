@@ -23,5 +23,5 @@ export default function Home(props) {
     ]);
   }, [page, setActions]);
 
-  return <div className="col transition-25">Placeholder Home</div>;
+  return <div className="col transition-25">Placeholder Admin</div>;
 }
