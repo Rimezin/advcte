@@ -6,15 +6,6 @@ export default function ActionBar(props) {
     expanded: false,
   });
 
-  // Handle Actions //
-  function handleAction(actionId) {
-    if (actionId === "admin-link") {
-      return setPage("admin");
-    } else {
-      return alert(actionId);
-    }
-  }
-
   // Actions Mapping //
   let renderActions = actions.map((action) => {
     return (
@@ -22,7 +13,7 @@ export default function ActionBar(props) {
         <button
           onClick={(event) => {
             event.preventDefault();
-            handleAction(action.id);
+            action.action();
           }}
           className={`nav-link no-select ${
             session.experience.darkMode ? "link-light" : "link-dark"

@@ -22,9 +22,23 @@ export default function Main(props) {
   function renderPage(param) {
     switch (param.toLowerCase()) {
       case "admin":
-        return <Admin session={session} setActions={setActions} page={page} />;
+        return (
+          <Admin
+            session={session}
+            setActions={setActions}
+            page={page}
+            setPage={setPage}
+          />
+        );
       default:
-        return <Home session={session} setActions={setActions} page={page} />;
+        return (
+          <Home
+            session={session}
+            setActions={setActions}
+            page={page}
+            setPage={setPage}
+          />
+        );
     }
   }
 
