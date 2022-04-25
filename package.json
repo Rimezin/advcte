@@ -9,9 +9,7 @@
     "nanoid": "3.3.2",
     "he": "1.2.0",
     "babel-loader": "8.0.5",
-    "webpack": "4.29.6",
-    "react-bootstrap": "2.3.0",
-    "jsx-runtime": "1.2.0"
+    "webpack": "4.29.6"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -38,8 +36,6 @@
     "babel-core": "^6.0",
     "babel-loader": "8.0.5",
     "babel-preset-env": "*",
-    "babel-preset-react": "*",
-    "react-bootstrap": "2.3.0",
-    "jsx-runtime": "1.2.0"
+    "babel-preset-react": "*"
   }
 }

@@ -2,20 +2,43 @@ import React from "react";
 import Logo from "../assets/Logo";
 import Waves from "./splash/Waves";
 import Birds from "./splash/Birds";
-import CornerToast from "../assets/Toast";
+import Toast from "../assets/Toast";
 
 export default function Splash(props) {
   const { session, handleSession } = props;
+  const [toast, setToast] = React.useState([]);
   // setModal
 
-  // Toast //
-  const [toast, setToast] = React.useState(false);
-
+  // Toasts //
   React.useEffect(() => {
     if (session.experience.darkMode) {
-      setToast(true);
+      setToast([
+        {
+          message: "Dark Mode is enabled based on your browser settings.",
+          icon: "bi-moon-stars-fill",
+          title: "Advcte",
+          time: "just now",
+          delay: "10000",
+          autoHide: "true",
+        },
+      ]);
     }
-  }, []);
+  }, [toast, setToast]);
+
+  function renderToasts() {
+    if (toast.length > 0) {
+      return (
+        <Toast
+          message={toast[0].message}
+          icon={toast[0].icon}
+          title={toast[0].title}
+          time={toast[0].time}
+          delay={toast[0].delay}
+          autoHide={toast[0].autoHide}
+        />
+      );
+    }
+  }
 
   return (
     <div
@@ -23,6 +46,7 @@ export default function Splash(props) {
         session.experience.darkMode ? "bg-dark text-white" : ""
       }`}
     >
+      {renderToasts}
       <div className="form-signin">
         <form className="text-center form-signin">
           <Logo logoClass="logo-large" />
@@ -63,15 +87,6 @@ export default function Splash(props) {
           <p className="mt-5 mb-3 text-muted">Under Development</p>
         </form>
       </div>
-      {/* Toast */}
-      <CornerToast
-        toast={toast}
-        setToast={setToast}
-        message="Dark mode activated based on your system settings."
-        icon="bi-moon-stars-fill"
-        title="Advcte"
-        time="just now"
-      />
       <Birds />
       <Waves />
     </div>

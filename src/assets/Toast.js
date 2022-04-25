@@ -1,26 +1,31 @@
 import React from "react";
-import Toast from "react-bootstrap";
 
-export default function CornerToast(props) {
-  const { message, icon, title, time, toast, setToast } = props;
+export default function Toast(props) {
+  const { message, icon, title, time, delay, autoHide } = props;
 
   return (
-    <Row>
-      <Col xs={6}>
-        <Toast
-          onClose={() => setToast(false)}
-          show={toast}
-          delay={3000}
-          autohide
+    <div
+      class="toast"
+      role="alert"
+      aria-live="assertive"
+      aria-atomic="true"
+      data-delay={delay}
+      data-autohide={autoHide}
+    >
+      <div class="toast-header">
+        <i class={icon}></i>
+        <strong class="mr-auto">{title}</strong>
+        <small class="text-muted">{time}</small>
+        <button
+          type="button"
+          class="ml-2 mb-1 close"
+          data-dismiss="toast"
+          aria-label="Close"
         >
-          <Toast.Header>
-            <i className={icon}></i>
-            <strong className="me-auto">{title}</strong>
-            <small>{time}</small>
-          </Toast.Header>
-          <Toast.Body>{message}</Toast.Body>
-        </Toast>
-      </Col>
-    </Row>
+          <i class="bi-times"></i>
+        </button>
+      </div>
+      <div class="toast-body">{message}</div>
+    </div>
   );
 }
