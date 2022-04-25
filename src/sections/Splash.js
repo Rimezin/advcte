@@ -49,9 +49,11 @@ export default function Splash(props) {
       <div
         aria-live="polite"
         aria-atomic="true"
-        style="position: relative; min-height: 200px;"
+        style={{ position: "relative", minHeight: "200px" }}
       >
-        <div style="position: absolute; top: 0; right: 0;">{renderToasts}</div>
+        <div style={{ position: "absolute", top: "0", right: "0" }}>
+          {renderToasts}
+        </div>
       </div>
       <div className="form-signin">
         <form className="text-center form-signin">
