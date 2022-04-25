@@ -4,10 +4,14 @@ import Waves from "./splash/Waves";
 import Birds from "./splash/Birds";
 
 export default function Splash(props) {
-  const { handleSession } = props;
-
+  const { session, handleSession } = props;
+  // setModal
   return (
-    <div className="splash-container text-center">
+    <div
+      className={`splash-container text-center ${
+        session.experience.darkMode ? "bg-dark text-white" : ""
+      }`}
+    >
       <div className="form-signin">
         <form className="text-center form-signin">
           <Logo logoClass="logo-large" />
