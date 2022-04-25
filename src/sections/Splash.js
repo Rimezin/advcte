@@ -10,6 +10,7 @@ export default function Splash(props) {
 
   function renderToasts() {
     // if (session.experience.darkMode) {
+    console.log("renderToasts");
     return (
       <Toast
         message="Dark Mode is enabled based on your browser settings."
@@ -41,21 +42,29 @@ export default function Splash(props) {
       <div className="form-signin">
         <form className="text-center form-signin">
           <Logo logoClass="logo-large" />
-          <h1 className="h3 mb-3 fw-normal">Please sign in</h1>
+          <h2 className="h3 mb-3 fw-normal">Please sign in</h2>
 
           <div className="form-floating">
             <input
               type="email"
-              className="form-control"
+              className={`form-control ${
+                session.experience.darkMode
+                  ? "form-control-dark text-white"
+                  : ""
+              }`}
               id="floatingInput"
-              placeholder="name@example.com"
+              placeholder="myname"
             />
-            <label for="floatingInput">Email address</label>
+            <label for="floatingInput">Username</label>
           </div>
           <div className="form-floating">
             <input
               type="password"
-              className="form-control"
+              className={`form-control ${
+                session.experience.darkMode
+                  ? "form-control-dark text-white"
+                  : ""
+              }`}
               id="floatingPassword"
               placeholder="Password"
             />
@@ -64,7 +73,12 @@ export default function Splash(props) {
 
           <div className="checkbox mb-3">
             <label>
-              <input type="checkbox" value="remember-me" /> Remember me
+              <input
+                type="checkbox"
+                value="remember-me"
+                className={session.experience.darkMode ? "text-white" : ""}
+              />
+              &nbsp; Remember me
             </label>
           </div>
           <button

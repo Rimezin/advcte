@@ -3,6 +3,8 @@ import React from "react";
 export default function Toast(props) {
   const { message, icon, title, time, delay, autoHide } = props;
 
+  console.log("toasted");
+
   return (
     <div
       class="toast"
