@@ -34,7 +34,7 @@ export default function Home(props) {
         },
       },
     ]);
-  }, [page]);
+  }, [page, setActions]);
 
   return <div className="col transition-25">Placeholder Home</div>;
 }
