@@ -3,7 +3,9 @@ import ActionBar from "./ActionBar";
 
 // Pages import //
 import Home from "../pages/Home";
+import Admin from "../pages/Admin";
 
+// Main Render //
 export default function Main(props) {
   const { session, page } = props;
   const [actions, setActions] = React.useState([
