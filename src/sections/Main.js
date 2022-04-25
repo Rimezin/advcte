@@ -20,7 +20,7 @@ export default function Main(props) {
   function renderPage(param) {
     switch (param.toLowerCase()) {
       case "home":
-        return <Home session={session} setActions={setActions} />;
+        return <Home session={session} setActions={setActions} page={page} />;
       default:
         return <div className="col">Placeholder</div>;
     }
