@@ -24,6 +24,8 @@ export default function Splash(props) {
     // }
   }
 
+  $("#toast").toast("show");
+
   return (
     <div
       className={`splash-container text-center ${
@@ -35,7 +37,7 @@ export default function Splash(props) {
         aria-atomic="true"
         style={{ position: "relative", minHeight: "200px" }}
       >
-        <div style={{ position: "absolute", top: "0", right: "0" }}>
+        <div id="toast" style={{ position: "absolute", top: "0", right: "0" }}>
           {renderToasts}
         </div>
       </div>
