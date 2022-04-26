@@ -11,7 +11,7 @@ export default function Splash(props) {
   return (
     <div
       className={`splash-container text-center transition-25 ${
-        session.experience.darkMode ? "bg-sunset text-white" : ""
+        session.experience.darkMode ? "bg-sunset text-white" : "bg-sky"
       }`}
     >
       <div className="form-signin">
@@ -66,13 +66,7 @@ export default function Splash(props) {
           >
             Sign in
           </button>
-          <p
-            className={`mt-5 mb-3 ${
-              session.experience.darkMode ? "text-white" : "text-muted"
-            }`}
-          >
-            Under Development
-          </p>
+          <p className={`mt-5 mb-3 text-white`}>Under Development</p>
         </form>
       </div>
       <Birds session={session} />
