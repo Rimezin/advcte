@@ -27,7 +27,7 @@ export default function Splash(props) {
   return (
     <div
       className={`splash-container text-center ${
-        session.experience.darkMode ? "bg-dark text-white" : ""
+        session.experience.darkMode ? "bg-sunset text-white" : ""
       }`}
     >
       <div
