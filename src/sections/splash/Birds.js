@@ -10,13 +10,15 @@ export default function Birds(props) {
 
   function renderBirds() {
     return birds.map((bird) => {
-      <div
-        className={`bird-container ${
-          session.experience.dark ? "" : "filter-blue"
-        } bird-container--${bird}`}
-      >
-        <div className={`bird bird--${bird}`}></div>
-      </div>;
+      return (
+        <div
+          className={`bird-container ${
+            session.experience.dark ? "" : "filter-blue"
+          } bird-container--${bird}`}
+        >
+          <div className={`bird bird--${bird}`}></div>
+        </div>
+      );
     });
   }
 
