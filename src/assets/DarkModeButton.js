@@ -18,9 +18,9 @@ export default function DarkModeButton(props) {
       }}
     >
       <i
-        className={
-          session.experience.darkMode ? "bi-sun-fill" : "bi-moon-stars-fill"
-        }
+        className={`transition-25 
+          ${session.experience.darkMode ? "bi-sun-fill" : "bi-moon-stars-fill"}
+        `}
         style={{
           fontSize: "32px",
           pointerEvents: "none",
