@@ -26,9 +26,9 @@ export default function Breadcrumb(props) {
       <li className="p-2" aria-current={page === crumb ? "page" : ""}>
         <button
           id={`breadcrumb-${crumb}`}
-          className={`bc-link hover-blue ${
-            page === crumb ? "active bc-link-a" : ""
-          } ${session.experience.darkMode ? "" : "bc-link-dark"}`}
+          className={`bc-link ${page === crumb ? "active bc-link-a" : ""} ${
+            session.experience.darkMode ? "bc-link-dark" : ""
+          }`}
           onClick={handleClick}
           style={{ outline: "none!important" }}
         >
