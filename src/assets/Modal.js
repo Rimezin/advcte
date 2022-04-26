@@ -79,7 +79,9 @@ export default function Modal(props) {
               }`}
               data-bs-dismiss="modal"
               onClick={
-                modal.button2.action !== null ? modal.button2.action : ""
+                modal.button2 !== null && modal.button2.action !== null
+                  ? modal.button2.action
+                  : ""
               }
             >
               {modal.button2 !== null ? modal.button2.label : "Cancel"}
@@ -92,7 +94,9 @@ export default function Modal(props) {
               }`}
               data-bs-dismiss="modal"
               onClick={
-                modal.button1.action !== null ? modal.button1.action : ""
+                modal.button1 !== null && modal.button1.action !== null
+                  ? modal.button1.action
+                  : ""
               }
             >
               {modal.button1 !== null ? modal.button1.label : "Confirm"}
