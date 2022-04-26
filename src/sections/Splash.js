@@ -66,7 +66,13 @@ export default function Splash(props) {
           >
             Sign in
           </button>
-          <p className="mt-5 mb-3 text-muted">Under Development</p>
+          <p
+            className={`mt-5 mb-3 ${
+              session.experience.darkMode ? "text-white" : "text-muted"
+            }`}
+          >
+            Under Development
+          </p>
         </form>
       </div>
       <Birds session={session} />
