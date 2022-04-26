@@ -14,22 +14,28 @@ export default function Breadcrumb(props) {
     }
   }
 
-  const renderCrumbs = crumbs().map((crumb) => {
-    let crumbItem;
-    if (page === crumb) {
-      crumbItem = crumb;
-    } else {
-      crumbItem = () => <button className="btn btn-link">{crumb}</button>;
-    }
+  function handleClick(event) {
+    event.preventDefault();
+    let dest = event.target.id;
+    dest = dest.substring(11);
+    setPage(dest);
+  }
 
+  const renderCrumbs = crumbs().map((crumb) => {
     return (
       <li
-        className={`breadcrumb-item ${page === crumb ? "active" : ""} ${
-          session.experience.darkMode ? "text-dark" : ""
-        }`}
+        className={`breadcrumb-item ${
+          page === crumb ? "active disabled" : ""
+        } ${session.experience.darkMode ? "text-dark" : ""}`}
         aria-current={page === crumb ? "page" : ""}
       >
-        {crumbItem}
+        <button
+          id={`breadcrumb-${crumb}`}
+          className="btn btn-link"
+          onClick={handleClick}
+        >
+          {crumb}
+        </button>
       </li>
     );
   });
