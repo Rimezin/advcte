@@ -29,11 +29,11 @@ export default function Breadcrumb(props) {
       >
         <button
           id={`breadcrumb-${crumb}`}
-          className={`btn hover-blue ${
+          className={`btn btn-link hover-blue ${
             page === crumb ? "active bc-link" : ""
           } ${session.experience.darkMode ? "text-light" : "text-dark"}`}
           onClick={handleClick}
-          style={{ outline: "none" }}
+          style={{ outline: "none!important" }}
         >
           {crumb}
         </button>

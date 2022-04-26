@@ -411,8 +411,23 @@ main {
 }
 
 /* Breadcrumb Links */
+.bc-link {
+  padding: 0px 5px 0px 5px;
+  transition: 0.25s;
+  outline: none;
+  border: none;
+}
+
 .bc-link::before {
   content: ">";
+}
+
+.bc-link:hover {
+  color: #00bfff;
+}
+
+.bc-link:active {
+  outline: none;
 }
 
 .bc {
