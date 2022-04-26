@@ -56,7 +56,7 @@ export default function App() {
       .addEventListener("change", modeMe);
     return window
       .matchMedia("(prefers-color-scheme: dark)")
-      .removeListener(modeMe);
+      .removeEventListener("change", () => {});
   }, []);
 
   // State to hold current page in main content //
