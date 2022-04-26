@@ -397,7 +397,7 @@ main {
   }
 }
 
-/* Sunset */
+/* Background Variants */
 .bg-sunset {
   background-image: linear-gradient(
     rgb(7 7 31),
@@ -408,4 +408,9 @@ main {
 
 .bg-medium-dark {
   background-color: #2d3238 !important;
+}
+
+/* Breadcrumb Links */
+.bc-link::before {
+  content: "...";
 }
