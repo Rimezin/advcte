@@ -2,7 +2,7 @@ import React from "react";
 import Logo from "../assets/Logo";
 import Waves from "./splash/Waves";
 import Birds from "./splash/Birds";
-// import Toast from "../assets/Toast";
+import Toast from "../assets/Toast";
 
 export default function Splash(props) {
   const { session, handleSession } = props;
