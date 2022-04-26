@@ -21,6 +21,7 @@ export default function Modal(props) {
   }
 */
 
+  // Button 2 (Secondary) //
   let button2 = () => {
     return (
       <button
@@ -39,6 +40,7 @@ export default function Modal(props) {
     );
   };
 
+  // Button 1 (Primary) //
   let button1 = () => {
     return (
       <button
@@ -57,6 +59,7 @@ export default function Modal(props) {
     );
   };
 
+  // Main rendering //
   return (
     <div
       id="advcte-modal"
@@ -107,8 +110,8 @@ export default function Modal(props) {
                 : {}
             }
           >
-            {modal.button2 !== null && button2}
-            {modal.button1 !== null && button1}
+            {modal.button2 !== null && button2()}
+            {modal.button1 !== null && button1()}
           </div>
         </div>
       </div>
