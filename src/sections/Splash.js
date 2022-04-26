@@ -2,31 +2,10 @@ import React from "react";
 import Logo from "../assets/Logo";
 import Waves from "./splash/Waves";
 import Birds from "./splash/Birds";
-import Toast from "../assets/Toast";
 
 export default function Splash(props) {
   const { session, handleSession } = props;
   // setModal
-
-  function renderToasts() {
-    // if (session.experience.darkMode) {
-    console.log("renderToasts");
-    return (
-      <Toast
-        message="Dark Mode is enabled based on your browser settings."
-        icon="bi-moon-stars-fill"
-        title="Advcte"
-        time="just now"
-        delay="10000"
-        autoHide="true"
-      />
-    );
-    // }
-  }
-
-  React.useEffect(() => {
-    document.getElementById("toast").toast("show");
-  }, []);
 
   return (
     <div
@@ -34,15 +13,6 @@ export default function Splash(props) {
         session.experience.darkMode ? "bg-sunset text-white" : ""
       }`}
     >
-      <div
-        aria-live="polite"
-        aria-atomic="true"
-        style={{ position: "relative", minHeight: "200px" }}
-      >
-        <div id="toast" style={{ position: "absolute", top: "0", right: "0" }}>
-          {renderToasts}
-        </div>
-      </div>
       <div className="form-signin">
         <form className="text-center form-signin">
           <Logo logoClass="logo-large" />
