@@ -25,7 +25,15 @@ export default function Breadcrumb(props) {
 
   return (
     <div aria-label="breadcrumb">
-      Breadcrumb
+      <ol
+        className={`breadcrumb ${
+          session.experience.darkMode ? "bg-secondary" : ""
+        }`}
+      >
+        <li className={`breadcrumb-item`} aria-current="page">
+          Breadcrumb
+        </li>
+      </ol>
       {/* <ol
         class={`breadcrumb ${
           session.experience.darkMode ? "bg-secondary" : ""
