@@ -45,7 +45,7 @@ export default function Main(props) {
   return (
     <main
       className={`row gx-0 transition-25 ${
-        session.experience.darkMode ? "bg-dark text-white" : "bg-white"
+        session.experience.darkMode ? "bg-medium-dark text-white" : "bg-white"
       }`}
     >
       <ActionBar session={session} actions={actions} setPage={setPage} />

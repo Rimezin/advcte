@@ -1,8 +1,9 @@
 import React from "react";
+import Breadcrumb from "../assets/Breadcrumb";
 
 export default function Home(props) {
-  const { setActions, page, setPage } = props;
-  // session
+  const { setActions, page, setPage, session } = props;
+
   React.useEffect(() => {
     setActions([
       {
@@ -40,5 +41,10 @@ export default function Home(props) {
     ]);
   }, [page, setActions, setPage]);
 
-  return <div className="col transition-25">Placeholder Home</div>;
+  return (
+    <div className="col transition-25">
+      <Breadcrumb session={session} page={page} />
+      Placeholder Home
+    </div>
+  );
 }
