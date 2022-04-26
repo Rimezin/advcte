@@ -15,7 +15,7 @@ export default function Breadcrumb(props) {
   //   let renderCrumbs = crumbs.map((crumb) => {
   //     return (
   //       <li
-  //         class={`breadcrumb-item ${page === crumb ? "active" : ""}`}
+  //         className={`breadcrumb-item ${page === crumb ? "active" : ""}`}
   //         aria-current="page"
   //       >
   //         {crumb}
@@ -30,12 +30,12 @@ export default function Breadcrumb(props) {
           session.experience.darkMode ? "bg-secondary" : ""
         }`}
       >
-        <li className={`breadcrumb-item`} aria-current="page">
+        <li className="breadcrumb-item active" aria-current="page">
           Breadcrumb
         </li>
       </ol>
       {/* <ol
-        class={`breadcrumb ${
+        className={`breadcrumb ${
           session.experience.darkMode ? "bg-secondary" : ""
         }`}
       >
