@@ -22,7 +22,7 @@ export default function Modal(props) {
 */
 
   // Button 2 (Secondary) //
-  let button2 = () => {
+  function button2() {
     return (
       <button
         type="button"
@@ -38,10 +38,10 @@ export default function Modal(props) {
         {modal.button2 !== null ? modal.button2.label : "Cancel"}
       </button>
     );
-  };
+  }
 
   // Button 1 (Primary) //
-  let button1 = () => {
+  function button1() {
     return (
       <button
         type="button"
@@ -57,7 +57,7 @@ export default function Modal(props) {
         {modal.button1 !== null ? modal.button1.label : "Confirm"}
       </button>
     );
-  };
+  }
 
   // Main rendering //
   return (
@@ -110,8 +110,8 @@ export default function Modal(props) {
                 : {}
             }
           >
-            {modal.button2 !== null && button2()}
-            {modal.button1 !== null && button1()}
+            {modal.button2 !== null && button2}
+            {modal.button1 !== null && button1}
           </div>
         </div>
       </div>

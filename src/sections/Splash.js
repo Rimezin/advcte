@@ -20,11 +20,7 @@ export default function Splash(props) {
           id: "about-modal-close",
           action: null,
         },
-        button2: {
-          label: "Cool!",
-          id: "about-modal-close",
-          action: null,
-        },
+        button2: null,
         static: false,
         scrollable: true,
       });
