@@ -31,7 +31,7 @@ export default function Breadcrumb(props) {
       >
         <button
           id={`breadcrumb-${crumb}`}
-          className={`btn btn-link ${page === crumb ? "disabled" : ""}`}
+          className={`btn hover-blue ${page === crumb ? "disabled" : ""}`}
           onClick={handleClick}
           style={{ outline: "none" }}
         >
