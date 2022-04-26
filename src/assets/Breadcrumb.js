@@ -1,7 +1,7 @@
 import React from "react";
 
 export default function Breadcrumb(props) {
-  const { session, page } = props;
+  const { session, page, setPage } = props;
 
   function crumbs() {
     switch (page) {
