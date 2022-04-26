@@ -48,7 +48,7 @@ export default function ActionBar(props) {
         panel.expanded ? "p-3" : ""
       } ${session.experience.darkMode ? "bg-dark" : "bg-light"}`}
       style={{
-        width: panel.expanded ? "230px" : "4.5rem",
+        width: panel.expanded ? "230px" : "3.5rem",
         height: "100%",
         paddingRight: "0px",
       }}

@@ -5,8 +5,27 @@ import Birds from "./splash/Birds";
 import DarkModeButton from "../assets/DarkModeButton";
 
 export default function Splash(props) {
-  const { session, handleSession } = props;
-  // setModal
+  const { session, handleSession, setModal } = props;
+
+  // Handle Modal //
+  function handleModal(event) {
+    event.preventDefault();
+
+    if (event.target.id === "about-modal-toggle") {
+      setModal({
+        title: "About Advcte",
+        content: <p>Placeholder for about</p>,
+        button1: {
+          label: "Cool!",
+          id: "about-modal-close",
+          action: null,
+        },
+        button2: null,
+        static: false,
+        scrollable: true,
+      });
+    }
+  }
 
   return (
     <div
@@ -66,7 +85,15 @@ export default function Splash(props) {
           >
             Sign in
           </button>
-          <p className={`mt-5 mb-3 text-white`}>Under Development</p>
+          <button
+            id="about-modal-toggle"
+            className="btn btn-link mt-5 mb-3 text-white transition-25"
+            onClick={handleModal}
+            data-bs-toggle="modal" //For modals
+            data-bs-target="#advcte-modal" //For modal id: "#advcte-modal"
+          >
+            What is Advcte?
+          </button>
         </form>
       </div>
       <Birds session={session} />
