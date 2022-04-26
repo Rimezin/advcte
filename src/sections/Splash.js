@@ -10,7 +10,7 @@ export default function Splash(props) {
 
   return (
     <div
-      className={`splash-container text-center ${
+      className={`splash-container text-center transition-25 ${
         session.experience.darkMode ? "bg-sunset text-white" : ""
       }`}
     >
@@ -72,7 +72,7 @@ export default function Splash(props) {
       <Birds session={session} />
       <Waves session={session} />
       <div
-        className="m-3"
+        className="m-3 transition-25"
         style={{
           position: "absolute",
           left: "0",
