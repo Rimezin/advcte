@@ -1,8 +1,9 @@
 import React from "react";
+import Breadcrumb from "../assets/Breadcrumb";
 
 export default function Home(props) {
-  const { setActions, page, setPage } = props;
-  // session
+  const { setActions, page, setPage, session } = props;
+
   React.useEffect(() => {
     setActions([
       {
