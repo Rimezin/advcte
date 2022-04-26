@@ -19,9 +19,7 @@ export default function Breadcrumb(props) {
     if (page === crumb) {
       crumbItem = crumb;
     } else {
-      crumbItem = () => {
-        return <button className="btn btn-link">{crumb}</button>;
-      };
+      crumbItem = () => <button className="btn btn-link">{crumb}</button>;
     }
 
     return (
