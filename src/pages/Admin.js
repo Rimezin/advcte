@@ -32,36 +32,5 @@ export default function Home(props) {
     ]);
   }, [page, setActions, setPage]);
 
-  // function handleBreadcrumb(event) {
-  //   switch (event.target.id) {
-  //     case "bc-home":
-  //       setPage("home");
-  //       break;
-  //     case "bc-admin":
-  //       setPage("admin");
-  //       break;
-  //   }
-  // }
-
-  return (
-    <div className="col transition-25">
-      {/* <nav aria-label="breadcrumb">
-        <ol className="breadcrumb transition-25">
-          <li className="breadcrumb-item">
-            <button
-              id="bc-home"
-              onclick={handleBreadcrumb}
-              className="btn btn-link hover-blue"
-            >
-              Home
-            </button>
-          </li>
-          <li className="breadcrumb-item active" aria-current="page">
-            Admin
-          </li>
-        </ol>
-      </nav> */}
-      <div className="row">Placeholder</div>
-    </div>
-  );
+  return <div className="col transition-25">Placeholder Admin</div>;
 }
