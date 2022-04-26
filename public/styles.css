@@ -417,6 +417,17 @@ main {
   border: none;
   text-decoration: none;
   color: rgba(0, 0, 0, 0.15);
+  display: inline-block;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  background-color: transparent;
+  font-size: 1rem;
 }
 
 .bc-link-dark {
@@ -438,7 +449,7 @@ main {
 .bc {
   display: flex;
   flex-wrap: wrap;
-  padding: 0 0;
+  padding: 0.75rem;
   margin-bottom: 1rem;
   list-style: none;
 }
