@@ -32,5 +32,10 @@ export default function Home(props) {
     ]);
   }, [page, setActions, setPage]);
 
-  return <div className="col transition-25">Placeholder Admin</div>;
+  return (
+    <div className="col transition-25 m-3">
+      <Breadcrumb session={session} page={page} />
+      Placeholder Admin
+    </div>
+  );
 }

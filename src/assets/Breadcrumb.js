@@ -7,12 +7,23 @@ export default function Breadcrumb(props) {
     switch (page) {
       case "home":
         return ["home"];
+      case "admin":
+        return ["home", "admin"];
       default:
         return ["home"];
     }
   }
 
   const renderCrumbs = crumbs().map((crumb) => {
+    let crumbItem;
+    if (page === crumb) {
+      crumbItem = crumb;
+    } else {
+      crumbItem = () => {
+        return <button className="btn btn-link">{crumb}</button>;
+      };
+    }
+
     return (
       <li
         className={`breadcrumb-item ${page === crumb ? "active" : ""} ${
@@ -20,7 +31,7 @@ export default function Breadcrumb(props) {
         }`}
         aria-current={page === crumb ? "page" : ""}
       >
-        {crumb}
+        {crumbItem}
       </li>
     );
   });
@@ -28,14 +39,11 @@ export default function Breadcrumb(props) {
   return (
     <div aria-label="breadcrumb">
       <ol
-        className={`breadcrumb m-2 p-2 rounded ${
+        className={`breadcrumb p-2 rounded ${
           session.experience.darkMode ? "bg-secondary" : ""
         }`}
       >
         {renderCrumbs}
-        {/* <li className="breadcrumb-item active" aria-current="page">
-          Breadcrumb
-        </li> */}
       </ol>
     </div>
   );
