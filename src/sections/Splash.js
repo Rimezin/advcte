@@ -24,7 +24,7 @@ export default function Splash(props) {
     // }
   }
 
-  $("#toast").toast("show");
+  document.getElementById("toast").toast("show");
 
   return (
     <div
