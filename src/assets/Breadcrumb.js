@@ -25,7 +25,7 @@ export default function Breadcrumb(props) {
     return (
       <li
         className={`breadcrumb-item ${page === crumb ? "active" : ""} ${
-          session.experience.darkMode ? "text-dark" : ""
+          session.experience.darkMode ? "text-light" : "text-dark"
         }`}
         aria-current={page === crumb ? "page" : ""}
       >
