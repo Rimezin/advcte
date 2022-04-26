@@ -43,7 +43,7 @@ export default function Home(props) {
 
   return (
     <div className="col transition-25">
-      <Breadcrumb session={session} page={page} />
+      {/* <Breadcrumb session={session} page={page} /> */}
       Placeholder Home
     </div>
   );
