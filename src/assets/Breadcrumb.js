@@ -31,7 +31,7 @@ export default function Breadcrumb(props) {
       >
         <button
           id={`breadcrumb-${crumb}`}
-          className="btn btn-link"
+          className="btn hover-blue"
           onClick={handleClick}
         >
           {crumb}
@@ -43,8 +43,8 @@ export default function Breadcrumb(props) {
   return (
     <div aria-label="breadcrumb">
       <ol
-        className={`breadcrumb p-2 rounded ${
-          session.experience.darkMode ? "bg-secondary" : ""
+        className={`breadcrumb rounded shadow ${
+          session.experience.darkMode ? "bg-secondary" : "bg-white"
         }`}
       >
         {renderCrumbs}
