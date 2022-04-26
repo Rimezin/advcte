@@ -24,7 +24,9 @@ export default function Splash(props) {
     // }
   }
 
-  document.getElementById("toast").toast("show");
+  React.useEffect(() => {
+    document.getElementById("toast").toast("show");
+  }, []);
 
   return (
     <div
