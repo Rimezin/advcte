@@ -100,8 +100,6 @@ export default function Splash(props) {
           </button>
         </form>
       </div>
-      <Birds session={session} />
-      <Waves session={session} />
       <div
         className="m-3 transition-25"
         style={{
@@ -112,6 +110,8 @@ export default function Splash(props) {
       >
         <DarkModeButton session={session} handleSession={handleSession} />
       </div>
+      <Birds session={session} />
+      <Waves session={session} />
     </div>
   );
 }
