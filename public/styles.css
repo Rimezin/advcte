@@ -412,5 +412,13 @@ main {
 
 /* Breadcrumb Links */
 .bc-link::before {
-  content: "...";
+  content: ">";
+}
+
+.bc {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 0;
+  margin-bottom: 1rem;
+  list-style: none;
 }

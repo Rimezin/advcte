@@ -24,16 +24,14 @@ export default function Breadcrumb(props) {
   const renderCrumbs = crumbs().map((crumb) => {
     return (
       <li
-        className={`breadcrumb-item ${page === crumb ? "active" : ""} ${
-          session.experience.darkMode ? "text-light" : "text-dark"
-        }`}
+        className={`${page === crumb ? "" : ""}`}
         aria-current={page === crumb ? "page" : ""}
       >
         <button
           id={`breadcrumb-${crumb}`}
-          className={`btn hover-blue bc-link ${
-            page === crumb ? "disabled" : ""
-          }`}
+          className={`btn hover-blue ${
+            page === crumb ? "active bc-link" : ""
+          } ${session.experience.darkMode ? "text-light" : "text-dark"}`}
           onClick={handleClick}
           style={{ outline: "none" }}
         >
@@ -46,7 +44,7 @@ export default function Breadcrumb(props) {
   return (
     <div aria-label="breadcrumb">
       <ol
-        className={`breadcrumb rounded shadow ${
+        className={`bc rounded shadow ${
           session.experience.darkMode ? "bg-dark" : "bg-white"
         }`}
       >
