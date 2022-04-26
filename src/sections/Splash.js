@@ -8,21 +8,21 @@ export default function Splash(props) {
   const { session, handleSession } = props;
   // setModal
 
-  // function renderToasts() {
-  //   // if (session.experience.darkMode) {
-  //   console.log("renderToasts");
-  //   return (
-  //     <Toast
-  //       message="Dark Mode is enabled based on your browser settings."
-  //       icon="bi-moon-stars-fill"
-  //       title="Advcte"
-  //       time="just now"
-  //       delay="10000"
-  //       autoHide="true"
-  //     />
-  //   );
-  //   // }
-  // }
+  function renderToasts() {
+    // if (session.experience.darkMode) {
+    console.log("renderToasts");
+    return (
+      <Toast
+        message="Dark Mode is enabled based on your browser settings."
+        icon="bi-moon-stars-fill"
+        title="Advcte"
+        time="just now"
+        delay="10000"
+        autoHide="true"
+      />
+    );
+    // }
+  }
 
   return (
     <div
@@ -30,7 +30,7 @@ export default function Splash(props) {
         session.experience.darkMode ? "bg-sunset text-white" : ""
       }`}
     >
-      {/* <div
+      <div
         aria-live="polite"
         aria-atomic="true"
         style={{ position: "relative", minHeight: "200px" }}
@@ -38,7 +38,7 @@ export default function Splash(props) {
         <div style={{ position: "absolute", top: "0", right: "0" }}>
           {renderToasts}
         </div>
-      </div> */}
+      </div>
       <div className="form-signin">
         <form className="text-center form-signin">
           <Logo logoClass="logo-large" />
