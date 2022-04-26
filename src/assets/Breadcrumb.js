@@ -23,15 +23,12 @@ export default function Breadcrumb(props) {
 
   const renderCrumbs = crumbs().map((crumb) => {
     return (
-      <li
-        className={`${page === crumb ? "" : ""}`}
-        aria-current={page === crumb ? "page" : ""}
-      >
+      <li className="p-2" aria-current={page === crumb ? "page" : ""}>
         <button
           id={`breadcrumb-${crumb}`}
           className={`btn btn-link hover-blue ${
             page === crumb ? "active bc-link" : ""
-          } ${session.experience.darkMode ? "text-light" : "text-dark"}`}
+          } ${session.experience.darkMode ? "" : "bc-link-dark"}`}
           onClick={handleClick}
           style={{ outline: "none!important" }}
         >

@@ -412,14 +412,19 @@ main {
 
 /* Breadcrumb Links */
 .bc-link {
-  padding: 0px 5px 0px 5px;
   transition: 0.25s;
   outline: none;
   border: none;
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.15);
+}
+
+.bc-link-dark {
+  color: white;
 }
 
 .bc-link::before {
-  content: ">";
+  content: ">  ";
 }
 
 .bc-link:hover {
