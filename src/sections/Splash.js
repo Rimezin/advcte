@@ -2,6 +2,7 @@ import React from "react";
 import Logo from "../assets/Logo";
 import Waves from "./splash/Waves";
 import Birds from "./splash/Birds";
+import DarkModeButton from "../assets/DarkModeButton";
 
 export default function Splash(props) {
   const { session, handleSession } = props;
@@ -70,6 +71,16 @@ export default function Splash(props) {
       </div>
       <Birds session={session} />
       <Waves />
+      <div
+        className="m-3"
+        style={{
+          position: "absolute",
+          left: "0",
+          top: "0",
+        }}
+      >
+        <DarkModeButton session={session} handleSession={handleSession} />
+      </div>
     </div>
   );
 }

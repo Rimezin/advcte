@@ -1,5 +1,6 @@
 import React from "react";
 import Logo from "../assets/Logo";
+import DarkModeButton from "../assets/DarkModeButton.js";
 
 export default function Header(props) {
   const { session, handleSession, setPage, setModal } = props;
@@ -201,31 +202,7 @@ export default function Header(props) {
           </div>
 
           {/* Dark Mode Toggle */}
-          <button
-            id="darkToggle"
-            onClick={handleSession}
-            className={
-              "no-select hover-blue transition-25" +
-              (session.experience.darkMode ? " text-white" : "")
-            }
-            style={{
-              backgroundColor: "transparent",
-              border: "none",
-              outline: "none",
-            }}
-          >
-            <i
-              className={
-                session.experience.darkMode
-                  ? "bi-sun-fill"
-                  : "bi-moon-stars-fill"
-              }
-              style={{
-                fontSize: "32px",
-                pointerEvents: "none",
-              }}
-            ></i>
-          </button>
+          <DarkModeButton session={session} handleSession={handleSession} />
         </div>
       </div>
     </header>
