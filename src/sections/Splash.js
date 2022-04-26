@@ -70,7 +70,7 @@ export default function Splash(props) {
         </form>
       </div>
       <Birds session={session} />
-      <Waves />
+      <Waves session={session} />
       <div
         className="m-3"
         style={{
