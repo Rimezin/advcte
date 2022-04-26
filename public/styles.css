@@ -423,7 +423,7 @@ main {
   color: white;
 }
 
-.bc-link::before {
+.bc-link-a::before {
   content: ">  ";
 }
 
