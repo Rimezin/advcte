@@ -94,7 +94,7 @@ export default function Splash(props) {
           <p className="mt-5 mb-3 text-muted">Under Development</p>
         </form>
       </div>
-      <Birds />
+      <Birds session={session} />
       <Waves />
     </div>
   );
