@@ -83,7 +83,9 @@ export default function Splash(props) {
           </div>
           <button
             id="splash-signin"
-            className="w-100 btn btn-lg btn-primary"
+            className={`w-100 btn btn-lg ${
+              session.experience.darkMode ? "btn-dark" : "btn-primary"
+            }`}
             type="submit"
             onClick={handleSession}
           >

@@ -396,5 +396,9 @@ main {
 
 /* Sunset */
 .bg-sunset {
-  background-image: linear-gradient(rgb(33, 26, 47), rgb(154, 102, 0));
+  background-image: linear-gradient(
+    rgb(7 7 31),
+    rgb(75 23 80),
+    rgb(180 139 64)
+  );
 }
