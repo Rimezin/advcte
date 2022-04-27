@@ -3,7 +3,9 @@ import React from "react";
 export default function About() {
   return (
     <div className="container-fluid">
-      <h3>An Evolving Landscape</h3>
+      <h5>
+        <u>An Evolving Landscape</u>
+      </h5>
       <p>
         Electronic Health Records (EHR's) have risen in popularity in the last
         10-15 years as professionals in medical, behavioral health, addiction
@@ -15,7 +17,9 @@ export default function About() {
         paperwork and unfortunately the swell of information needed to be
         collected and transmitted in these lines of work is only increasing.
       </p>
-      <h3>Reimagining the EHR</h3>
+      <h5>
+        <u>Reimagining the EHR</u>
+      </h5>
       <p>
         EHR solutions unfortunately have not kept up with the rising tide of
         documentation needs, and that's where <b>Advcte</b> comes in. Just like
@@ -40,7 +44,9 @@ export default function About() {
         works on mobile devices (even your smartphone) out of the box. No
         additional costs or hidden fees.
       </p>
-      <h3>Explore Advcte</h3>
+      <h5>
+        <u>Explore Advcte</u>
+      </h5>
       <p>
         Currently Advte is{" "}
         <b>
@@ -49,7 +55,11 @@ export default function About() {
         . It was created by Rimezin as a concept for a better electronic health
         record solution. Advcte is open-source (and open for
         suggestions/improvement ideas), see the source code on{" "}
-        <a className="btn btn-link" href="https://github.com/Rimezin/advcte">
+        <a
+          className="btn btn-link"
+          target="_blank"
+          href="https://github.com/Rimezin/advcte"
+        >
           GitHub
         </a>
         .
