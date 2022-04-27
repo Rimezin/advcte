@@ -55,7 +55,11 @@ export default function About() {
         . It was created by Rimezin as a concept for a better electronic health
         record solution. Advcte is open-source (and open for
         suggestions/improvement ideas), see the source code on{" "}
-        <a target="_blank" href="https://github.com/Rimezin/advcte">
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://github.com/Rimezin/advcte"
+        >
           GitHub
         </a>
         .
