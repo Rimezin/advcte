@@ -23,7 +23,11 @@ export default function Profile(props) {
 
   // Profile rendering //
   let profileContent = () => {
-    return <div id="profile-content">Profile Words</div>;
+    return (
+      <div id="profile-content" className="container-fluid">
+        Profile Words
+      </div>
+    );
   };
 
   // Button Functions //
@@ -91,7 +95,7 @@ export default function Profile(props) {
                 : {}
             }
           >
-            <h5 class="modal-title">Profile</h5>
+            <h5 class="modal-title">{session.user.firstName}'s Profile</h5>
             <button
               type="button"
               class={`btn-close ${
