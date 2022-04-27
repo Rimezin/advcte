@@ -6,7 +6,7 @@ import DarkModeButton from "../assets/DarkModeButton";
 import About from "../pages/About";
 
 export default function Splash(props) {
-  const { session, handleSession, setModal } = props;
+  const { session, handleSession, setModal, handleToast } = props;
 
   // Handle Modal //
   function handleModal(event) {
@@ -94,6 +94,13 @@ export default function Splash(props) {
             data-bs-target="#advcte-modal" //For modal id: "#advcte-modal"
           >
             What is Advcte?
+          </button>
+          <button
+            id="toast Test"
+            className="btn btn-link mt-5 mb-3 text-white transition-25"
+            onClick={handleToast}
+          >
+            Send toast
           </button>
         </form>
       </div>

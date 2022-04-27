@@ -1,9 +1,11 @@
 import React from "react";
 
-export default function Toast() {
+export default function Toast(props) {
+  const { toast } = props;
+
   return (
     <div
-      className="toast fade m-3 show"
+      className={`toast fade m-3 ${toast ? "show" : ""}`}
       role="alert"
       aria-live="assertive"
       aria-atomic="true"
@@ -12,8 +14,6 @@ export default function Toast() {
         backgroundColor: "none",
         float: "right",
       }}
-      data-autohide="true"
-      data-delay="10000"
     >
       <div className="toast-header">
         <i className="bi-question-circle"></i>

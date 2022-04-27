@@ -41,6 +41,14 @@ export default function App() {
     },
   });
 
+  // State for toast - default false to hide //
+  const [toast, setToast] = React.useState(false);
+
+  function handleToast(event) {
+    event.preventDefault();
+    setToast(!toast);
+  }
+
   // Watch for darkMode //
   React.useEffect(() => {
     const modeMe = (e) => {
@@ -124,7 +132,7 @@ export default function App() {
           top: "0",
         }}
       >
-        <Toast />
+        <Toast toast={toast} />
       </div>
 
       {/* Splash Page */}
@@ -133,6 +141,7 @@ export default function App() {
           session={session}
           handleSession={handleSession}
           setModal={setModal}
+          handleToast={handleToast}
         />
       )}
 
