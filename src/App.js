@@ -67,9 +67,11 @@ export default function App() {
   }
 
   const darkToast = {
-    title: "Dark Mode Activated",
-    icon: "bi-moon-stars-fill",
-    message: "Dark mode was activated based on your browser settings.",
+    title: `${session.experience.darkMode ? "Dark" : "Light"} Mode Activated`,
+    icon: `bi-${session.experience.darkMode ? "moon-stars" : "sun"}-fill`,
+    message: `${
+      session.experience.darkMode ? "Dark" : "Light"
+    } mode was activated based on your browser settings.`,
     delay: 8000,
   };
 
@@ -85,9 +87,8 @@ export default function App() {
           darkMode: e.matches ? true : false,
         },
       }));
-      if (e.matches) {
-        handleToast(darkToast);
-      }
+      // Show transition in a toast //
+      handleToast(darkToast);
     };
     window
       .matchMedia("(prefers-color-scheme: dark)")
@@ -161,6 +162,7 @@ export default function App() {
           right: "0",
           top: "0",
           zIndex: toast.show ? "999" : "-999",
+          transition: "0.25s",
         }}
       >
         <Toast toast={toast} session={session} setToast={setToast} />
