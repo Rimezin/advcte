@@ -1,7 +1,7 @@
 import React from "react";
 
 export default function Toast(props) {
-  const { toast, setToast, session } = props;
+  const { toast, session } = props;
 
   // const testObj = {
   //   title: "Splash Toast",
@@ -14,13 +14,14 @@ export default function Toast(props) {
   //   handleToast(testObj);
   // }, [handleToast]);
 
-  function handleClose(event) {
-    event.preventDefault();
-    setToast((toast) => ({
-      ...toast,
-      show: false,
-    }));
-  }
+  // function handleClose(event) {
+  //   alert("clicked!");
+  //   event.preventDefault();
+  //   setToast((toast) => ({
+  //     ...toast,
+  //     show: false,
+  //   }));
+  // }
 
   return (
     <div
@@ -36,18 +37,16 @@ export default function Toast(props) {
           session.experience.darkMode ? "bg-dark text-light" : ""
         }`}
       >
-        <i className={toast.icon}></i>
-        <strong className="mr-auto">{toast.title}</strong>
+        <i className={toast.icon} style={{ marginRight: "10px" }}></i>
+        <strong style={{ marginRight: "auto" }}>{toast.title}</strong>
         <small>just now</small>
         <button
           type="button"
-          className="ml-2 mb-1 close"
           aria-label="Close"
           onClick={handleClose}
           style={{
             border: "none",
-            backgroundColor: "none",
-            float: "right",
+            background: "none",
           }}
         >
           <i
