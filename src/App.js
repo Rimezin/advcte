@@ -93,10 +93,6 @@ export default function App() {
       .matchMedia("(prefers-color-scheme: dark)")
       .addEventListener("change", modeMe);
 
-    if (window.matchMedia("(prefers-color-scheme: dark)")) {
-      handleToast(darkToast);
-    }
-
     return window
       .matchMedia("(prefers-color-scheme: dark)")
       .removeEventListener("change", () => {});
