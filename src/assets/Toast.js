@@ -1,7 +1,7 @@
 import React from "react";
 
 export default function Toast(props) {
-  const { toast, setToast } = props;
+  const { toast, setToast, session } = props;
 
   // setToast((toast) => ({
   //   show: true,
@@ -20,7 +20,9 @@ export default function Toast(props) {
 
   return (
     <div
-      className={`toast fade m-3 ${toast.show ? "show" : ""}`}
+      className={`toast fade m-3 ${toast.show ? "show" : ""} ${
+        session.experience.darkMode ? "bg-dark text-white" : ""
+      }`}
       role="alert"
       aria-live="assertive"
       aria-atomic="true"

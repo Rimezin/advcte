@@ -150,7 +150,7 @@ export default function App() {
           top: "0",
         }}
       >
-        <Toast toast={toast} />
+        <Toast toast={toast} session={session} setToast={setToast} />
       </div>
 
       {/* Splash Page */}
