@@ -13,6 +13,7 @@ export default function Toast() {
         float: "right",
       }}
       data-autohide="true"
+      data-delay="10000"
     >
       <div className="toast-header">
         <i className="bi-question-circle"></i>
