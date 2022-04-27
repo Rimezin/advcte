@@ -66,6 +66,13 @@ export default function App() {
     }, toastObj.delay);
   }
 
+  const darkToast = {
+    title: "Dark Mode Activated",
+    icon: "bi-moon-stars-fill",
+    message: "Dark mode was activated based on your browser settings.",
+    delay: 8000,
+  };
+
   // Watch for darkMode //
   React.useEffect(() => {
     const modeMe = (e) => {
@@ -76,6 +83,9 @@ export default function App() {
           darkMode: e.matches ? true : false,
         },
       }));
+      if (e.matches) {
+        handleToast(darkToast);
+      }
     };
     window
       .matchMedia("(prefers-color-scheme: dark)")
@@ -83,7 +93,7 @@ export default function App() {
     return window
       .matchMedia("(prefers-color-scheme: dark)")
       .removeEventListener("change", () => {});
-  }, []);
+  }, [handleToast]);
 
   // State to hold current page in main content //
   const [page, setPage] = React.useState("home");

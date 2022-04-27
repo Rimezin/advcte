@@ -6,7 +6,7 @@ import DarkModeButton from "../assets/DarkModeButton";
 import About from "../pages/About";
 
 export default function Splash(props) {
-  const { session, handleSession, setModal, handleToast } = props;
+  const { session, handleSession, setModal } = props;
 
   // Handle Modal //
   function handleModal(event) {
@@ -27,17 +27,6 @@ export default function Splash(props) {
       });
     }
   }
-
-  const testObj = {
-    title: "Splash Toast",
-    icon: "bi-moon-stars-fill",
-    message: "This is a splash toast!",
-    delay: 8000,
-  };
-
-  React.useState(() => {
-    handleToast(testObj);
-  }, [handleToast]);
 
   return (
     <div
