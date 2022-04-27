@@ -73,6 +73,8 @@ export default function App() {
     delay: 8000,
   };
 
+  const constHandleToast = React.useCallback(handleToast);
+
   // Watch for darkMode //
   React.useEffect(() => {
     const modeMe = (e) => {
@@ -93,7 +95,7 @@ export default function App() {
     return window
       .matchMedia("(prefers-color-scheme: dark)")
       .removeEventListener("change", () => {});
-  }, [React.useCallback(handleToast), darkToast]);
+  }, [constHandleToast, darkToast]);
 
   // State to hold current page in main content //
   const [page, setPage] = React.useState("home");
