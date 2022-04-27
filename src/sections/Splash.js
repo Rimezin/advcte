@@ -99,6 +99,9 @@ export default function Splash(props) {
             id="toast Test"
             className="btn btn-link mt-5 mb-3 text-white transition-25"
             onClick={handleToast}
+            ttitle="Splash Toast"
+            ticon="bi-moon-stars-fill"
+            tmessage="You have dark mode on."
           >
             Send toast
           </button>

@@ -42,16 +42,29 @@ export default function App() {
   });
 
   // State for toast - default false to hide //
-  const [toast, setToast] = React.useState(false);
+  const [toast, setToast] = React.useState({
+    show: false,
+    title: "Advcte",
+    icon: "bi-question-circle",
+    message: "This is the default toast message.",
+  });
 
   function handleToast(event) {
     event.preventDefault();
-    setToast(true);
+    setToast((toast) => ({
+      show: true,
+      title: event.target.ttitle,
+      icon: event.target.ticon,
+      message: event.target.tmessage,
+    }));
 
     // Hide after delay //
     setTimeout(() => {
-      setToast(false);
-    }, 10000);
+      setToast((toast) => ({
+        ...toast,
+        show: false,
+      }));
+    }, event.target.ttime);
   }
 
   // Watch for darkMode //
