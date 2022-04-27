@@ -1,33 +1,27 @@
 import React from "react";
 
-export default function Toast(props) {
-  const { message, icon, title, time, delay, autoHide } = props;
-
-  console.log("toasted");
-
+export default function Toast() {
   return (
     <div
-      class="toast"
+      className="toast fade m-3 show"
       role="alert"
       aria-live="assertive"
       aria-atomic="true"
-      data-delay={delay}
-      data-autohide={autoHide}
     >
-      <div class="toast-header">
-        <i class={icon}></i>
-        <strong class="mr-auto">{title}</strong>
-        <small class="text-muted">{time}</small>
+      <div className="toast-header">
+        <i className="bi-question-circle"></i>
+        <strong className="mr-auto">Bootstrap</strong>
+        <small>11 mins ago</small>
         <button
           type="button"
-          class="ml-2 mb-1 close"
+          className="ml-2 mb-1 close"
           data-dismiss="toast"
           aria-label="Close"
         >
-          <i class="bi-times"></i>
+          <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="toast-body">{message}</div>
+      <div className="toast-body">Hello, world! This is a toast message.</div>
     </div>
   );
 }

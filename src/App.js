@@ -1,5 +1,6 @@
 import React from "react";
 import Modal from "./assets/Modal";
+import Toast from "./assets/Toast";
 
 // Layout Sections Import //
 import Splash from "./sections/Splash";
@@ -113,6 +114,18 @@ export default function App() {
     <div id="advcte" className="container-sm-12" style={{ height: "100%" }}>
       {/* Modal */}
       <Modal modal={modal} session={session} />
+
+      {/* Toast */}
+      <div
+        id="toastContainer"
+        style={{
+          position: "absolute",
+          right: "0",
+          top: "0",
+        }}
+      >
+        <Toast />
+      </div>
 
       {/* Splash Page */}
       {!session.loggedOn && (
