@@ -46,7 +46,10 @@ export default function App() {
 
   function handleToast(event) {
     event.preventDefault();
-    setToast(!toast);
+    setToast(true);
+
+    // Hide after delay //
+    setTimeout(setToast(false), 10000);
   }
 
   // Watch for darkMode //
