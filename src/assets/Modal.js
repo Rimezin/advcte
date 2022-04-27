@@ -64,7 +64,7 @@ export default function Modal(props) {
     <div
       id="advcte-modal"
       class={`transition-25 ${
-        modal.scrollable ? "modal modal-scrollable" : "modal fade"
+        modal.scrollable ? "modal modal-scrollable fade" : "modal fade"
       }`}
       tabindex="-1"
       data-bs-backdrop={modal.static ? "static" : ""}

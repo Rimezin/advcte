@@ -3,6 +3,7 @@ import Logo from "../assets/Logo";
 import Waves from "./splash/Waves";
 import Birds from "./splash/Birds";
 import DarkModeButton from "../assets/DarkModeButton";
+import About from "../pages/About";
 
 export default function Splash(props) {
   const { session, handleSession, setModal } = props;
@@ -14,7 +15,7 @@ export default function Splash(props) {
     if (event.target.id === "about-modal-toggle") {
       setModal({
         title: "About Advcte",
-        content: <p>Placeholder for about</p>,
+        content: <About />,
         button1: {
           label: "Cool!",
           id: "about-modal-close",
