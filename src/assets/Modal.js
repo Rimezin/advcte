@@ -63,13 +63,15 @@ export default function Modal(props) {
   return (
     <div
       id="advcte-modal"
-      class={`transition-25 ${
-        modal.scrollable ? "modal modal-scrollable fade" : "modal fade"
-      }`}
+      class="transition-25 modal fade"
       tabindex="-1"
       data-bs-backdrop={modal.static ? "static" : ""}
     >
-      <div class="modal-dialog">
+      <div
+        class={`modal-dialog ${
+          modal.scrollable ? "modal-dialog-scrollable" : ""
+        }`}
+      >
         <div
           class={`modal-content ${
             session.experience.darkMode
