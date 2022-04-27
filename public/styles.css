@@ -1,3 +1,7 @@
+* {
+  transition: 0.25s;
+}
+
 .transition-25 {
   transition: 0.25s !important;
 }
@@ -407,7 +411,7 @@ main {
 }
 
 .bg-sky {
-  background-image: linear-gradient(#f5f5f5, #a3cdff, #95aaff);
+  background-image: linear-gradient(#bfdfff, #f5f5f5);
 }
 
 .bg-medium-dark {
