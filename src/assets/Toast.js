@@ -51,7 +51,7 @@ export default function Toast(props) {
           }}
         >
           <i
-            className={`bi-times no-select ${
+            className={`bi-x-square no-select ${
               session.experience.darkMode ? "text-light" : ""
             } hover-blue`}
             aria-hidden="true"
