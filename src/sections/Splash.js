@@ -34,6 +34,27 @@ export default function Splash(props) {
         session.experience.darkMode ? "bg-sunset text-white" : "bg-sky"
       }`}
     >
+      <div
+        className="toast"
+        role="alert"
+        aria-live="assertive"
+        aria-atomic="true"
+      >
+        <div className="toast-header">
+          <i className="bi-question-circle">img</i>
+          <strong className="mr-auto">Bootstrap</strong>
+          <small>11 mins ago</small>
+          <button
+            type="button"
+            className="ml-2 mb-1 close"
+            data-dismiss="toast"
+            aria-label="Close"
+          >
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div className="toast-body">Hello, world! This is a toast message.</div>
+      </div>
       <div className="form-signin">
         <form className="text-center form-signin">
           <Logo logoClass="logo-large" />
