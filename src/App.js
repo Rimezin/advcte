@@ -160,6 +160,7 @@ export default function App() {
           position: "absolute",
           right: "0",
           top: "0",
+          zIndex: "999",
         }}
       >
         <Toast toast={toast} session={session} setToast={setToast} />

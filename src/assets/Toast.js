@@ -25,9 +25,9 @@ export default function Toast(props) {
 
   return (
     <div
-      className={`toast fade m-3 ${toast.show ? "show" : ""} ${
+      className={`toast fade m-3 ${
         session.experience.darkMode ? "bg-medium-dark text-white" : ""
-      }`}
+      } ${toast.show ? "show" : ""}`}
       role="alert"
       aria-live="assertive"
       aria-atomic="true"
