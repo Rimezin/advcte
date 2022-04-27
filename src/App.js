@@ -93,7 +93,7 @@ export default function App() {
     return window
       .matchMedia("(prefers-color-scheme: dark)")
       .removeEventListener("change", () => {});
-  }, [handleToast, darkToast]);
+  }, [React.useCallback(handleToast), darkToast]);
 
   // State to hold current page in main content //
   const [page, setPage] = React.useState("home");
