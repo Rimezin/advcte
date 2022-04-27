@@ -12,11 +12,12 @@ export default function Toast() {
         backgroundColor: "none",
         float: "right",
       }}
+      data-autohide="true"
     >
       <div className="toast-header">
         <i className="bi-question-circle"></i>
-        <strong className="mr-auto">Bootstrap</strong>
-        <small>11 mins ago</small>
+        <strong className="mr-auto">Advcte</strong>
+        <small>just now</small>
         <button
           type="button"
           className="ml-2 mb-1 close"
