@@ -91,12 +91,15 @@ export default function App() {
     };
     window
       .matchMedia("(prefers-color-scheme: dark)")
-      .addEventListener("change", modeMe)
-      .addEventListener("load", modeMe);
+      .addEventListener("change", modeMe);
+
+    if (window.matchMedia("(prefers-color-scheme: dark)")) {
+      handleToast(darkToast);
+    }
+
     return window
       .matchMedia("(prefers-color-scheme: dark)")
-      .removeEventListener("change", () => {})
-      .removeEventListener("load", () => {});
+      .removeEventListener("change", () => {});
   }, [constHandleToast, darkToast]);
 
   // State to hold current page in main content //
