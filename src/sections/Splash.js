@@ -28,6 +28,17 @@ export default function Splash(props) {
     }
   }
 
+  const testObj = {
+    title: "Splash Toast",
+    icon: "bi-moon-stars-fill",
+    message: "This is a splash toast!",
+    delay: 8000,
+  };
+
+  React.useState(() => {
+    handleToast(testObj);
+  }, [handleToast]);
+
   return (
     <div
       className={`splash-container text-center transition-25 ${
@@ -94,17 +105,6 @@ export default function Splash(props) {
             data-bs-target="#advcte-modal" //For modal id: "#advcte-modal"
           >
             What is Advcte?
-          </button>
-          <button
-            id="toast Test"
-            className="btn btn-link mt-5 mb-3 text-white transition-25"
-            onClick={handleToast}
-            ttitle="Splash Toast"
-            ticon="bi-moon-stars-fill"
-            tmessage="You have dark mode on."
-            ttime="8000"
-          >
-            Send toast
           </button>
         </form>
       </div>

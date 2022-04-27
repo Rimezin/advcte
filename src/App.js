@@ -49,14 +49,13 @@ export default function App() {
     message: "This is the default toast message.",
   });
 
-  function handleToast(event) {
-    event.preventDefault();
-    setToast((toast) => ({
+  function handleToast(toastObj) {
+    setToast({
       show: true,
-      title: event.target.ttitle,
-      icon: event.target.ticon,
-      message: event.target.tmessage,
-    }));
+      title: toastObj.title,
+      icon: toastObj.icon,
+      message: toastObj.message,
+    });
 
     // Hide after delay //
     setTimeout(() => {
@@ -64,7 +63,7 @@ export default function App() {
         ...toast,
         show: false,
       }));
-    }, event.target.ttime);
+    }, toastObj.delay);
   }
 
   // Watch for darkMode //

@@ -3,12 +3,16 @@ import React from "react";
 export default function Toast(props) {
   const { toast, setToast, session } = props;
 
-  // setToast((toast) => ({
-  //   show: true,
-  //   title: event.target.ttitle,
-  //   icon: event.target.ticon,
-  //   message: event.target.tmessage,
-  // }));
+  // const testObj = {
+  //   title: "Splash Toast",
+  //   icon: "bi-moon-stars-fill",
+  //   message: "This is a splash toast!",
+  //   delay: 8000,
+  // };
+
+  // React.useState(() => {
+  //   handleToast(testObj);
+  // }, [handleToast]);
 
   function handleClose(event) {
     event.preventDefault();
