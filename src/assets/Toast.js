@@ -7,6 +7,11 @@ export default function Toast() {
       role="alert"
       aria-live="assertive"
       aria-atomic="true"
+      style={{
+        border: "none",
+        backgroundColor: "none",
+        float: "right",
+      }}
     >
       <div className="toast-header">
         <i className="bi-question-circle"></i>
