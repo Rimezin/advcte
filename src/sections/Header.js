@@ -3,7 +3,7 @@ import Logo from "../assets/Logo";
 import DarkModeButton from "../assets/DarkModeButton.js";
 
 export default function Header(props) {
-  const { session, handleSession, setPage, setModal, setProfile } = props;
+  const { session, handleSession, setPage, setModal } = props;
 
   const navLinks = [
     {
@@ -46,9 +46,7 @@ export default function Header(props) {
       label: "Profile",
       icon: "bi-person-badge-fill",
       id: "header-profile-link",
-      action: () => {
-        setProfile(true);
-      },
+      action: null,
       divideAbove: false,
       bsToggle: "modal",
       bsTarget: "#profile-modal",
@@ -105,7 +103,7 @@ export default function Header(props) {
           <button
             id={link.id}
             className="dropdown-item d-flex gap-2 align-items-center transition-25"
-            onClick={link.action}
+            onClick={link.action !== null ? link.action : ""}
             data-bs-toggle={link.bsToggle} //For modals
             data-bs-target={link.bsTarget} //For modal id: "#advcte-modal"
           >

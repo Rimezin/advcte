@@ -150,7 +150,7 @@ export default function App() {
   }
 
   // Profile State //
-  const [profile, setProfile] = React.useState(false);
+  // const [profile, setProfile] = React.useState(false);
 
   //// Rendering ////
   return (
@@ -192,7 +192,7 @@ export default function App() {
           handleSession={handleSession}
           setPage={setPage}
           setModal={setModal}
-          setProfile={setProfile}
+          // setProfile={setProfile}
         />
       )}
       {session.loggedOn && (
