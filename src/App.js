@@ -67,10 +67,10 @@ export default function App() {
   }
 
   const darkToast = {
-    title: `${session.experience.darkMode ? "Dark" : "Light"} Mode Activated`,
-    icon: `bi-${session.experience.darkMode ? "moon-stars" : "sun"}-fill`,
+    title: `${!session.experience.darkMode ? "Dark" : "Light"} Mode Activated`,
+    icon: `bi-${!session.experience.darkMode ? "moon-stars" : "sun"}-fill`,
     message: `${
-      session.experience.darkMode ? "Dark" : "Light"
+      !session.experience.darkMode ? "Dark" : "Light"
     } mode was activated based on your browser settings.`,
     delay: 8000,
   };
