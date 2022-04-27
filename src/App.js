@@ -7,6 +7,7 @@ import Splash from "./sections/Splash";
 import Header from "./sections/Header";
 import Main from "./sections/Main";
 import Footer from "./sections/Footer";
+import Profile from "./sections/Profile";
 
 export default function App() {
   // State to hold session details for the user. //
@@ -148,6 +149,9 @@ export default function App() {
     }
   }
 
+  // Profile State //
+  const [profile, setProfile] = React.useState(false);
+
   //// Rendering ////
   return (
     <div id="advcte" className="container-sm-12" style={{ height: "100%" }}>
@@ -168,6 +172,9 @@ export default function App() {
         <Toast toast={toast} session={session} setToast={setToast} />
       </div>
 
+      {/* Profile */}
+      <Profile session={session} />
+
       {/* Splash Page */}
       {!session.loggedOn && (
         <Splash
@@ -185,6 +192,7 @@ export default function App() {
           handleSession={handleSession}
           setPage={setPage}
           setModal={setModal}
+          setProfile={setProfile}
         />
       )}
       {session.loggedOn && (

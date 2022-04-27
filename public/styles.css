@@ -1,7 +1,3 @@
-* {
-  transition: 0.25s;
-}
-
 .transition-25 {
   transition: 0.25s !important;
 }

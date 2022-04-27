@@ -3,7 +3,7 @@ import Logo from "../assets/Logo";
 import DarkModeButton from "../assets/DarkModeButton.js";
 
 export default function Header(props) {
-  const { session, handleSession, setPage, setModal } = props;
+  const { session, handleSession, setPage, setModal, setProfile } = props;
 
   const navLinks = [
     {
@@ -47,11 +47,11 @@ export default function Header(props) {
       icon: "bi-person-badge-fill",
       id: "header-profile-link",
       action: () => {
-        alert("Profile clicked");
+        setProfile(true);
       },
       divideAbove: false,
-      bsToggle: null,
-      bsTarget: null,
+      bsToggle: "modal",
+      bsTarget: "#profile-modal",
     },
     {
       label: "Settings",
