@@ -40,7 +40,7 @@ export default function Toast(props) {
         <i className={toast.icon} style={{ marginRight: "10px" }}></i>
         <strong style={{ marginRight: "auto" }}>{toast.title}</strong>
         <small>just now</small>
-        <button
+        {/* <button
           type="button"
           aria-label="Close"
           onClick={handleClose}
@@ -55,7 +55,7 @@ export default function Toast(props) {
             } hover-blue`}
             aria-hidden="true"
           ></i>
-        </button>
+        </button> */}
       </div>
       <div className="toast-body">{toast.message}</div>
     </div>
