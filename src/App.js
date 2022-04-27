@@ -49,7 +49,9 @@ export default function App() {
     setToast(true);
 
     // Hide after delay //
-    setTimeout(setToast(false), 10000);
+    setTimeout(() => {
+      setToast(false);
+    }, 10000);
   }
 
   // Watch for darkMode //
