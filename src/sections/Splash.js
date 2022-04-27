@@ -102,6 +102,7 @@ export default function Splash(props) {
             ttitle="Splash Toast"
             ticon="bi-moon-stars-fill"
             tmessage="You have dark mode on."
+            ttime="8000"
           >
             Send toast
           </button>
