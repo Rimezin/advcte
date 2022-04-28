@@ -118,7 +118,7 @@ export default function Header(props) {
   return (
     <header
       id="advcte-header"
-      className={`py-3 mb-3 transition-25 ${
+      className={`mb-3 transition-25 ${
         session.experience.darkMode
           ? "shadow-lg bg-dark text-white border-bottom-dark"
           : "shadow bg-light border-bottom"
