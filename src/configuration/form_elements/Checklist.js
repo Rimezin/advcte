@@ -142,4 +142,4 @@ function InlineChecklist(props) {
   );
 }
 
-export { Radio, InlineRadio };
+export { Checklist, InlineChecklist };
