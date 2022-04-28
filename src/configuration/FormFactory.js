@@ -2,21 +2,21 @@ import React from "react";
 import nanoId from "nanoid";
 
 // Form Elements //
-import Password from "./FormElements/Password";
-import Email from "./FormElements/Email";
-import { File, MultiFile } from "./FormElements/File";
-import Text from "./FormElements/Text";
-import Memo from "./FormElements/Memo";
-import TextArea from "./FormElements/TextArea";
-import PlainText from "./FormElements/PlainText";
-import Color from "./FormElements/Color";
-import DataList from "./FormElements/DataList";
-import { Select, MultiSelect } from "./FormElements/Select";
-import Checkbox from "./FormElements/Checkbox";
-import { Checklist, InlineChecklist } from "./FormElements/Checklist";
-import { Radio, InlineRadio } from "./FormElements/Radio";
-import Switch from "./FormElements/Switch";
-import { Toggle, InlineToggle } from "./FormElements/Toggle";
+import Password from "./form_elements/Password";
+import Email from "./form_elements/Email";
+import { File, MultiFile } from "./form_elements/File";
+import Text from "./form_elements/Text";
+import Memo from "./form_elements/Memo";
+import TextArea from "./form_elements/TextArea";
+import PlainText from "./form_elements/PlainText";
+import Color from "./form_elements/Color";
+import DataList from "./form_elements/DataList";
+import { Select, MultiSelect } from "./form_elements/Select";
+import Checkbox from "./form_elements/Checkbox";
+import { Checklist, InlineChecklist } from "./form_elements/Checklist";
+import { Radio, InlineRadio } from "./form_elements/Radio";
+import Switch from "./form_elements/Switch";
+import { Toggle, InlineToggle } from "./form_elements/Toggle";
 // import Range from "./FormElements/Range";
 // import Steps from "./FormElements/Steps";
 
