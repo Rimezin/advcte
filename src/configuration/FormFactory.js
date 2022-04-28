@@ -1,5 +1,5 @@
 import React from "react";
-import nanoId from "nanoid";
+import nanoid from "nanoid";
 
 // Form Elements //
 import Password from "./form_elements/Password";
@@ -55,7 +55,7 @@ export default function FormFactory(props) {
   function renderForm() {
     const convertedForm = formArray.map((formElement) => {
       // Add formElementId //
-      formElement.formElementId = nanoId();
+      formElement.formElementId = nanoid();
 
       // Determine formElement rendering //
       switch (formElement.type) {
