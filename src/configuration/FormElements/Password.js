@@ -63,6 +63,7 @@ export default function Password(props) {
         aria-describedby={`ins_${formElement.formElementId}`}
         placeholder={formElement.placeholder}
         dirty={formElement.dirty}
+        name={formElement.name}
         required={formElement.required}
         disabled={formElement.disabled}
         readonly={formElement.readOnly}

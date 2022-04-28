@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Text(props) {
+export default function Color(props) {
   const { formElement, session } = props;
 
   // Each formElement object should have: //
@@ -55,9 +55,9 @@ export default function Text(props) {
         </div>
       )}
       <input
-        type="text"
+        type="color"
         id={formElement.formElementId}
-        className={`form-control ${
+        className={`form-control form-control-color ${
           session.experience.darkMode ? "form-control-dark" : ""
         }`}
         aria-describedby={`ins_${formElement.formElementId}`}

@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Text(props) {
+export default function PlainText(props) {
   const { formElement, session } = props;
 
   // Each formElement object should have: //
@@ -57,7 +57,7 @@ export default function Text(props) {
       <input
         type="text"
         id={formElement.formElementId}
-        className={`form-control ${
+        className={`form-control-plaintext ${
           session.experience.darkMode ? "form-control-dark" : ""
         }`}
         aria-describedby={`ins_${formElement.formElementId}`}
@@ -66,7 +66,7 @@ export default function Text(props) {
         name={formElement.name}
         required={formElement.required}
         disabled={formElement.disabled}
-        readonly={formElement.readOnly}
+        readonly
         onClick={formElement.onClick()}
         onChange={formElement.onChange()}
       />

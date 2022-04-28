@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Text(props) {
+export default function DataList(props) {
   const { formElement, session } = props;
 
   // Each formElement object should have: //
@@ -38,6 +38,13 @@ export default function Text(props) {
             invalid: "Please enter a name."
         }
 */
+
+  function renderOptions() {
+    const fieldOptions = formElement.options.map((option) => {
+      return <option value={option} />;
+    });
+  }
+
   return (
     <div
       className={`col${
@@ -55,7 +62,7 @@ export default function Text(props) {
         </div>
       )}
       <input
-        type="text"
+        list={`datalist_${formElement.formElementId}`}
         id={formElement.formElementId}
         className={`form-control ${
           session.experience.darkMode ? "form-control-dark" : ""
@@ -70,6 +77,9 @@ export default function Text(props) {
         onClick={formElement.onClick()}
         onChange={formElement.onChange()}
       />
+      <datalist id={`datalist_${formElement.formElementId}`}>
+        {renderOptions}
+      </datalist>
       {formElement.feedback.show && (
         <div
           className={`${

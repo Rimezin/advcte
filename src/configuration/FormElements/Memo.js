@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Text(props) {
+export default function Memo(props) {
   const { formElement, session } = props;
 
   // Each formElement object should have: //
@@ -38,6 +38,15 @@ export default function Text(props) {
             invalid: "Please enter a name."
         }
 */
+
+  React.useEffect(() => {
+    $(`#${formElement.formElementId}`).summernote({
+      placeholder: formElement.placeholder,
+      tabsize: 2,
+      height: 100,
+    });
+  }, []);
+
   return (
     <div
       className={`col${
@@ -54,8 +63,7 @@ export default function Text(props) {
           {formElement.instructions}
         </div>
       )}
-      <input
-        type="text"
+      <textarea
         id={formElement.formElementId}
         className={`form-control ${
           session.experience.darkMode ? "form-control-dark" : ""

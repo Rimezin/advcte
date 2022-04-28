@@ -36,8 +36,15 @@ import React from "react";
       }
 */
 
-function File(props) {
+function Select(props) {
   const { formElement, session } = props;
+
+  function renderOptions() {
+    const fieldOptions = formElement.options.map((option) => {
+      return <option value={option} />;
+    });
+    return fieldOptions;
+  }
 
   return (
     <div
@@ -55,61 +62,9 @@ function File(props) {
           {formElement.instructions}
         </div>
       )}
-      <input
-        type="file"
+      <select
         id={formElement.formElementId}
-        className={`form-control ${
-          session.experience.darkMode ? "form-control-dark" : ""
-        }`}
-        aria-describedby={`ins_${formElement.formElementId}`}
-        placeholder={formElement.placeholder}
-        dirty={formElement.dirty}
-        required={formElement.required}
-        disabled={formElement.disabled}
-        readonly={formElement.readOnly}
-        onClick={formElement.onClick()}
-        onChange={formElement.onChange()}
-      />
-      {formElement.feedback.show && (
-        <div
-          className={`${
-            formElement.feedback.isValid ? "valid" : "invalid"
-          }-feedback`}
-        >
-          {`${
-            formElement.feedback.isValid
-              ? formElement.feedback.valid
-              : formElement.feedback.invalid
-          }-feedback`}
-        </div>
-      )}
-    </div>
-  );
-}
-
-function MultiFile(props) {
-  const { formElement, session } = props;
-
-  return (
-    <div
-      className={`col${
-        formElement.layout.width === 12
-          ? "-12"
-          : `-md-${formElement.layout.width}`
-      } ${formElement.layout.floating ? "form-floating" : ""}`}
-    >
-      <label for={formElement.formElementId} className="form-label">
-        {formElement.label}
-      </label>
-      {formElement.instructions && (
-        <div id={`ins_${formElement.formElementId}`} className="form-text">
-          {formElement.instructions}
-        </div>
-      )}
-      <input
-        type="file"
-        id={formElement.formElementId}
-        className={`form-control ${
+        className={`form-select ${
           session.experience.darkMode ? "form-control-dark" : ""
         }`}
         aria-describedby={`ins_${formElement.formElementId}`}
@@ -121,8 +76,9 @@ function MultiFile(props) {
         readonly={formElement.readOnly}
         onClick={formElement.onClick()}
         onChange={formElement.onChange()}
-        multiple
-      />
+      >
+        {renderOptions}
+      </select>
       {formElement.feedback.show && (
         <div
           className={`${
@@ -140,4 +96,64 @@ function MultiFile(props) {
   );
 }
 
-export { File, MultiFile };
+function MultiSelect(props) {
+  const { formElement, session } = props;
+
+  function renderOptions() {
+    const fieldOptions = formElement.options.map((option) => {
+      return <option value={option} />;
+    });
+  }
+
+  return (
+    <div
+      className={`col${
+        formElement.layout.width === 12
+          ? "-12"
+          : `-md-${formElement.layout.width}`
+      } ${formElement.layout.floating ? "form-floating" : ""}`}
+    >
+      <label for={formElement.formElementId} className="form-label">
+        {formElement.label}
+      </label>
+      {formElement.instructions && (
+        <div id={`ins_${formElement.formElementId}`} className="form-text">
+          {formElement.instructions}
+        </div>
+      )}
+      <select
+        id={formElement.formElementId}
+        className={`form-select ${
+          session.experience.darkMode ? "form-control-dark" : ""
+        }`}
+        multiple
+        aria-describedby={`ins_${formElement.formElementId}`}
+        placeholder={formElement.placeholder}
+        dirty={formElement.dirty}
+        name={formElement.name}
+        required={formElement.required}
+        disabled={formElement.disabled}
+        readonly={formElement.readOnly}
+        onClick={formElement.onClick()}
+        onChange={formElement.onChange()}
+      >
+        {renderOptions}
+      </select>
+      {formElement.feedback.show && (
+        <div
+          className={`${
+            formElement.feedback.isValid ? "valid" : "invalid"
+          }-feedback`}
+        >
+          {`${
+            formElement.feedback.isValid
+              ? formElement.feedback.valid
+              : formElement.feedback.invalid
+          }-feedback`}
+        </div>
+      )}
+    </div>
+  );
+}
+
+export { Select, MultiSelect };

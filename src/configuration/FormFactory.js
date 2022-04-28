@@ -6,16 +6,17 @@ import Password from "./FormElements/Password";
 import Email from "./FormElements/Email";
 import { File, MultiFile } from "./FormElements/File";
 import Text from "./FormElements/Text";
-// import TextArea from "./FormElements/TextArea";
-// import PlainText from "./FormElements/PlainText";
-// import Color from "./FormElements/Color";
-// import DataList from "./FormElements/DataList";
-// import { Select, MultiSelect } from "./FormElements/Select";
-// import { Checkbox, InlineCheckbox } from "./FormElements/Checkbox";
-// import { Radio, InlineRadio } from "./FormElements/Radio";
-// import InlineCheckbox from "./FormElements/Inline";
-// import Switch from "./FormElements/Switch";
-// import { Toggle, InlineToggle } from "./FormElements/Toggle";
+import Memo from "./FormElements/Memo";
+import TextArea from "./FormElements/TextArea";
+import PlainText from "./FormElements/PlainText";
+import Color from "./FormElements/Color";
+import DataList from "./FormElements/DataList";
+import { Select, MultiSelect } from "./FormElements/Select";
+import Checkbox from "./FormElements/Checkbox";
+import { Checklist, InlineChecklist } from "./FormElements/Checklist";
+import { Radio, InlineRadio } from "./FormElements/Radio";
+import Switch from "./FormElements/Switch";
+import { Toggle, InlineToggle } from "./FormElements/Toggle";
 // import Range from "./FormElements/Range";
 // import Steps from "./FormElements/Steps";
 
@@ -75,8 +76,9 @@ export default function FormFactory(props) {
         datalist - (uses options) a type-in selector of options
         select - (uses options) a dropdown to pick single option
             > multiselect - (uses options) a dropdown to pick more than one selection
-        checkbox - (uses options) a list of options that are either true or false
-            > inlinecheckbox - (uses options) renders options on the same line
+        checkbox - a single true or false
+        checklist - (uses options) a list of options that are either true or false
+            > inlinechecklist - (uses options) renders options on the same line
         radio - (uses options) a list of options, but only one can be selected
             > inlineradio - (uses options) renders radio options in one line
         switch - a flip-flip style toggle that returns true or false (technically a checkbox)
@@ -105,32 +107,38 @@ export default function FormFactory(props) {
           return <File session={session} formElement={formElement} />;
         case "multifile":
           return <MultiFile session={session} formElement={formElement} />;
-        // case "textarea":
-        //   return <TextArea session={session} formElement={formElement} />;
-        // case "plaintext":
-        //   return <PlainText session={session} formElement={formElement} />;
-        // case "color":
-        //   return <Color session={session} formElement={formElement} />;
-        // case "datalist":
-        //   return <DataList session={session} formElement={formElement} />;
-        // case "select":
-        //   return <Select session={session} formElement={formElement} />;
-        // case "multiselect":
-        //   return <MultiSelect session={session} formElement={formElement} />;
-        // case "checkbox":
-        //   return <Checkbox session={session} formElement={formElement} />;
-        // case "inlinecheckbox":
-        //   return <InlineCheckbox session={session} formElement={formElement} />;
-        // case "radio":
-        //   return <Radio session={session} formElement={formElement} />;
-        // case "inlineradio":
-        //   return <InlineRadio session={session} formElement={formElement} />;
-        // case "switch":
-        //   return <Switch session={session} formElement={formElement} />;
-        // case "toggle":
-        //   return <Toggle session={session} formElement={formElement} />;
-        // case "inlinetoggle":
-        //   return <InlineToggle session={session} formElement={formElement} />;
+        case "memo":
+          return <Memo session={session} formElement={formElement} />;
+        case "textarea":
+          return <TextArea session={session} formElement={formElement} />;
+        case "plaintext":
+          return <PlainText session={session} formElement={formElement} />;
+        case "color":
+          return <Color session={session} formElement={formElement} />;
+        case "datalist":
+          return <DataList session={session} formElement={formElement} />;
+        case "select":
+          return <Select session={session} formElement={formElement} />;
+        case "multiselect":
+          return <MultiSelect session={session} formElement={formElement} />;
+        case "checkbox":
+          return <Checkbox session={session} formElement={formElement} />;
+        case "checklist":
+          return <Checklist session={session} formElement={formElement} />;
+        case "inlinechecklist":
+          return (
+            <InlineChecklist session={session} formElement={formElement} />
+          );
+        case "radio":
+          return <Radio session={session} formElement={formElement} />;
+        case "inlineradio":
+          return <InlineRadio session={session} formElement={formElement} />;
+        case "switch":
+          return <Switch session={session} formElement={formElement} />;
+        case "toggle":
+          return <Toggle session={session} formElement={formElement} />;
+        case "inlinetoggle":
+          return <InlineToggle session={session} formElement={formElement} />;
         // case "range":
         //   return <Range session={session} formElement={formElement} />;
         // case "steps":
