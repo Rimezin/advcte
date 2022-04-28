@@ -1,4 +1,6 @@
 import React from "react";
+import FormFactory from "../configuration/FormFactory";
+import fd_profile from "../configuration/form_designs/fd_profile";
 
 export default function Profile(props) {
   const { session } = props;
@@ -25,7 +27,7 @@ export default function Profile(props) {
   let profileContent = () => {
     return (
       <div id="profile-content" className="container-fluid">
-        Profile Words
+        <FormFactory formArray={fd_profile} />
       </div>
     );
   };
