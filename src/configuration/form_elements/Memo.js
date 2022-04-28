@@ -46,7 +46,7 @@ export default function Memo(props) {
       tabsize: 2,
       height: 100,
     });
-  }, []);
+  }, [formElement.formElementId, formElement.placeholder]);
 
   return (
     <div

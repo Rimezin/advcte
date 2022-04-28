@@ -103,6 +103,7 @@ function MultiSelect(props) {
     const fieldOptions = formElement.options.map((option) => {
       return <option value={option} />;
     });
+    return fieldOptions;
   }
 
   return (
