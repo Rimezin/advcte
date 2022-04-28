@@ -22,7 +22,7 @@ export default function Profile(props) {
     scrollable: false,
   }
 */
-
+  console.log(fd_profile);
   // Profile rendering //
   let profileContent = () => {
     return (
