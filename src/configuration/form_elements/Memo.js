@@ -41,7 +41,8 @@ export default function Memo(props) {
 */
 
   React.useEffect(() => {
-    $(`#${formElement.formElementId}`).summernote({
+    // $(`#${formElement.formElementId}`).summernote({
+    $("#summernote").summernote({
       placeholder: formElement.placeholder,
       tabsize: 2,
       height: 100,
@@ -65,7 +66,8 @@ export default function Memo(props) {
         </div>
       )}
       <textarea
-        id={formElement.formElementId}
+        id="summernote"
+        // id={formElement.formElementId}
         className={`form-control ${
           session.experience.darkMode ? "form-control-dark" : ""
         }`}
