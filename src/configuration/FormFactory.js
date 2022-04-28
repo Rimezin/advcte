@@ -56,7 +56,7 @@ export default function FormFactory(props) {
     const convertedForm = formArray.map((formElement) => {
       // Add formElementId //
       formElement.formElementId = nanoid();
-
+      console.log(formElement);
       // Determine formElement rendering //
       switch (formElement.type) {
         // PASSWORD //
