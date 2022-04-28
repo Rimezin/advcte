@@ -53,9 +53,11 @@ export default function FormFactory(props) {
     */
 
   function renderForm() {
-    console.log(formArray[1]);
+    // Array is trapped inside an object, so get it out. //
+    const deObjArray = Object.values(formArray)[0];
 
-    const convertedForm = formArray.map((formElement) => {
+    // Convert the array of formElements.
+    const convertedForm = deObjArray.map((formElement) => {
       // Add formElementId //
       formElement.formElementId = nanoid();
       // Determine formElement rendering //
