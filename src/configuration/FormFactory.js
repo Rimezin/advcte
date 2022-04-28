@@ -1,5 +1,5 @@
 import React from "react";
-import nanoid from "nanoid";
+import { nanoid } from "nanoid";
 
 // Form Elements //
 import Password from "./form_elements/Password";
