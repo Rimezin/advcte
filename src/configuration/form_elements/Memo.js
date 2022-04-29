@@ -2,8 +2,9 @@ import React from "react";
 import { Editor, EditorState } from "draft-js";
 import "draft-js/dist/Draft.css";
 
-export default function Memo() {
-  const { formElement, session } = props;
+export default function Memo(props) {
+  const { formElement } = props;
+  //session
   const [editorState, setEditorState] = React.useState(() =>
     EditorState.createEmpty()
   );
