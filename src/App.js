@@ -8,6 +8,7 @@ import Header from "./sections/Header";
 import Main from "./sections/Main";
 import Footer from "./sections/Footer";
 import Profile from "./sections/Profile";
+import Settings from "./sections/Settings";
 
 export default function App() {
   // State to hold session details for the user. //
