@@ -1,4 +1,20 @@
 import React from "react";
+import RichTextEditor from "react-rte";
+
+export default function Memo() {
+  const [editorState, setEditorState] = React.useState(() =>
+    React.createEmptyValue()
+  );
+
+  function onChange(value) {
+    setEditorState(value.toString("html"));
+  }
+
+  return <RichTextEditor value={editorState} onChange={onChange} />;
+}
+
+/*
+import React from "react";
 import { Editor, EditorState } from "draft-js";
 import "draft-js/dist/Draft.css";
 
@@ -46,7 +62,7 @@ export default function Memo(props) {
     </div>
   );
 }
-
+*/
 //////////////////////////////////
 /*
 import React from "react";
