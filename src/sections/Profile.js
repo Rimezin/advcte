@@ -4,31 +4,13 @@ import fd_profile from "../configuration/form_designs/fd_profile";
 
 export default function Profile(props) {
   const { session } = props;
-  const [formData, setFormData] = React.useState();
-
-  // Push data to state function //
-  function pushFormData(object) {
-    setFormData((prevFormData) => {
-      return {
-        ...prevFormData,
-        [object.name]:
-          object.type === "checkbox" || object.type === "radio"
-            ? object.checked
-            : object.value,
-      };
-    });
-  }
-
-  // Set the initial formData state based on form design //
-  React.useEffect(() => {
-    // Grab design and convert to array of JSX objects
-    const deObjArray = Object.values(fd_profile)[0];
-    console.log("LENGTH:" + deObjArray.length);
-    for (let a = 0; a < deObjArray.length; a++) {
-      var thisObject = deObjArray[a];
-      pushFormData(thisObject);
-    }
-  }, [setFormData]);
+  const [formData, setFormData] = React.useState({
+    first_name: "",
+    last_name: "",
+    username: "",
+    password: "",
+    profile_description: "",
+  });
 
   // Button Functions //
   function handleCancel() {
