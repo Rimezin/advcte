@@ -6,23 +6,28 @@ export default function Settings(props) {
   const { session } = props;
   const [formData, setFormData] = React.useState();
 
+  // Push data to state function //
+  function pushFormData(object) {
+    setFormData((prevFormData) => {
+      return {
+        ...prevFormData,
+        [object.name]:
+          object.type === "checkbox" || object.type === "radio"
+            ? object.checked
+            : object.value,
+      };
+    });
+  }
+
   // Set the initial formData state based on form design //
   React.useEffect(() => {
     // Grab design and convert to array of JSX objects
     const deObjArray = Object.values(fd_settings)[0];
     for (let a = 0; a < deObjArray.length; a++) {
       var thisObject = deObjArray[a];
-      setFormData((prevFormData) => {
-        return {
-          ...prevFormData,
-          [thisObject.name]:
-            thisObject.type === "checkbox"
-              ? thisObject.checked
-              : thisObject.value,
-        };
-      });
+      pushFormData(thisObject);
     }
-  }, [setFormData, fd_settings]);
+  }, [setFormData]);
 
   // Button Functions //
   function handleCancel() {
