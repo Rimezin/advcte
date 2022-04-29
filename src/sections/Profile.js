@@ -23,6 +23,7 @@ export default function Profile(props) {
   React.useEffect(() => {
     // Grab design and convert to array of JSX objects
     const deObjArray = Object.values(fd_profile)[0];
+    console.log("LENGTH:" + deObjArray.length);
     for (let a = 0; a < deObjArray.length; a++) {
       var thisObject = deObjArray[a];
       pushFormData(thisObject);
