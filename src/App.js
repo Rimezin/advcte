@@ -9,39 +9,50 @@ import Main from "./sections/Main";
 import Footer from "./sections/Footer";
 import Profile from "./sections/Profile";
 
-function App() {
-  // State to hold session details for the user. //
-  const [session, setSession] = React.useState({
-    loggedOn: false,
-    user: {
-      firstName: null,
-      lastName: null,
-      fullName: (firstName, lastName) => {
-        if (firstName === null || lastName === null) {
-          return null;
-        } else {
-          return `${firstName} ${lastName}`;
-        }
-      },
-      userName: null,
-      userId: null,
-      security: {
-        roleId: null,
-        rolePermissions: null,
-        navId: null,
-        navViews: null,
-      },
+// State to hold session details for the user. //
+const [session, setSession] = React.useState({
+  loggedOn: false,
+  user: {
+    firstName: null,
+    lastName: null,
+    fullName: (firstName, lastName) => {
+      if (firstName === null || lastName === null) {
+        return null;
+      } else {
+        return `${firstName} ${lastName}`;
+      }
     },
-    experience: {
-      language: "english",
-      darkMode:
-        window.matchMedia &&
-        window.matchMedia("(prefers-color-scheme: dark)").matches
-          ? true
-          : false,
+    userName: null,
+    userId: null,
+    security: {
+      roleId: null,
+      rolePermissions: null,
+      navId: null,
+      navViews: null,
     },
-  });
+  },
+  experience: {
+    language: "english",
+    darkMode:
+      window.matchMedia &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches
+        ? true
+        : false,
+  },
+});
 
+// Handle Dark Toggles //
+function handleDark() {
+  setSession((sessionObj) => ({
+    ...sessionObj,
+    experience: {
+      ...sessionObj.experience,
+      darkMode: !sessionObj.experience.darkMode,
+    },
+  }));
+}
+
+function App() {
   // State for toast - default false to hide //
   const [toast, setToast] = React.useState({
     show: false,
@@ -120,16 +131,6 @@ function App() {
     static: true,
     scrollable: false,
   });
-
-  function handleDark() {
-    setSession((sessionObj) => ({
-      ...sessionObj,
-      experience: {
-        ...sessionObj.experience,
-        darkMode: !sessionObj.experience.darkMode,
-      },
-    }));
-  }
 
   // Handle the session //
   function handleSession(event) {
