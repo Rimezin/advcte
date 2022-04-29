@@ -10,7 +10,7 @@ import Footer from "./sections/Footer";
 import Profile from "./sections/Profile";
 
 // State to hold session details for the user. //
-const [session, setSession] = React.useState({
+export const [session, setSession] = React.useState({
   loggedOn: false,
   user: {
     firstName: null,
