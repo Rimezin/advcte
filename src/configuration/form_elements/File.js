@@ -45,7 +45,9 @@ function File(props) {
         formElement.layout.width === 12
           ? "-12"
           : `-md-${formElement.layout.width}`
-      } ${formElement.layout.floating ? "form-floating" : ""}`}
+      } ${formElement.layout.floating ? "form-floating" : ""} ${
+        formElement.disabled ? "form-disabled" : ""
+      } ${formElement.disabled ? "form-disabled" : ""}`}
     >
       <label for={formElement.formElementId} className="form-label">
         {formElement.label}
@@ -65,8 +67,6 @@ function File(props) {
         placeholder={formElement.placeholder}
         dirty={formElement.dirty}
         required={formElement.required}
-        disabled={formElement.disabled}
-        readonly={formElement.readOnly}
         onClick={formElement.onClick()}
         onChange={formElement.onChange()}
         value={formElement.value}
@@ -97,7 +97,7 @@ function MultiFile(props) {
         formElement.layout.width === 12
           ? "-12"
           : `-md-${formElement.layout.width}`
-      }`}
+      } ${formElement.disabled ? "form-disabled" : ""}`}
     >
       <label for={formElement.formElementId} className="form-label">
         {formElement.label}
@@ -113,8 +113,6 @@ function MultiFile(props) {
         dirty={formElement.dirty}
         name={formElement.name}
         required={formElement.required}
-        disabled={formElement.disabled}
-        readonly={formElement.readOnly}
         onClick={formElement.onClick()}
         onChange={formElement.onChange()}
         value={formElement.value}

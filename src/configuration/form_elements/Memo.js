@@ -15,7 +15,7 @@ export default function Memo(props) {
         formElement.layout.width === 12
           ? "-12"
           : `-md-${formElement.layout.width}`
-      }`}
+      } ${formElement.disabled ? "form-disabled" : ""}`}
       style={{ color: "black" }}
     >
       <label for={formElement.formElementId} className="form-label">

@@ -54,8 +54,6 @@ function Radio(props) {
             dirty={formElement.dirty}
             name={formElement.name}
             required={formElement.required}
-            disabled={formElement.disabled}
-            readonly={formElement.readOnly}
             onClick={formElement.onClick()}
             onChange={formElement.onChange()}
             value={formElement.value}
@@ -80,7 +78,7 @@ function Radio(props) {
         formElement.layout.width === 12
           ? "-12"
           : `-md-${formElement.layout.width}`
-      } form-check`}
+      } form-check ${formElement.disabled ? "form-disabled" : ""}`}
     >
       <label for={formElement.formElementId} className="form-label">
         {formElement.label}
@@ -108,8 +106,6 @@ function InlineRadio(props) {
             dirty={formElement.dirty}
             name={formElement.name}
             required={formElement.required}
-            disabled={formElement.disabled}
-            readonly={formElement.readOnly}
             onClick={formElement.onClick()}
             onChange={formElement.onChange()}
             value={formElement.value}
@@ -134,7 +130,9 @@ function InlineRadio(props) {
         formElement.layout.width === 12
           ? "-12"
           : `-md-${formElement.layout.width}`
-      } form-check form-check-inline`}
+      } form-check form-check-inline ${
+        formElement.disabled ? "form-disabled" : ""
+      }`}
     >
       <label for={formElement.formElementId} className="form-label">
         {formElement.label}

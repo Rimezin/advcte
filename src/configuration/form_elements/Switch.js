@@ -45,7 +45,7 @@ export default function Switch(props) {
         formElement.layout.width === 12
           ? "-12"
           : `-md-${formElement.layout.width}`
-      } form-check form-switch`}
+      } form-check form-switch ${formElement.disabled ? "form-disabled" : ""}`}
     >
       <input
         type="checkbox"
@@ -59,8 +59,6 @@ export default function Switch(props) {
         dirty={formElement.dirty}
         name={formElement.name}
         required={formElement.required}
-        disabled={formElement.disabled}
-        readonly={formElement.readOnly}
         onClick={formElement.onClick()}
         onChange={formElement.onChange()}
         value={formElement.value}

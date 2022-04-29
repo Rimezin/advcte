@@ -44,7 +44,7 @@ export default function Color(props) {
         formElement.layout.width === 12
           ? "-12"
           : `-md-${formElement.layout.width}`
-      }`}
+      } ${formElement.disabled ? "form-disabled" : ""}`}
     >
       <label for={formElement.formElementId} className="form-label">
         {formElement.label}
@@ -60,8 +60,6 @@ export default function Color(props) {
         dirty={formElement.dirty}
         name={formElement.name}
         required={formElement.required}
-        disabled={formElement.disabled}
-        readonly={formElement.readOnly}
         onClick={formElement.onClick()}
         onChange={formElement.onChange()}
         value={formElement.value}

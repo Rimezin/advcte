@@ -52,7 +52,7 @@ function Select(props) {
         formElement.layout.width === 12
           ? "-12"
           : `-md-${formElement.layout.width}`
-      } form-floating`}
+      } form-floating ${formElement.disabled ? "form-disabled" : ""}`}
     >
       <select
         id={formElement.formElementId}
@@ -64,8 +64,6 @@ function Select(props) {
         dirty={formElement.dirty}
         name={formElement.name}
         required={formElement.required}
-        disabled={formElement.disabled}
-        readonly={formElement.readOnly}
         onClick={formElement.onClick()}
         onChange={formElement.onChange()}
         value={formElement.value}
@@ -113,7 +111,7 @@ function MultiSelect(props) {
         formElement.layout.width === 12
           ? "-12"
           : `-md-${formElement.layout.width}`
-      } form-floating`}
+      } form-floating ${formElement.disabled ? "form-disabled" : ""}`}
     >
       <select
         id={formElement.formElementId}
@@ -126,8 +124,6 @@ function MultiSelect(props) {
         dirty={formElement.dirty}
         name={formElement.name}
         required={formElement.required}
-        disabled={formElement.disabled}
-        readonly={formElement.readOnly}
         onClick={formElement.onClick()}
         onChange={formElement.onChange()}
         value={formElement.value}

@@ -67,6 +67,8 @@
 
     */
 
+// import { session, setSession } from ".../App";
+
 export const fd_profile = [
   {
     name: "first_name",
@@ -75,7 +77,6 @@ export const fd_profile = [
     type: "text",
     instructions: "Please provide your first name",
     disabled: false,
-    readOnly: false,
     required: true,
     dirty: false,
     value: null,
@@ -104,7 +105,6 @@ export const fd_profile = [
     type: "text",
     instructions: "Please provide your last name",
     disabled: false,
-    readOnly: false,
     required: true,
     dirty: false,
     value: null,
@@ -132,8 +132,7 @@ export const fd_profile = [
     placeholder: "Username",
     type: "text",
     instructions: "Configured by the Administrator.",
-    disabled: false,
-    readOnly: true,
+    disabled: true,
     required: false,
     dirty: false,
     value: null,
@@ -162,7 +161,6 @@ export const fd_profile = [
     type: "password",
     instructions: "Choose something strong!",
     disabled: false,
-    readOnly: false,
     required: true,
     dirty: false,
     value: null,
@@ -191,7 +189,6 @@ export const fd_profile = [
     type: "textarea",
     instructions: "Tell us about your favorite things.",
     disabled: false,
-    readOnly: false,
     required: true,
     dirty: false,
     value: null,
@@ -220,7 +217,6 @@ export const fd_profile = [
     type: "switch",
     instructions: null,
     disabled: false,
-    readOnly: false,
     required: false,
     dirty: false,
     value: null,
@@ -229,7 +225,7 @@ export const fd_profile = [
       width: 3,
     },
     onClick: function () {
-      // NOTHING
+      // Nothing
     },
     onChange: function () {
       // NOTHING

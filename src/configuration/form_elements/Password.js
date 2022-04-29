@@ -44,7 +44,7 @@ export default function Password(props) {
         formElement.layout.width === 12
           ? "-12"
           : `-md-${formElement.layout.width}`
-      } form-floating`}
+      } form-floating ${formElement.disabled ? "form-disabled" : ""}`}
     >
       <input
         type="password"
@@ -57,8 +57,6 @@ export default function Password(props) {
         dirty={formElement.dirty}
         name={formElement.name}
         required={formElement.required}
-        disabled={formElement.disabled}
-        readonly={formElement.readOnly}
         onClick={formElement.onClick()}
         onChange={formElement.onChange()}
         value={formElement.value}

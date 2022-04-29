@@ -54,8 +54,6 @@ function Checklist(props) {
             dirty={formElement.dirty}
             name={`${formElement.name}_${formElement.options.indexOf(option)}`}
             required={formElement.required}
-            disabled={formElement.disabled}
-            readonly={formElement.readOnly}
             onClick={formElement.onClick()}
             onChange={formElement.onChange()}
             value={formElement.value}
@@ -80,7 +78,7 @@ function Checklist(props) {
         formElement.layout.width === 12
           ? "-12"
           : `-md-${formElement.layout.width}`
-      } form-check`}
+      } form-check ${formElement.disabled ? "form-disabled" : ""}`}
     >
       <label for={formElement.formElementId} className="form-label">
         {formElement.label}
@@ -108,8 +106,6 @@ function InlineChecklist(props) {
             dirty={formElement.dirty}
             name={`${formElement.name}_${formElement.options.indexOf(option)}`}
             required={formElement.required}
-            disabled={formElement.disabled}
-            readonly={formElement.readOnly}
             onClick={formElement.onClick()}
             onChange={formElement.onChange()}
             value={formElement.value}
@@ -134,7 +130,7 @@ function InlineChecklist(props) {
         formElement.layout.width === 12
           ? "-12"
           : `-md-${formElement.layout.width}`
-      } form-check`}
+      } form-check ${formElement.disabled ? "form-disabled" : ""}`}
     >
       <label for={formElement.formElementId} className="form-label">
         {formElement.label}

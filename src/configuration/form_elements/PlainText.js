@@ -44,7 +44,7 @@ export default function PlainText(props) {
         formElement.layout.width === 12
           ? "-12"
           : `-md-${formElement.layout.width}`
-      }`}
+      } form-disabled`}
     >
       <label for={formElement.formElementId} className="form-label">
         {formElement.label}
@@ -60,8 +60,6 @@ export default function PlainText(props) {
         dirty={formElement.dirty}
         name={formElement.name}
         required={formElement.required}
-        disabled={formElement.disabled}
-        readonly
         onClick={formElement.onClick()}
         onChange={formElement.onChange()}
         value={formElement.value}

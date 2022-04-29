@@ -45,7 +45,7 @@ export default function TextArea(props) {
         formElement.layout.width === 12
           ? "-12"
           : `-md-${formElement.layout.width}`
-      } form-floating`}
+      } form-floating ${formElement.disabled ? "form-disabled" : ""}`}
     >
       <textarea
         id={formElement.formElementId}
@@ -57,8 +57,6 @@ export default function TextArea(props) {
         dirty={formElement.dirty}
         name={formElement.name}
         required={formElement.required}
-        disabled={formElement.disabled}
-        readonly={formElement.readOnly}
         onClick={formElement.onClick()}
         onChange={formElement.onChange()}
         value={formElement.value}
