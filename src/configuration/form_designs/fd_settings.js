@@ -1,4 +1,4 @@
-//// PROFILE FORM DESIGN ////
+//// SETTINGS FORM DESIGN ////
 
 // Each formElement object should have: //
 /*
@@ -66,147 +66,30 @@
 
     */
 
-export const fd_profile = [
+export const fd_settings = [
   {
-    name: "first_name",
-    label: "First Name",
-    placeholder: "John",
-    type: "text",
-    instructions: "Please provide your first name",
+    name: "is_darkmode",
+    label: "Dark Mode",
+    placeholder: null,
+    type: "switch",
+    instructions: null,
     disabled: false,
-    required: true,
-    dirty: false,
-    value: null,
-    layout: {
-      size: "default",
-      width: 3,
-    },
-    onClick: function () {
-      // NOTHING
-    },
-    onChange: function () {
-      // NOTHING
-    },
-    options: null,
-    feedback: {
-      show: false,
-      isValid: false,
-      valid: "Looks good!",
-      invalid: "Please enter a first name.",
-    },
-  },
-  {
-    name: "last_name",
-    label: "Last Name",
-    placeholder: "Smith",
-    type: "text",
-    instructions: "Please provide your last name",
-    disabled: false,
-    required: true,
-    dirty: false,
-    value: null,
-    layout: {
-      size: "default",
-      width: 3,
-    },
-    onClick: function () {
-      // NOTHING
-    },
-    onChange: function () {
-      // NOTHING
-    },
-    options: null,
-    feedback: {
-      show: false,
-      isValid: false,
-      valid: "Looks good!",
-      invalid: "Please enter a last name.",
-    },
-  },
-  {
-    name: "username",
-    label: "Username",
-    placeholder: "Username",
-    type: "text",
-    instructions: "Configured by the Administrator.",
-    disabled: true,
     required: false,
     dirty: false,
-    value: null,
+    value: true, //session.experience.darkMode,
     layout: {
       size: "default",
       width: 3,
     },
     onClick: function () {
-      // NOTHING
+      //handleDark();
     },
     onChange: function () {
       // NOTHING
     },
     options: null,
-    feedback: {
-      show: false,
-      isValid: false,
-      valid: "Looks good!",
-      invalid: "Please enter a last name.",
-    },
-  },
-  {
-    name: "password",
-    label: "Password",
-    placeholder: "Password",
-    type: "password",
-    instructions: "Choose something strong!",
-    disabled: false,
-    required: true,
-    dirty: false,
-    value: null,
-    layout: {
-      size: "default",
-      width: 3,
-    },
-    onClick: function () {
-      // NOTHING
-    },
-    onChange: function () {
-      // NOTHING
-    },
-    options: null,
-    feedback: {
-      show: false,
-      isValid: false,
-      valid: "Looks good!",
-      invalid: "Please enter a valid password.",
-    },
-  },
-  {
-    name: "profile_description",
-    label: "Describe Yourself",
-    placeholder: "Type some words here...",
-    type: "textarea",
-    instructions: "Tell us about your favorite things.",
-    disabled: false,
-    required: true,
-    dirty: false,
-    value: null,
-    layout: {
-      size: "default",
-      width: 12,
-    },
-    onClick: function () {
-      // NOTHING
-    },
-    onChange: function () {
-      // NOTHING
-    },
-    options: null,
-    feedback: {
-      show: false,
-      isValid: false,
-      valid: "Looks good!",
-      invalid: "Please provide some details.",
-    },
+    feedback: null,
   },
 ];
 
-export default { fd_profile };
+export default { fd_settings };

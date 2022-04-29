@@ -55,12 +55,10 @@ export default function Header(props) {
       label: "Settings",
       icon: "bi-gear-fill",
       id: "header-settings-link",
-      action: () => {
-        alert("Settings clicked");
-      },
+      action: null,
       divideAbove: false,
-      bsToggle: null,
-      bsTarget: null,
+      bsToggle: "modal",
+      bsTarget: "#settings-modal",
     },
     {
       label: "Logout",
