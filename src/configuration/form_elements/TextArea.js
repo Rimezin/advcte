@@ -61,6 +61,7 @@ export default function TextArea(props) {
         readonly={formElement.readOnly}
         onClick={formElement.onClick()}
         onChange={formElement.onChange()}
+        value={formElement.value}
       />
       <label for={formElement.formElementId} className="form-label">
         {formElement.label}

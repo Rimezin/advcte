@@ -68,6 +68,7 @@ function Select(props) {
         readonly={formElement.readOnly}
         onClick={formElement.onClick()}
         onChange={formElement.onChange()}
+        value={formElement.value}
       >
         {renderOptions}
       </select>
@@ -129,6 +130,7 @@ function MultiSelect(props) {
         readonly={formElement.readOnly}
         onClick={formElement.onClick()}
         onChange={formElement.onChange()}
+        value={formElement.value}
       >
         {renderOptions}
       </select>

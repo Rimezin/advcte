@@ -69,6 +69,7 @@ function File(props) {
         readonly={formElement.readOnly}
         onClick={formElement.onClick()}
         onChange={formElement.onChange()}
+        value={formElement.value}
       />
       {formElement.feedback.show && (
         <div
@@ -116,6 +117,7 @@ function MultiFile(props) {
         readonly={formElement.readOnly}
         onClick={formElement.onClick()}
         onChange={formElement.onChange()}
+        value={formElement.value}
         multiple
       />
       {formElement.instructions && (

@@ -64,6 +64,7 @@ export default function PlainText(props) {
         readonly
         onClick={formElement.onClick()}
         onChange={formElement.onChange()}
+        value={formElement.value}
       />
       {formElement.instructions && (
         <div id={`ins_${formElement.formElementId}`} className="form-text">

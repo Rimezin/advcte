@@ -58,6 +58,7 @@ function Radio(props) {
             readonly={formElement.readOnly}
             onClick={formElement.onClick()}
             onChange={formElement.onChange()}
+            value={formElement.value}
           />
           <label
             for={`${formElement.formElementId}_${formElement.options.indexOf(
@@ -111,6 +112,7 @@ function InlineRadio(props) {
             readonly={formElement.readOnly}
             onClick={formElement.onClick()}
             onChange={formElement.onChange()}
+            value={formElement.value}
           />
           <label
             for={`${formElement.formElementId}_${formElement.options.indexOf(

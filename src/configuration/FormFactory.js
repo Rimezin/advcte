@@ -56,7 +56,6 @@ export default function FormFactory(props) {
   const renderForm = deObjArray.map((formElement) => {
     // Add formElementId //
     formElement.formElementId = nanoid();
-    console.log("FORM ELEMENT: " + JSON.stringify(formElement));
     // Determine formElement rendering //
     switch (formElement.type) {
       // PASSWORD //
@@ -108,7 +107,11 @@ export default function FormFactory(props) {
   });
 
   return (
-    <form className="form needs-validation row g-3" novalidate>
+    <form
+      className="form needs-validation row g-3"
+      autocomplete="off"
+      novalidate
+    >
       {renderForm}
     </form>
   );

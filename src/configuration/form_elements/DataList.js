@@ -72,6 +72,7 @@ export default function DataList(props) {
         readonly={formElement.readOnly}
         onClick={formElement.onClick()}
         onChange={formElement.onChange()}
+        value={formElement.value}
       />
       {formElement.instructions && (
         <div id={`ins_${formElement.formElementId}`} className="form-text">
