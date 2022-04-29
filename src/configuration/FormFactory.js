@@ -54,9 +54,9 @@ export default function FormFactory(props) {
   const deObjArray = Object.values(formArray)[0];
 
   const renderForm = deObjArray.map((formElement) => {
-    console.log("FORM ELEMENT: " + JSON.stringify(formElement));
     // Add formElementId //
     formElement.formElementId = nanoid();
+    console.log("FORM ELEMENT: " + JSON.stringify(formElement));
     // Determine formElement rendering //
     switch (formElement.type) {
       // PASSWORD //

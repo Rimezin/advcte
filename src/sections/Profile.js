@@ -26,7 +26,7 @@ export default function Profile(props) {
   let profileContent = () => {
     return (
       <div id="profile-content" className="container-fluid">
-        <FormFactory formArray={fd_profile} />
+        <FormFactory formArray={fd_profile} session={session} />
       </div>
     );
   };
