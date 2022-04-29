@@ -67,7 +67,7 @@
 
     */
 
-import { session, handleDark } from "../../App";
+import { handleDark } from "../../App";
 
 export const fd_profile = [
   {
@@ -219,7 +219,7 @@ export const fd_profile = [
     disabled: false,
     required: false,
     dirty: false,
-    value: session.experience.darkMode,
+    value: true, //session.experience.darkMode,
     layout: {
       size: "default",
       width: 3,
