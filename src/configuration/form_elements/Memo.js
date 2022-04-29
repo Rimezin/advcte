@@ -1,16 +1,28 @@
-import React from "react";
+import React, { Component, PropTypes } from "react";
 import RichTextEditor from "react-rte";
 
-export default function Memo() {
-  const [editorState, setEditorState] = React.useState(() =>
-    React.createEmptyValue()
-  );
+class Memo extends Component {
+  static propTypes = {
+    onChange: PropTypes.func,
+  };
 
-  function onChange(value) {
-    setEditorState(value.toString("html"));
+  state = {
+    value: RichTextEditor.createEmptyValue(),
+  };
+
+  onChange = (value) => {
+    this.setState({ value });
+    if (this.props.onChange) {
+      // Send the changes up to the parent component as an HTML string.
+      // This is here to demonstrate using `.toString()` but in a real app it
+      // would be better to avoid generating a string on each change.
+      this.props.onChange(value.toString("html"));
+    }
+  };
+
+  render() {
+    return <RichTextEditor value={this.state.value} onChange={this.onChange} />;
   }
-
-  return <RichTextEditor value={editorState} onChange={onChange} />;
 }
 
 /*
@@ -63,67 +75,3 @@ export default function Memo(props) {
   );
 }
 */
-//////////////////////////////////
-/*
-import React from "react";
-import $ from "jquery";
-
-export default function Memo(props) {*/
-// Each formElement object should have: //
-/*
-    formElement = {
-        name: "first_name",
-        label: "First Name",
-        placeholder: "John",
-        type: "text",
-        instructions: "Please provide your first name"
-        disabled: false, // prevents pointer events
-        readOnly: false, // prevents changing the value, but allows pointer events
-        required: true, // will be checked by FormProcessing.js
-        dirty: false, // toggles when modified
-        layout: {
-            size: "default" // or large, or small
-            width: 3 // numerical value for bootstrap columns taken 1-12
-            floating: true // placed the label in the field //
-        }
-        onClick: () => {
-            alert('clicked!');
-        },
-        onChange: () => {
-            alert('clicked!');
-        },
-        options: [  // set to null if no options
-            option1,
-            option2,
-            option3,
-        ],
-        feedback: {
-            show: false,
-            isValid: false,
-            valid: "Looks good!",
-            invalid: "Please enter a name."
-        }
-*/
-/*
-  React.useEffect(() => {
-    // $(`#${formElement.formElementId}`).summernote({
-    $("#summernote").summernote({
-      placeholder: formElement.placeholder,
-      tabsize: 2,
-      height: 100,
-    });
-  }, [formElement.formElementId, formElement.placeholder]);
-
-  return (
-    <textarea
-      id="summernote"
-      // id={formElement.formElementId}
-      className={`form-control ${
-        session.experience.darkMode ? "form-control-dark" : ""
-      }`}
-      aria-describedby={`ins_${formElement.formElementId}`}
-      placeholder={formElement.placeholder}
-      dirty={formElement.dirty}
-    />
-  );
-}*/
