@@ -59,7 +59,7 @@ export default function Text(props) {
         required={formElement.required}
         onClick={formElement.onClick()}
         onChange={handleChange}
-        checked={formData[formElement.name]}
+        value={formData[formElement.name]}
       />
       <label for={formElement.formElementId} className="form-label">
         {formElement.label}
