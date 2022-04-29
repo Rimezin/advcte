@@ -456,3 +456,12 @@ main {
   margin-bottom: 1rem;
   list-style: none;
 }
+
+/* Form CSS */
+.form-disabled {
+  pointer-events: none;
+  user-select: none;
+  background-color: lightgray;
+  color: gray;
+  border: 1px solid #2d3238;
+}
