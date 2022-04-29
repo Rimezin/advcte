@@ -9,7 +9,7 @@ import Main from "./sections/Main";
 import Footer from "./sections/Footer";
 import Profile from "./sections/Profile";
 
-export default function App() {
+function App() {
   // State to hold session details for the user. //
   const [session, setSession] = React.useState({
     loggedOn: false,
@@ -121,6 +121,16 @@ export default function App() {
     scrollable: false,
   });
 
+  function handleDark() {
+    setSession((sessionObj) => ({
+      ...sessionObj,
+      experience: {
+        ...sessionObj.experience,
+        darkMode: !sessionObj.experience.darkMode,
+      },
+    }));
+  }
+
   // Handle the session //
   function handleSession(event) {
     if (event.target.id === "darkToggle") {
@@ -207,3 +217,5 @@ export default function App() {
     </div>
   );
 }
+
+export { App, session, handleDark };

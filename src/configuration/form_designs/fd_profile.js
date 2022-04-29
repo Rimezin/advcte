@@ -67,7 +67,7 @@
 
     */
 
-// import { session, setSession } from ".../App";
+import { session, handleDark } from ".../App";
 
 export const fd_profile = [
   {
@@ -219,13 +219,13 @@ export const fd_profile = [
     disabled: false,
     required: false,
     dirty: false,
-    value: null,
+    value: session.experience.darkMode,
     layout: {
       size: "default",
       width: 3,
     },
     onClick: function () {
-      // Nothing
+      handleDark();
     },
     onChange: function () {
       // NOTHING
