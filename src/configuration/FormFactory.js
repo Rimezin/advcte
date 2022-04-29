@@ -6,7 +6,7 @@ import Password from "./form_elements/Password";
 import Email from "./form_elements/Email";
 import { File, MultiFile } from "./form_elements/File";
 import Text from "./form_elements/Text";
-// import Memo from "./form_elements/Memo";
+import Memo from "./form_elements/Memo";
 import TextArea from "./form_elements/TextArea";
 import PlainText from "./form_elements/PlainText";
 import Color from "./form_elements/Color";
@@ -68,8 +68,8 @@ export default function FormFactory(props) {
         return <File session={session} formElement={formElement} />;
       case "multifile":
         return <MultiFile session={session} formElement={formElement} />;
-      // case "memo":
-      //   return <Memo session={session} formElement={formElement} />;
+      case "memo":
+        return <Memo session={session} formElement={formElement} />;
       case "textarea":
         return <TextArea session={session} formElement={formElement} />;
       case "plaintext":
@@ -108,7 +108,7 @@ export default function FormFactory(props) {
   });
 
   return (
-    <form id="form needs-validation" novalidate>
+    <form className="form needs-validation row g-3" novalidate>
       {renderForm}
     </form>
   );

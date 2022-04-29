@@ -81,7 +81,6 @@ export const fd_profile = [
     layout: {
       size: "default",
       width: 3,
-      floating: true,
     },
     onClick: function () {
       // NOTHING
@@ -110,7 +109,6 @@ export const fd_profile = [
     layout: {
       size: "default",
       width: 3,
-      floating: true,
     },
     onClick: function () {
       // NOTHING
@@ -124,6 +122,34 @@ export const fd_profile = [
       isValid: false,
       valid: "Looks good!",
       invalid: "Please enter a last name.",
+    },
+  },
+  {
+    name: "profile_description",
+    label: "Describe Yourself",
+    placeholder: "Type some words here...",
+    type: "memo",
+    instructions: "Tell us about your favorite things.",
+    disabled: false,
+    readOnly: false,
+    required: true,
+    dirty: false,
+    layout: {
+      size: "default",
+      width: 12,
+    },
+    onClick: function () {
+      // NOTHING
+    },
+    onChange: function () {
+      // NOTHING
+    },
+    options: null,
+    feedback: {
+      show: false,
+      isValid: false,
+      valid: "Looks good!",
+      invalid: "Please provide some details.",
     },
   },
 ];

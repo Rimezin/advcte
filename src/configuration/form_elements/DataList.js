@@ -52,16 +52,11 @@ export default function DataList(props) {
         formElement.layout.width === 12
           ? "-12"
           : `-md-${formElement.layout.width}`
-      } ${formElement.layout.floating ? "form-floating" : ""}`}
+      }`}
     >
       <label for={formElement.formElementId} className="form-label">
         {formElement.label}
       </label>
-      {formElement.instructions && (
-        <div id={`ins_${formElement.formElementId}`} className="form-text">
-          {formElement.instructions}
-        </div>
-      )}
       <input
         list={`datalist_${formElement.formElementId}`}
         id={formElement.formElementId}
@@ -78,6 +73,11 @@ export default function DataList(props) {
         onClick={formElement.onClick()}
         onChange={formElement.onChange()}
       />
+      {formElement.instructions && (
+        <div id={`ins_${formElement.formElementId}`} className="form-text">
+          {formElement.instructions}
+        </div>
+      )}
       <datalist id={`datalist_${formElement.formElementId}`}>
         {renderOptions}
       </datalist>

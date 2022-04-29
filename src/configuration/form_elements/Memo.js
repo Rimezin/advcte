@@ -55,7 +55,7 @@ export default function Memo(props) {
         formElement.layout.width === 12
           ? "-12"
           : `-md-${formElement.layout.width}`
-      } ${formElement.layout.floating ? "form-floating" : ""}`}
+      }`}
     >
       <label for={formElement.formElementId} className="form-label">
         {formElement.label}

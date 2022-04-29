@@ -44,16 +44,8 @@ export default function Text(props) {
         formElement.layout.width === 12
           ? "-12"
           : `-md-${formElement.layout.width}`
-      } ${formElement.layout.floating ? "form-floating" : ""}`}
+      } form-floating`}
     >
-      <label for={formElement.formElementId} className="form-label">
-        {formElement.label}
-      </label>
-      {formElement.instructions && (
-        <div id={`ins_${formElement.formElementId}`} className="form-text">
-          {formElement.instructions}
-        </div>
-      )}
       <input
         type="text"
         id={formElement.formElementId}
@@ -70,6 +62,14 @@ export default function Text(props) {
         onClick={formElement.onClick()}
         onChange={formElement.onChange()}
       />
+      <label for={formElement.formElementId} className="form-label">
+        {formElement.label}
+      </label>
+      {formElement.instructions && (
+        <div id={`ins_${formElement.formElementId}`} className="form-text">
+          {formElement.instructions}
+        </div>
+      )}
       {formElement.feedback.show && (
         <div
           className={`${

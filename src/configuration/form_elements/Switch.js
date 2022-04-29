@@ -45,8 +45,6 @@ export default function Switch(props) {
         formElement.layout.width === 12
           ? "-12"
           : `-md-${formElement.layout.width}`
-      } ${
-        formElement.layout.floating ? "form-floating" : ""
       } form-check form-switch`}
     >
       <input

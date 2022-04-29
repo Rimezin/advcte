@@ -52,16 +52,8 @@ function Select(props) {
         formElement.layout.width === 12
           ? "-12"
           : `-md-${formElement.layout.width}`
-      } ${formElement.layout.floating ? "form-floating" : ""}`}
+      } form-floating`}
     >
-      <label for={formElement.formElementId} className="form-label">
-        {formElement.label}
-      </label>
-      {formElement.instructions && (
-        <div id={`ins_${formElement.formElementId}`} className="form-text">
-          {formElement.instructions}
-        </div>
-      )}
       <select
         id={formElement.formElementId}
         className={`form-select ${
@@ -79,6 +71,14 @@ function Select(props) {
       >
         {renderOptions}
       </select>
+      <label for={formElement.formElementId} className="form-label">
+        {formElement.label}
+      </label>
+      {formElement.instructions && (
+        <div id={`ins_${formElement.formElementId}`} className="form-text">
+          {formElement.instructions}
+        </div>
+      )}
       {formElement.feedback.show && (
         <div
           className={`${
@@ -112,16 +112,8 @@ function MultiSelect(props) {
         formElement.layout.width === 12
           ? "-12"
           : `-md-${formElement.layout.width}`
-      } ${formElement.layout.floating ? "form-floating" : ""}`}
+      } form-floating`}
     >
-      <label for={formElement.formElementId} className="form-label">
-        {formElement.label}
-      </label>
-      {formElement.instructions && (
-        <div id={`ins_${formElement.formElementId}`} className="form-text">
-          {formElement.instructions}
-        </div>
-      )}
       <select
         id={formElement.formElementId}
         className={`form-select ${
@@ -140,6 +132,14 @@ function MultiSelect(props) {
       >
         {renderOptions}
       </select>
+      <label for={formElement.formElementId} className="form-label">
+        {formElement.label}
+      </label>
+      {formElement.instructions && (
+        <div id={`ins_${formElement.formElementId}`} className="form-text">
+          {formElement.instructions}
+        </div>
+      )}
       {formElement.feedback.show && (
         <div
           className={`${

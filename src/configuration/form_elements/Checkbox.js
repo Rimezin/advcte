@@ -45,7 +45,7 @@ export default function Checkbox(props) {
         formElement.layout.width === 12
           ? "-12"
           : `-md-${formElement.layout.width}`
-      } ${formElement.layout.floating ? "form-floating" : ""} form-check`}
+      } form-check`}
     >
       <input
         type="checkbox"
