@@ -83,8 +83,12 @@ export const fd_profile = [
       width: 3,
       floating: true,
     },
-    onClick: null,
-    onChange: null,
+    onClick: function () {
+      // NOTHING
+    },
+    onChange: function () {
+      // NOTHING
+    },
     options: null,
     feedback: {
       show: false,
@@ -108,8 +112,12 @@ export const fd_profile = [
       width: 3,
       floating: true,
     },
-    onClick: null,
-    onChange: null,
+    onClick: function () {
+      // NOTHING
+    },
+    onChange: function () {
+      // NOTHING
+    },
     options: null,
     feedback: {
       show: false,
