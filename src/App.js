@@ -9,50 +9,50 @@ import Main from "./sections/Main";
 import Footer from "./sections/Footer";
 import Profile from "./sections/Profile";
 
-// State to hold session details for the user. //
-const [session, setSession] = React.useState({
-  loggedOn: false,
-  user: {
-    firstName: null,
-    lastName: null,
-    fullName: (firstName, lastName) => {
-      if (firstName === null || lastName === null) {
-        return null;
-      } else {
-        return `${firstName} ${lastName}`;
-      }
+export default function App() {
+  // State to hold session details for the user. //
+  const [session, setSession] = React.useState({
+    loggedOn: false,
+    user: {
+      firstName: null,
+      lastName: null,
+      fullName: (firstName, lastName) => {
+        if (firstName === null || lastName === null) {
+          return null;
+        } else {
+          return `${firstName} ${lastName}`;
+        }
+      },
+      userName: null,
+      userId: null,
+      security: {
+        roleId: null,
+        rolePermissions: null,
+        navId: null,
+        navViews: null,
+      },
     },
-    userName: null,
-    userId: null,
-    security: {
-      roleId: null,
-      rolePermissions: null,
-      navId: null,
-      navViews: null,
-    },
-  },
-  experience: {
-    language: "english",
-    darkMode:
-      window.matchMedia &&
-      window.matchMedia("(prefers-color-scheme: dark)").matches
-        ? true
-        : false,
-  },
-});
-
-// Handle Dark Toggles //
-function handleDark() {
-  setSession((sessionObj) => ({
-    ...sessionObj,
     experience: {
-      ...sessionObj.experience,
-      darkMode: !sessionObj.experience.darkMode,
+      language: "english",
+      darkMode:
+        window.matchMedia &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches
+          ? true
+          : false,
     },
-  }));
-}
+  });
 
-function App() {
+  // Handle Dark Toggles //
+  // function handleDark() {
+  //   setSession((sessionObj) => ({
+  //     ...sessionObj,
+  //     experience: {
+  //       ...sessionObj.experience,
+  //       darkMode: !sessionObj.experience.darkMode,
+  //     },
+  //   }));
+  // }
+
   // State for toast - default false to hide //
   const [toast, setToast] = React.useState({
     show: false,
@@ -218,5 +218,3 @@ function App() {
     </div>
   );
 }
-
-export { App, session, handleDark };

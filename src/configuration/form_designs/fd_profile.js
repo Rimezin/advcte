@@ -67,8 +67,6 @@
 
     */
 
-import { handleDark } from "../../App";
-
 export const fd_profile = [
   {
     name: "first_name",
@@ -225,7 +223,7 @@ export const fd_profile = [
       width: 3,
     },
     onClick: function () {
-      handleDark();
+      //handleDark();
     },
     onChange: function () {
       // NOTHING
