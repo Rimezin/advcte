@@ -25,6 +25,8 @@ class Memo extends Component {
   }
 }
 
+export default Memo;
+
 /*
 import React from "react";
 import { Editor, EditorState } from "draft-js";
