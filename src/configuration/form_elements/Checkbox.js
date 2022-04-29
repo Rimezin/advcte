@@ -37,7 +37,7 @@ import React from "react";
 */
 
 export default function Checkbox(props) {
-  const { formElement, session } = props;
+  const { formElement, session, formData, handleChange } = props;
 
   return (
     <div
@@ -59,8 +59,8 @@ export default function Checkbox(props) {
         name={formElement.name}
         required={formElement.required}
         onClick={formElement.onClick()}
-        onChange={formElement.onChange()}
-        value={formElement.value}
+        onChange={handleChange}
+        checked={formData[formElement.name]}
       />
       <label for={formElement.formElementId} className="form-label">
         {formElement.label}

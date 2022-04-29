@@ -4,41 +4,61 @@ import fd_settings from "../configuration/form_designs/fd_settings";
 
 export default function Settings(props) {
   const { session } = props;
+  const [formData, setFormData] = React.useState();
 
-  /* {
-    title: "Title goes here",
-    content: <p>A cool message here.</p>,
-    button1: {
-      label: "Confirm",
-      id: "modal-confirm",
-      action: null,
-    },
-    button2: {
-      label: "Cancel",
-      id: "modal-cancel",
-      action: null,
-    },
-    static: true,
-    scrollable: false,
-  }
-*/
-  // settings rendering //
-  let settingsContent = () => {
-    return (
-      <div id="settings-content" className="container-fluid">
-        <FormFactory formArray={fd_settings} session={session} />
-      </div>
-    );
-  };
+  // Set the initial formData state based on form design //
+  React.useEffect(() => {
+    // Grab design and convert to array of JSX objects
+    const deObjArray = Object.values(fd_settings)[0];
+    for (let a = 0; a < deObjArray.length; a++) {
+      var thisObject = deObjArray[a];
+      setFormData((prevFormData) => {
+        return {
+          ...prevFormData,
+          [thisObject.name]:
+            thisObject.type === "checkbox"
+              ? thisObject.checked
+              : thisObject.value,
+        };
+      });
+    }
+  }, [setFormData, fd_settings]);
 
   // Button Functions //
   function handleCancel() {
     alert("Cancelled!");
   }
 
-  function handleSave() {
-    alert("Saved!");
+  function handleChange(event) {
+    const { name, value, type, checked } = event.target;
+    setFormData((prevFormData) => {
+      return {
+        ...prevFormData,
+        [name]: type === "checkbox" ? checked : value,
+      };
+    });
   }
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    // Submit to api
+    console.log(formData);
+  }
+
+  // Settings rendering //
+  let settingsContent = () => {
+    return (
+      <div id="settings-content" className="container-fluid">
+        <FormFactory
+          formArray={fd_settings}
+          session={session}
+          handleSubmit={handleSubmit}
+          handleChange={handleChange}
+          formData={formData}
+        />
+      </div>
+    );
+  };
 
   // Button 2 (Secondary) //
   let button2 = () => {
@@ -63,7 +83,7 @@ export default function Settings(props) {
         id="settings-modal-button-1"
         class="btn btn-primary"
         data-bs-dismiss="modal"
-        onClick={handleSave}
+        onClick={handleSubmit}
       >
         Save Changes
       </button>

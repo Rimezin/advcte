@@ -37,7 +37,7 @@ import React from "react";
 */
 
 function Radio(props) {
-  const { formElement, session } = props;
+  const { formElement, session, formData, handleChange } = props;
 
   function renderOptions() {
     const radioOptions = formElement.options.map((option) => {
@@ -55,8 +55,8 @@ function Radio(props) {
             name={formElement.name}
             required={formElement.required}
             onClick={formElement.onClick()}
-            onChange={formElement.onChange()}
-            value={formElement.value}
+            onChange={handleChange}
+            checked={formData[formElement.name]}
           />
           <label
             for={`${formElement.formElementId}_${formElement.options.indexOf(
@@ -89,7 +89,7 @@ function Radio(props) {
 }
 
 function InlineRadio(props) {
-  const { formElement, session } = props;
+  const { formElement, session, formData, handleChange } = props;
 
   function renderOptions() {
     const radioOptions = formElement.options.map((option) => {
@@ -107,8 +107,8 @@ function InlineRadio(props) {
             name={formElement.name}
             required={formElement.required}
             onClick={formElement.onClick()}
-            onChange={formElement.onChange()}
-            value={formElement.value}
+            onChange={handleChange}
+            checked={formData[formElement.name]}
           />
           <label
             for={`${formElement.formElementId}_${formElement.options.indexOf(

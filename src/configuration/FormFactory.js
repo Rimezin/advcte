@@ -22,7 +22,7 @@ import { Toggle, InlineToggle } from "./form_elements/Toggle";
 
 // Default Render //
 export default function FormFactory(props) {
-  const { formArray, session } = props;
+  const { formArray, session, handleSumbit, formData, handleChange } = props;
 
   // Types //
   /*
@@ -51,6 +51,8 @@ export default function FormFactory(props) {
         
 
     */
+
+  // Grab design array and convert to JSX objects
   const deObjArray = Object.values(formArray)[0];
 
   const renderForm = deObjArray.map((formElement) => {
@@ -60,49 +62,188 @@ export default function FormFactory(props) {
     switch (formElement.type) {
       // PASSWORD //
       case "password":
-        return <Password session={session} formElement={formElement} />;
+        return (
+          <Password
+            session={session}
+            formElement={formElement}
+            formData={formData}
+            handleChange={handleChange}
+          />
+        );
       case "email":
-        return <Email session={session} formElement={formElement} />;
+        return (
+          <Email
+            session={session}
+            formElement={formElement}
+            formData={formData}
+            handleChange={handleChange}
+          />
+        );
       case "file":
-        return <File session={session} formElement={formElement} />;
+        return (
+          <File
+            session={session}
+            formElement={formElement}
+            formData={formData}
+            handleChange={handleChange}
+          />
+        );
       case "multifile":
-        return <MultiFile session={session} formElement={formElement} />;
+        return (
+          <MultiFile
+            session={session}
+            formElement={formElement}
+            formData={formData}
+            handleChange={handleChange}
+          />
+        );
       case "memo":
-        return <Memo session={session} formElement={formElement} />;
+        return (
+          <Memo
+            session={session}
+            formElement={formElement}
+            formData={formData}
+            handleChange={handleChange}
+          />
+        );
       case "textarea":
-        return <TextArea session={session} formElement={formElement} />;
+        return (
+          <TextArea
+            session={session}
+            formElement={formElement}
+            formData={formData}
+            handleChange={handleChange}
+          />
+        );
       case "plaintext":
-        return <PlainText session={session} formElement={formElement} />;
+        return (
+          <PlainText
+            session={session}
+            formElement={formElement}
+            formData={formData}
+            handleChange={handleChange}
+          />
+        );
       case "color":
-        return <Color session={session} formElement={formElement} />;
+        return (
+          <Color
+            session={session}
+            formElement={formElement}
+            formData={formData}
+            handleChange={handleChange}
+          />
+        );
       case "datalist":
-        return <DataList session={session} formElement={formElement} />;
+        return (
+          <DataList
+            session={session}
+            formElement={formElement}
+            formData={formData}
+            handleChange={handleChange}
+          />
+        );
       case "select":
-        return <Select session={session} formElement={formElement} />;
+        return (
+          <Select
+            session={session}
+            formElement={formElement}
+            formData={formData}
+            handleChange={handleChange}
+          />
+        );
       case "multiselect":
-        return <MultiSelect session={session} formElement={formElement} />;
+        return (
+          <MultiSelect
+            session={session}
+            formElement={formElement}
+            formData={formData}
+            handleChange={handleChange}
+          />
+        );
       case "checkbox":
-        return <Checkbox session={session} formElement={formElement} />;
+        return (
+          <Checkbox
+            session={session}
+            formElement={formElement}
+            formData={formData}
+            handleChange={handleChange}
+          />
+        );
       case "checklist":
-        return <Checklist session={session} formElement={formElement} />;
+        return (
+          <Checklist
+            session={session}
+            formElement={formElement}
+            formData={formData}
+            handleChange={handleChange}
+          />
+        );
       case "inlinechecklist":
-        return <InlineChecklist session={session} formElement={formElement} />;
+        return (
+          <InlineChecklist
+            session={session}
+            formElement={formElement}
+            formData={formData}
+            handleChange={handleChange}
+          />
+        );
       case "radio":
-        return <Radio session={session} formElement={formElement} />;
+        return (
+          <Radio
+            session={session}
+            formElement={formElement}
+            formData={formData}
+            handleChange={handleChange}
+          />
+        );
       case "inlineradio":
-        return <InlineRadio session={session} formElement={formElement} />;
+        return (
+          <InlineRadio
+            session={session}
+            formElement={formElement}
+            formData={formData}
+            handleChange={handleChange}
+          />
+        );
       case "switch":
-        return <Switch session={session} formElement={formElement} />;
+        return (
+          <Switch
+            session={session}
+            formElement={formElement}
+            formData={formData}
+            handleChange={handleChange}
+          />
+        );
       case "toggle":
-        return <Toggle session={session} formElement={formElement} />;
+        return (
+          <Toggle
+            session={session}
+            formElement={formElement}
+            formData={formData}
+          />
+        );
       case "inlinetoggle":
-        return <InlineToggle session={session} formElement={formElement} />;
+        return (
+          <InlineToggle
+            session={session}
+            formElement={formElement}
+            formData={formData}
+            handleChange={handleChange}
+          />
+        );
       // case "range":
       //   return <Range session={session} formElement={formElement} />;
       // case "steps":
       //   return <Steps session={session} formElement={formElement} />;
       default:
-        return <Text session={session} formElement={formElement} />;
+        return (
+          <Text
+            session={session}
+            formElement={formElement}
+            formData={formData}
+            handleChange={handleChange}
+          />
+        );
     }
   });
 
@@ -111,6 +252,7 @@ export default function FormFactory(props) {
       className="form needs-validation row g-3"
       autocomplete="off"
       novalidate
+      onSubmit={handleSumbit}
     >
       {renderForm}
     </form>

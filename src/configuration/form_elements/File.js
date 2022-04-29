@@ -37,7 +37,7 @@ import React from "react";
 */
 
 function File(props) {
-  const { formElement, session } = props;
+  const { formElement, session, handleChange, formData } = props;
 
   return (
     <div
@@ -68,8 +68,8 @@ function File(props) {
         dirty={formElement.dirty}
         required={formElement.required}
         onClick={formElement.onClick()}
-        onChange={formElement.onChange()}
-        value={formElement.value}
+        onChange={handleChange}
+        value={formData[formElement.name]}
       />
       {formElement.feedback.show && (
         <div
@@ -89,7 +89,7 @@ function File(props) {
 }
 
 function MultiFile(props) {
-  const { formElement, session } = props;
+  const { formElement, session, formData, handleChange } = props;
 
   return (
     <div
@@ -114,8 +114,8 @@ function MultiFile(props) {
         name={formElement.name}
         required={formElement.required}
         onClick={formElement.onClick()}
-        onChange={formElement.onChange()}
-        value={formElement.value}
+        onChange={handleChange}
+        checked={formData[formElement.name]}
         multiple
       />
       {formElement.instructions && (

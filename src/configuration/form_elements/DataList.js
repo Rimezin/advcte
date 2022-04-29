@@ -1,7 +1,7 @@
 import React from "react";
 
 export default function DataList(props) {
-  const { formElement, session } = props;
+  const { formElement, session, handleChange, formData } = props;
 
   // Each formElement object should have: //
   /*
@@ -69,8 +69,8 @@ export default function DataList(props) {
         name={formElement.name}
         required={formElement.required}
         onClick={formElement.onClick()}
-        onChange={formElement.onChange()}
-        value={formElement.value}
+        onChange={handleChange}
+        value={formData[formElement.name]}
       />
       {formElement.instructions && (
         <div id={`ins_${formElement.formElementId}`} className="form-text">

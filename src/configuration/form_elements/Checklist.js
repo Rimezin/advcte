@@ -37,7 +37,7 @@ import React from "react";
 */
 
 function Checklist(props) {
-  const { formElement, session } = props;
+  const { formElement, session, handleChange, formData } = props;
 
   function renderOptions() {
     const listOptions = formElement.options.map((option) => {
@@ -55,8 +55,8 @@ function Checklist(props) {
             name={`${formElement.name}_${formElement.options.indexOf(option)}`}
             required={formElement.required}
             onClick={formElement.onClick()}
-            onChange={formElement.onChange()}
-            value={formElement.value}
+            onChange={handleChange}
+            checked={formData[formElement.name]}
           />
           <label
             for={`${formElement.formElementId}_${formElement.options.indexOf(
@@ -89,7 +89,7 @@ function Checklist(props) {
 }
 
 function InlineChecklist(props) {
-  const { formElement, session } = props;
+  const { formElement, session, formData, handleChange } = props;
 
   function renderOptions() {
     const listOptions = formElement.options.map((option) => {
@@ -107,8 +107,8 @@ function InlineChecklist(props) {
             name={`${formElement.name}_${formElement.options.indexOf(option)}`}
             required={formElement.required}
             onClick={formElement.onClick()}
-            onChange={formElement.onChange()}
-            value={formElement.value}
+            onChange={handleChange}
+            checked={formData[formElement.name]}
           />
           <label
             for={`${formElement.formElementId}_${formElement.options.indexOf(

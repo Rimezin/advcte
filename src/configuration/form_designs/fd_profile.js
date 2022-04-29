@@ -77,6 +77,7 @@ export const fd_profile = [
     required: true,
     dirty: false,
     value: null,
+    checked: false,
     layout: {
       size: "default",
       width: 3,
@@ -105,6 +106,7 @@ export const fd_profile = [
     required: true,
     dirty: false,
     value: null,
+    checked: false,
     layout: {
       size: "default",
       width: 3,
@@ -133,6 +135,7 @@ export const fd_profile = [
     required: false,
     dirty: false,
     value: null,
+    checked: false,
     layout: {
       size: "default",
       width: 3,
@@ -161,6 +164,7 @@ export const fd_profile = [
     required: true,
     dirty: false,
     value: null,
+    checked: false,
     layout: {
       size: "default",
       width: 3,
@@ -189,6 +193,7 @@ export const fd_profile = [
     required: true,
     dirty: false,
     value: null,
+    checked: false,
     layout: {
       size: "default",
       width: 12,

@@ -1,7 +1,7 @@
 import React from "react";
 
 export default function Password(props) {
-  const { formElement, session } = props;
+  const { formElement, session, formData, handleChange } = props;
 
   // Each formElement object should have: //
   /*
@@ -58,8 +58,8 @@ export default function Password(props) {
         name={formElement.name}
         required={formElement.required}
         onClick={formElement.onClick()}
-        onChange={formElement.onChange()}
-        value={formElement.value}
+        onChange={handleChange}
+        value={formData[formElement.name]}
       />
       <label for={formElement.formElementId} className="form-label">
         {formElement.label}

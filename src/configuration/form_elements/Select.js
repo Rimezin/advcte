@@ -37,7 +37,7 @@ import React from "react";
 */
 
 function Select(props) {
-  const { formElement, session } = props;
+  const { formElement, session, formData, handleChange } = props;
 
   function renderOptions() {
     const fieldOptions = formElement.options.map((option) => {
@@ -65,8 +65,8 @@ function Select(props) {
         name={formElement.name}
         required={formElement.required}
         onClick={formElement.onClick()}
-        onChange={formElement.onChange()}
-        value={formElement.value}
+        onChange={handleChange}
+        value={formData[formElement.name]}
       >
         {renderOptions}
       </select>
@@ -96,7 +96,7 @@ function Select(props) {
 }
 
 function MultiSelect(props) {
-  const { formElement, session } = props;
+  const { formElement, session, formData, handleChange } = props;
 
   function renderOptions() {
     const fieldOptions = formElement.options.map((option) => {
@@ -125,8 +125,8 @@ function MultiSelect(props) {
         name={formElement.name}
         required={formElement.required}
         onClick={formElement.onClick()}
-        onChange={formElement.onChange()}
-        value={formElement.value}
+        onChange={handleChange}
+        value={formData[formElement.name]}
       >
         {renderOptions}
       </select>

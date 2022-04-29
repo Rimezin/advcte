@@ -66,6 +66,8 @@
 
     */
 
+import { session } from "../../App";
+
 export const fd_settings = [
   {
     name: "is_darkmode",
@@ -76,7 +78,8 @@ export const fd_settings = [
     disabled: false,
     required: false,
     dirty: false,
-    value: true, //session.experience.darkMode,
+    value: true,
+    checked: session.experience.darkMode ? true : false,
     layout: {
       size: "default",
       width: 3,
