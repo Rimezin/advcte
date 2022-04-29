@@ -11,7 +11,8 @@
     "babel-loader": "8.0.5",
     "webpack": "4.29.6",
     "util": "0.12.4",
-    "jquery": "3.6.0"
+    "jquery": "3.6.0",
+    "draft-js": "0.11.7"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -40,6 +41,7 @@
     "babel-preset-env": "*",
     "babel-preset-react": "*",
     "util": "0.12.4",
-    "jquery": "3.6.0"
+    "jquery": "3.6.0",
+    "draft-js": "0.11.7"
   }
 }

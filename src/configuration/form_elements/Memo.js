@@ -1,11 +1,59 @@
 import React from "react";
+import { Editor, EditorState } from "draft-js";
+import "draft-js/dist/Draft.css";
+
+export default function Memo() {
+  const { formElement, session } = props;
+  const [editorState, setEditorState] = React.useState(() =>
+    EditorState.createEmpty()
+  );
+  return (
+    <div
+      id={formElement.formElementId}
+      className={`col${
+        formElement.layout.width === 12
+          ? "-12"
+          : `-md-${formElement.layout.width}`
+      }`}
+    >
+      <label for={formElement.formElementId} className="form-label">
+        {formElement.label}
+      </label>
+      {formElement.instructions && (
+        <div id={`ins_${formElement.formElementId}`} className="form-text">
+          {formElement.instructions}
+        </div>
+      )}
+      <Editor
+        editorState={editorState}
+        onChange={setEditorState}
+        name={formElement.name}
+      />
+      {formElement.feedback.show && (
+        <div
+          className={`${
+            formElement.feedback.isValid ? "valid" : "invalid"
+          }-feedback`}
+        >
+          {`${
+            formElement.feedback.isValid
+              ? formElement.feedback.valid
+              : formElement.feedback.invalid
+          }-feedback`}
+        </div>
+      )}
+    </div>
+  );
+}
+
+//////////////////////////////////
+/*
+import React from "react";
 import $ from "jquery";
 
-export default function Memo(props) {
-  const { formElement, session } = props;
-
-  // Each formElement object should have: //
-  /*
+export default function Memo(props) {*/
+// Each formElement object should have: //
+/*
     formElement = {
         name: "first_name",
         label: "First Name",
@@ -39,7 +87,7 @@ export default function Memo(props) {
             invalid: "Please enter a name."
         }
 */
-
+/*
   React.useEffect(() => {
     // $(`#${formElement.formElementId}`).summernote({
     $("#summernote").summernote({
@@ -50,50 +98,15 @@ export default function Memo(props) {
   }, [formElement.formElementId, formElement.placeholder]);
 
   return (
-    <div
-      className={`col${
-        formElement.layout.width === 12
-          ? "-12"
-          : `-md-${formElement.layout.width}`
+    <textarea
+      id="summernote"
+      // id={formElement.formElementId}
+      className={`form-control ${
+        session.experience.darkMode ? "form-control-dark" : ""
       }`}
-    >
-      <label for={formElement.formElementId} className="form-label">
-        {formElement.label}
-      </label>
-      {formElement.instructions && (
-        <div id={`ins_${formElement.formElementId}`} className="form-text">
-          {formElement.instructions}
-        </div>
-      )}
-      <textarea
-        id="summernote"
-        // id={formElement.formElementId}
-        className={`form-control ${
-          session.experience.darkMode ? "form-control-dark" : ""
-        }`}
-        aria-describedby={`ins_${formElement.formElementId}`}
-        placeholder={formElement.placeholder}
-        dirty={formElement.dirty}
-        name={formElement.name}
-        required={formElement.required}
-        disabled={formElement.disabled}
-        readonly={formElement.readOnly}
-        onClick={formElement.onClick()}
-        onChange={formElement.onChange()}
-      />
-      {formElement.feedback.show && (
-        <div
-          className={`${
-            formElement.feedback.isValid ? "valid" : "invalid"
-          }-feedback`}
-        >
-          {`${
-            formElement.feedback.isValid
-              ? formElement.feedback.valid
-              : formElement.feedback.invalid
-          }-feedback`}
-        </div>
-      )}
-    </div>
+      aria-describedby={`ins_${formElement.formElementId}`}
+      placeholder={formElement.placeholder}
+      dirty={formElement.dirty}
+    />
   );
-}
+}*/
