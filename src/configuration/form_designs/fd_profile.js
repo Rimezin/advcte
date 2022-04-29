@@ -67,7 +67,7 @@
 
     */
 
-import { session, handleDark } from ".../App.js";
+import { session, handleDark } from "/src/App";
 
 export const fd_profile = [
   {
