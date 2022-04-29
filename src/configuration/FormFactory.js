@@ -51,9 +51,9 @@ export default function FormFactory(props) {
         
 
     */
-  console.log("IMPORTED DESIGN: " + formArray);
+  console.log("IMPORTED DESIGN: " + JSON.stringify(formArray));
   const deObjArray = Object.values(formArray)[0];
-  console.log("DEOBJECTIFIED:" + deObjArray);
+  console.log("DEOBJECTIFIED:" + deObjArray.toString());
 
   function renderForm() {
     // Array is trapped inside an object, so get it out. //
