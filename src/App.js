@@ -184,7 +184,10 @@ export default function App() {
       </div>
 
       {/* Profile */}
-      <Profile session={session} />
+      {session.loggedOn && <Profile session={session} />}
+
+      {/* Settings */}
+      {session.loggedOn && <Settings session={session} />}
 
       {/* Splash Page */}
       {!session.loggedOn && (
