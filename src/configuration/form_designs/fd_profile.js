@@ -125,6 +125,62 @@ export const fd_profile = [
     },
   },
   {
+    name: "username",
+    label: "Username",
+    placeholder: "Username",
+    type: "text",
+    instructions: "Configured by the Administrator.",
+    disabled: false,
+    readOnly: true,
+    required: false,
+    dirty: false,
+    layout: {
+      size: "default",
+      width: 3,
+    },
+    onClick: function () {
+      // NOTHING
+    },
+    onChange: function () {
+      // NOTHING
+    },
+    options: null,
+    feedback: {
+      show: false,
+      isValid: false,
+      valid: "Looks good!",
+      invalid: "Please enter a last name.",
+    },
+  },
+  {
+    name: "password",
+    label: "Password",
+    placeholder: "Password",
+    type: "password",
+    instructions: "Choose something strong!",
+    disabled: false,
+    readOnly: false,
+    required: true,
+    dirty: false,
+    layout: {
+      size: "default",
+      width: 3,
+    },
+    onClick: function () {
+      // NOTHING
+    },
+    onChange: function () {
+      // NOTHING
+    },
+    options: null,
+    feedback: {
+      show: false,
+      isValid: false,
+      valid: "Looks good!",
+      invalid: "Please enter a valid password.",
+    },
+  },
+  {
     name: "profile_description",
     label: "Describe Yourself",
     placeholder: "Type some words here...",
@@ -151,6 +207,29 @@ export const fd_profile = [
       valid: "Looks good!",
       invalid: "Please provide some details.",
     },
+  },
+  {
+    name: "is_darkmode",
+    label: "Dark Mode",
+    placeholder: null,
+    type: "switch",
+    instructions: null,
+    disabled: false,
+    readOnly: false,
+    required: false,
+    dirty: false,
+    layout: {
+      size: "default",
+      width: 3,
+    },
+    onClick: function () {
+      // NOTHING
+    },
+    onChange: function () {
+      // NOTHING
+    },
+    options: null,
+    feedback: null,
   },
 ];
 
