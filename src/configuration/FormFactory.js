@@ -53,67 +53,59 @@ export default function FormFactory(props) {
     */
   const deObjArray = Object.values(formArray)[0];
 
-  function renderForm() {
-    // Array is trapped inside an object, so get it out. //
-    // Convert the array of formElements.
-    const convertedForm = deObjArray.map((formElement) => {
-      console.log("FORM ELEMENT: " + JSON.stringify(formElement));
-      // Add formElementId //
-      formElement.formElementId = nanoid();
-      // Determine formElement rendering //
-      switch (formElement.type) {
-        // PASSWORD //
-        case "password":
-          return <Password session={session} formElement={formElement} />;
-        case "email":
-          return <Email session={session} formElement={formElement} />;
-        case "file":
-          return <File session={session} formElement={formElement} />;
-        case "multifile":
-          return <MultiFile session={session} formElement={formElement} />;
-        // case "memo":
-        //   return <Memo session={session} formElement={formElement} />;
-        case "textarea":
-          return <TextArea session={session} formElement={formElement} />;
-        case "plaintext":
-          return <PlainText session={session} formElement={formElement} />;
-        case "color":
-          return <Color session={session} formElement={formElement} />;
-        case "datalist":
-          return <DataList session={session} formElement={formElement} />;
-        case "select":
-          return <Select session={session} formElement={formElement} />;
-        case "multiselect":
-          return <MultiSelect session={session} formElement={formElement} />;
-        case "checkbox":
-          return <Checkbox session={session} formElement={formElement} />;
-        case "checklist":
-          return <Checklist session={session} formElement={formElement} />;
-        case "inlinechecklist":
-          return (
-            <InlineChecklist session={session} formElement={formElement} />
-          );
-        case "radio":
-          return <Radio session={session} formElement={formElement} />;
-        case "inlineradio":
-          return <InlineRadio session={session} formElement={formElement} />;
-        case "switch":
-          return <Switch session={session} formElement={formElement} />;
-        case "toggle":
-          return <Toggle session={session} formElement={formElement} />;
-        case "inlinetoggle":
-          return <InlineToggle session={session} formElement={formElement} />;
-        // case "range":
-        //   return <Range session={session} formElement={formElement} />;
-        // case "steps":
-        //   return <Steps session={session} formElement={formElement} />;
-        default:
-          return <Text session={session} formElement={formElement} />;
-      }
-    });
-
-    return convertedForm;
-  }
+  const renderForm = deObjArray.map((formElement) => {
+    console.log("FORM ELEMENT: " + JSON.stringify(formElement));
+    // Add formElementId //
+    formElement.formElementId = nanoid();
+    // Determine formElement rendering //
+    switch (formElement.type) {
+      // PASSWORD //
+      case "password":
+        return <Password session={session} formElement={formElement} />;
+      case "email":
+        return <Email session={session} formElement={formElement} />;
+      case "file":
+        return <File session={session} formElement={formElement} />;
+      case "multifile":
+        return <MultiFile session={session} formElement={formElement} />;
+      // case "memo":
+      //   return <Memo session={session} formElement={formElement} />;
+      case "textarea":
+        return <TextArea session={session} formElement={formElement} />;
+      case "plaintext":
+        return <PlainText session={session} formElement={formElement} />;
+      case "color":
+        return <Color session={session} formElement={formElement} />;
+      case "datalist":
+        return <DataList session={session} formElement={formElement} />;
+      case "select":
+        return <Select session={session} formElement={formElement} />;
+      case "multiselect":
+        return <MultiSelect session={session} formElement={formElement} />;
+      case "checkbox":
+        return <Checkbox session={session} formElement={formElement} />;
+      case "checklist":
+        return <Checklist session={session} formElement={formElement} />;
+      case "inlinechecklist":
+        return <InlineChecklist session={session} formElement={formElement} />;
+      case "radio":
+        return <Radio session={session} formElement={formElement} />;
+      case "inlineradio":
+        return <InlineRadio session={session} formElement={formElement} />;
+      case "switch":
+        return <Switch session={session} formElement={formElement} />;
+      case "toggle":
+        return <Toggle session={session} formElement={formElement} />;
+      case "inlinetoggle":
+        return <InlineToggle session={session} formElement={formElement} />;
+      // case "range":
+      //   return <Range session={session} formElement={formElement} />;
+      // case "steps":
+      //   return <Steps session={session} formElement={formElement} />;
+      default:
+        return <Text session={session} formElement={formElement} />;
+    }
+  });
 
   return (
     <form id="form needs-validation" novalidate>
