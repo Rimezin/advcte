@@ -324,7 +324,7 @@ export default function App() {
         width: 3,
       },
       onClick: function () {
-        // Nothing
+        handleDark;
       },
       options: null,
       feedback: null,
