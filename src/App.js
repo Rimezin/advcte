@@ -342,6 +342,14 @@ export default function App() {
     }
   }
 
+  React.useEffect(() => {
+    handleToast({
+      title: "test!",
+      icon: "bi-person-fill",
+      message: "You have successfully saved your test!",
+    });
+  }, [handleToast]);
+
   //////////////////////////////////////////////////////
   //////////////////////////////////////////////////////
   ///////////    Main Rendering    /////////////////////
@@ -390,7 +398,6 @@ export default function App() {
           session={session}
           handleSession={handleSession}
           setModal={setModal}
-          handleToast={handleToast}
         />
       )}
 
@@ -401,7 +408,6 @@ export default function App() {
           handleSession={handleSession}
           setPage={setPage}
           setModal={setModal}
-          // setProfile={setProfile}
         />
       )}
       {session.loggedOn && (
