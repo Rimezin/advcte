@@ -68,6 +68,8 @@ export default function App() {
     }, toastObj.delay);
   }
 
+  const constHandleToast = React.useCallback(handleToast);
+
   ///////////////////////////////////////////////
   ////////////////// DARK MODE //////////////////
   ///////////////////////////////////////////////
@@ -79,8 +81,6 @@ export default function App() {
     } mode was activated based on your browser settings.`,
     delay: 8000,
   };
-
-  const constHandleToast = React.useCallback(handleToast);
 
   // Watch for darkMode //
   React.useEffect(() => {
@@ -348,7 +348,7 @@ export default function App() {
       icon: "bi-person-fill",
       message: "You have successfully saved your test!",
     });
-  }, [handleToast]);
+  }, [constHandleToast]);
 
   //////////////////////////////////////////////////////
   //////////////////////////////////////////////////////
