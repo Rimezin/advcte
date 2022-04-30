@@ -1,6 +1,6 @@
 import React from "react";
 import Logo from "../assets/Logo";
-import DarkModeButton from "../assets/DarkModeButton.js";
+// import DarkModeButton from "../assets/DarkModeButton.js";
 
 export default function Header(props) {
   const { session, handleSession, setPage, setModal } = props;
