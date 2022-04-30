@@ -342,14 +342,6 @@ export default function App() {
     }
   }
 
-  React.useEffect(() => {
-    handleToast({
-      title: "test!",
-      icon: "bi-person-fill",
-      message: "You have successfully saved your test!",
-    });
-  }, [constHandleToast]);
-
   //////////////////////////////////////////////////////
   //////////////////////////////////////////////////////
   ///////////    Main Rendering    /////////////////////
@@ -379,7 +371,7 @@ export default function App() {
         <Profile
           session={session}
           formDesign={fd_profile}
-          handleToast={handleToast}
+          handleToast={constHandleToast}
         />
       )}
 
@@ -388,7 +380,7 @@ export default function App() {
         <Settings
           session={session}
           formDesign={fd_settings}
-          handleToast={handleToast}
+          handleToast={constHandleToast}
         />
       )}
 
