@@ -333,7 +333,8 @@ export default function App() {
         width: 3,
       },
       onClick: function () {
-        handleDark();
+        // handleDark();
+        alert("Dark toggled!");
       },
       onChange: function () {
         // NOTHING
