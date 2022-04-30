@@ -2,14 +2,19 @@ import React from "react";
 import FormFactory from "../configuration/FormFactory";
 
 export default function Settings(props) {
-  const { session, formDesign, handleToast } = props;
+  const { session, formDesign, handleToast, handleDark } = props;
   const [formData, setFormData] = React.useState({
-    is_darkmode: true,
+    is_darkmode: session.experience.darkMode,
   });
 
   // Button Functions //
   function handleCancel() {
-    alert("Cancelled!");
+    event.preventDefault();
+    handleToast({
+      title: "Cancelled changes!",
+      icon: "bi-gear-fill",
+      message: "Your settings have not been saved.",
+    });
   }
 
   function handleChange(event) {
@@ -29,6 +34,10 @@ export default function Settings(props) {
       icon: "bi-gear-fill",
       message: "You have successfully saved your settings!",
     });
+    if (formData.is_darkmode !== session.experience.darkMode) {
+      handleDark();
+    }
+
     // Submit to api
     console.log(formData);
   }

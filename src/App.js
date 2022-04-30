@@ -318,7 +318,7 @@ export default function App() {
         width: 3,
       },
       onClick: function () {
-        console.log("dark toggled");
+        // Nothing
       },
       options: null,
       feedback: null,
