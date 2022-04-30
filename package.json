@@ -9,7 +9,7 @@
     "nanoid": "3.3.3",
     "he": "1.2.0",
     "babel-loader": "8.2.5",
-    "babel-core": "6.26.3",
+    "core-js": "3.22.3",
     "webpack": "5.72.0",
     "util": "0.12.4",
     "jquery": "3.6.0",
