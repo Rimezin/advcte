@@ -8,7 +8,7 @@ export default function Settings(props) {
   });
 
   // Button Functions //
-  function handleCancel() {
+  function handleCancel(event) {
     event.preventDefault();
     handleToast({
       title: "Cancelled changes!",
