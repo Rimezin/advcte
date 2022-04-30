@@ -332,7 +332,9 @@ export default function App() {
         size: "default",
         width: 3,
       },
-      onClick: alert("Dark toggled!"),
+      onClick: React.useEffect(() => {
+        handleDark();
+      }, [session.experience.darkMode]),
       onChange: function () {
         // NOTHING
       },
