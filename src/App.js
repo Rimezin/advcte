@@ -45,6 +45,7 @@ export default function App() {
 
   // Handle session changes //
   function handleSession(event) {
+    event.preventDefault();
     if (
       event.target.id === "header-logout-link" ||
       event.target.id === "modal-logout-confirm"
@@ -90,12 +91,17 @@ export default function App() {
     });
 
     // Hide after delay //
-    setTimeout(() => {
-      setToast((toast) => ({
-        ...toast,
-        show: false,
-      }));
-    }, toastObj.delay);
+    setTimeout(
+      () => {
+        setToast((toast) => ({
+          ...toast,
+          show: false,
+        }));
+      },
+      toastObj.delay === undefined || toastObj.delay === null
+        ? 8000
+        : toastObj.delay
+    );
   }
 
   //const constHandleToast = React.useCallback(handleToast);
