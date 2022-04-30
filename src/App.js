@@ -332,10 +332,7 @@ export default function App() {
         size: "default",
         width: 3,
       },
-      onClick: function () {
-        // handleDark();
-        alert("Dark toggled!");
-      },
+      onClick: alert("Dark toggled!"),
       onChange: function () {
         // NOTHING
       },
