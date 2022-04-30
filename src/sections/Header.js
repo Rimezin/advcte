@@ -198,7 +198,7 @@ export default function Header(props) {
           </div>
 
           {/* Dark Mode Toggle */}
-          <DarkModeButton session={session} handleSession={handleSession} />
+          {/* <DarkModeButton session={session} handleSession={handleSession} /> */}
         </div>
       </div>
     </header>

@@ -46,17 +46,6 @@ export default function App() {
   // Handle session changes //
   function handleSession(event) {
     if (
-      event.target.id === "darkToggle" ||
-      event.target.name === "is_darkMode"
-    ) {
-      setSession((sessionObj) => ({
-        ...sessionObj,
-        experience: {
-          ...sessionObj.experience,
-          darkMode: !sessionObj.experience.darkMode,
-        },
-      }));
-    } else if (
       event.target.id === "header-logout-link" ||
       event.target.id === "modal-logout-confirm"
     ) {
@@ -72,6 +61,16 @@ export default function App() {
         loggedOn: true,
       }));
     }
+  }
+
+  function handleDark() {
+    setSession((sessionObj) => ({
+      ...sessionObj,
+      experience: {
+        ...sessionObj.experience,
+        darkMode: !sessionObj.experience.darkMode,
+      },
+    }));
   }
 
   // State for toast - default false to hide //
@@ -334,7 +333,7 @@ export default function App() {
         width: 3,
       },
       onClick: function () {
-        handleSession();
+        handleDark();
       },
       onChange: function () {
         // NOTHING
