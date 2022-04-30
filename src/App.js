@@ -368,12 +368,20 @@ export default function App() {
 
       {/* Profile */}
       {session.loggedOn && (
-        <Profile session={session} formDesign={fd_profile} />
+        <Profile
+          session={session}
+          formDesign={fd_profile}
+          handleToast={handleToast}
+        />
       )}
 
       {/* Settings */}
       {session.loggedOn && (
-        <Settings session={session} formDesign={fd_settings} />
+        <Settings
+          session={session}
+          formDesign={fd_settings}
+          handleToast={handleToast}
+        />
       )}
 
       {/* Splash Page */}

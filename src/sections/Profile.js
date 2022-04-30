@@ -2,7 +2,7 @@ import React from "react";
 import FormFactory from "../configuration/FormFactory";
 
 export default function Profile(props) {
-  const { session, formDesign } = props;
+  const { session, formDesign, handleToast } = props;
   const [formData, setFormData] = React.useState({
     first_name: "",
     last_name: "",
@@ -28,6 +28,11 @@ export default function Profile(props) {
 
   function handleSubmit(event) {
     event.preventDefault();
+    handleToast({
+      title: "Profile Saved!",
+      icon: "bi-person-fill",
+      message: "You have successfully saved your profile!",
+    });
     // Submit to api
     console.log(formData);
   }

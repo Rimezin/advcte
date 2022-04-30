@@ -2,7 +2,7 @@ import React from "react";
 import FormFactory from "../configuration/FormFactory";
 
 export default function Settings(props) {
-  const { session, formDesign } = props;
+  const { session, formDesign, handleToast } = props;
   const [formData, setFormData] = React.useState({
     is_darkmode: true,
   });
@@ -24,6 +24,11 @@ export default function Settings(props) {
 
   function handleSubmit(event) {
     event.preventDefault();
+    handleToast({
+      title: "Settings Saved!",
+      icon: "bi-gear-fill",
+      message: "You have successfully saved your settings!",
+    });
     // Submit to api
     console.log(formData);
   }
