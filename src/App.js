@@ -43,6 +43,37 @@ export default function App() {
     },
   });
 
+  // Handle session changes //
+  function handleSession(event) {
+    if (
+      event.target.id === "darkToggle" ||
+      event.target.name === "is_darkMode"
+    ) {
+      setSession((sessionObj) => ({
+        ...sessionObj,
+        experience: {
+          ...sessionObj.experience,
+          darkMode: !sessionObj.experience.darkMode,
+        },
+      }));
+    } else if (
+      event.target.id === "header-logout-link" ||
+      event.target.id === "modal-logout-confirm"
+    ) {
+      // Logout //
+      setSession((sessionObj) => ({
+        ...sessionObj,
+        loggedOn: false,
+      }));
+    } else if (event.target.id === "splash-signin") {
+      // Login //
+      setSession((sessionObj) => ({
+        ...sessionObj,
+        loggedOn: true,
+      }));
+    }
+  }
+
   // State for toast - default false to hide //
   const [toast, setToast] = React.useState({
     show: false,
@@ -303,7 +334,7 @@ export default function App() {
         width: 3,
       },
       onClick: function () {
-        //handleDark();
+        handleSession();
       },
       onChange: function () {
         // NOTHING
@@ -315,34 +346,6 @@ export default function App() {
 
   ////////////////////////////////////
   ////////////////////////////////////
-
-  // Handle session changes //
-  function handleSession(event) {
-    if (event.target.id === "darkToggle") {
-      setSession((sessionObj) => ({
-        ...sessionObj,
-        experience: {
-          ...sessionObj.experience,
-          darkMode: !sessionObj.experience.darkMode,
-        },
-      }));
-    } else if (
-      event.target.id === "header-logout-link" ||
-      event.target.id === "modal-logout-confirm"
-    ) {
-      // Logout //
-      setSession((sessionObj) => ({
-        ...sessionObj,
-        loggedOn: false,
-      }));
-    } else if (event.target.id === "splash-signin") {
-      // Login //
-      setSession((sessionObj) => ({
-        ...sessionObj,
-        loggedOn: true,
-      }));
-    }
-  }
 
   //////////////////////////////////////////////////////
   //////////////////////////////////////////////////////
