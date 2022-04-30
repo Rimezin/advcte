@@ -68,12 +68,12 @@ export default function App() {
     }, toastObj.delay);
   }
 
-  const constHandleToast = React.useCallback(handleToast);
+  //const constHandleToast = React.useCallback(handleToast);
 
   ///////////////////////////////////////////////
   ////////////////// DARK MODE //////////////////
   ///////////////////////////////////////////////
-  const darkToast = {
+  /*const darkToast = {
     title: `${!session.experience.darkMode ? "Dark" : "Light"} Mode Activated`,
     icon: `bi-${!session.experience.darkMode ? "moon-stars" : "sun"}-fill`,
     message: `${
@@ -103,6 +103,8 @@ export default function App() {
       .matchMedia("(prefers-color-scheme: dark)")
       .removeEventListener("change", () => {});
   }, [constHandleToast, darkToast]);
+  
+  */
 
   ///////////////////////////////////////////////
 
@@ -366,24 +368,6 @@ export default function App() {
         <Toast toast={toast} session={session} setToast={setToast} />
       </div>
 
-      {/* Profile */}
-      {session.loggedOn && (
-        <Profile
-          session={session}
-          formDesign={fd_profile}
-          handleToast={constHandleToast}
-        />
-      )}
-
-      {/* Settings */}
-      {session.loggedOn && (
-        <Settings
-          session={session}
-          formDesign={fd_settings}
-          handleToast={constHandleToast}
-        />
-      )}
-
       {/* Splash Page */}
       {!session.loggedOn && (
         <Splash
@@ -394,6 +378,22 @@ export default function App() {
       )}
 
       {/* Logged-in Items */}
+      {session.loggedOn && (
+        <Profile
+          session={session}
+          formDesign={fd_profile}
+          handleToast={handleToast}
+        />
+      )}
+
+      {session.loggedOn && (
+        <Settings
+          session={session}
+          formDesign={fd_settings}
+          handleToast={handleToast}
+        />
+      )}
+
       {session.loggedOn && (
         <Header
           session={session}
