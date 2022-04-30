@@ -6,7 +6,7 @@ import DarkModeButton from "../assets/DarkModeButton";
 import About from "../pages/About";
 
 export default function Splash(props) {
-  const { session, handleSession, setModal } = props;
+  const { session, handleSession, setModal, handleDark } = props;
 
   // Handle Modal //
   function handleModal(event) {
@@ -105,7 +105,7 @@ export default function Splash(props) {
           top: "0",
         }}
       >
-        <DarkModeButton session={session} handleSession={handleSession} />
+        <DarkModeButton session={session} handleDark={handleDark} />
       </div>
       <Birds session={session} />
       <Waves session={session} />

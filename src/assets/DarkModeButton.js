@@ -1,12 +1,12 @@
 import React from "react";
 
 export default function DarkModeButton(props) {
-  const { session, handleSession } = props;
+  const { session, handleDark } = props;
 
   return (
     <button
       id="darkToggle"
-      onClick={handleSession}
+      onClick={handleDark}
       className={
         "no-select hover-blue transition-25" +
         (session.experience.darkMode ? " text-white" : "")

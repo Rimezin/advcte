@@ -376,6 +376,7 @@ export default function App() {
           session={session}
           handleSession={handleSession}
           setModal={setModal}
+          handleDark={handleDark}
         />
       )}
 
