@@ -1,9 +1,8 @@
 import React from "react";
 import FormFactory from "../configuration/FormFactory";
-import fd_profile from "../configuration/form_designs/fd_profile";
 
 export default function Profile(props) {
-  const { session } = props;
+  const { session, formDesign } = props;
   const [formData, setFormData] = React.useState({
     first_name: "",
     last_name: "",
@@ -38,7 +37,7 @@ export default function Profile(props) {
     return (
       <div id="profile-content" className="container-fluid">
         <FormFactory
-          formArray={fd_profile}
+          formArray={formDesign}
           session={session}
           handleSubmit={handleSubmit}
           handleChange={handleChange}

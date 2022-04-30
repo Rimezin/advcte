@@ -1,9 +1,8 @@
 import React from "react";
 import FormFactory from "../configuration/FormFactory";
-import fd_settings from "../configuration/form_designs/fd_settings";
 
 export default function Settings(props) {
-  const { session } = props;
+  const { session, formDesign } = props;
   const [formData, setFormData] = React.useState({
     is_darkmode: true,
   });
@@ -34,7 +33,7 @@ export default function Settings(props) {
     return (
       <div id="settings-content" className="container-fluid">
         <FormFactory
-          formArray={fd_settings}
+          formArray={formDesign}
           session={session}
           handleSubmit={handleSubmit}
           handleChange={handleChange}

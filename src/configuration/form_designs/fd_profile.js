@@ -214,4 +214,4 @@ export const fd_profile = [
   },
 ];
 
-export default { fd_profile };
+export default fd_profile;

@@ -43,17 +43,6 @@ export default function App() {
     },
   });
 
-  // Handle Dark Toggles //
-  // function handleDark() {
-  //   setSession((sessionObj) => ({
-  //     ...sessionObj,
-  //     experience: {
-  //       ...sessionObj.experience,
-  //       darkMode: !sessionObj.experience.darkMode,
-  //     },
-  //   }));
-  // }
-
   // State for toast - default false to hide //
   const [toast, setToast] = React.useState({
     show: false,
@@ -79,6 +68,9 @@ export default function App() {
     }, toastObj.delay);
   }
 
+  ///////////////////////////////////////////////
+  ////////////////// DARK MODE //////////////////
+  ///////////////////////////////////////////////
   const darkToast = {
     title: `${!session.experience.darkMode ? "Dark" : "Light"} Mode Activated`,
     icon: `bi-${!session.experience.darkMode ? "moon-stars" : "sun"}-fill`,
@@ -112,9 +104,14 @@ export default function App() {
       .removeEventListener("change", () => {});
   }, [constHandleToast, darkToast]);
 
+  ///////////////////////////////////////////////
+
   // State to hold current page in main content //
   const [page, setPage] = React.useState("home");
 
+  ////////////////////////////////////
+  //////// MODALS ////////////////////
+  ////////////////////////////////////
   // State to hold modal properties //
   const [modal, setModal] = React.useState({
     title: "Title goes here",
@@ -133,7 +130,191 @@ export default function App() {
     scrollable: false,
   });
 
-  // Handle the session //
+  ////////////////////////////////////
+  ///////// FORM DESIGNS /////////////
+  ////////////////////////////////////
+
+  //// Profile Form Design ////
+  const fd_profile = [
+    {
+      name: "first_name",
+      label: "First Name",
+      placeholder: "John",
+      type: "text",
+      instructions: "Please provide your first name",
+      disabled: false,
+      required: true,
+      dirty: false,
+      value: null,
+      checked: false,
+      layout: {
+        size: "default",
+        width: 3,
+      },
+      onClick: function () {
+        // NOTHING
+      },
+      onChange: function () {
+        // NOTHING
+      },
+      options: null,
+      feedback: {
+        show: false,
+        isValid: false,
+        valid: "Looks good!",
+        invalid: "Please enter a first name.",
+      },
+    },
+    {
+      name: "last_name",
+      label: "Last Name",
+      placeholder: "Smith",
+      type: "text",
+      instructions: "Please provide your last name",
+      disabled: false,
+      required: true,
+      dirty: false,
+      value: null,
+      checked: false,
+      layout: {
+        size: "default",
+        width: 3,
+      },
+      onClick: function () {
+        // NOTHING
+      },
+      onChange: function () {
+        // NOTHING
+      },
+      options: null,
+      feedback: {
+        show: false,
+        isValid: false,
+        valid: "Looks good!",
+        invalid: "Please enter a last name.",
+      },
+    },
+    {
+      name: "username",
+      label: "Username",
+      placeholder: "Username",
+      type: "text",
+      instructions: "Configured by the Administrator.",
+      disabled: true,
+      required: false,
+      dirty: false,
+      value: null,
+      checked: false,
+      layout: {
+        size: "default",
+        width: 3,
+      },
+      onClick: function () {
+        // NOTHING
+      },
+      onChange: function () {
+        // NOTHING
+      },
+      options: null,
+      feedback: {
+        show: false,
+        isValid: false,
+        valid: "Looks good!",
+        invalid: "Please enter a last name.",
+      },
+    },
+    {
+      name: "password",
+      label: "Password",
+      placeholder: "Password",
+      type: "password",
+      instructions: "Choose something strong!",
+      disabled: false,
+      required: true,
+      dirty: false,
+      value: null,
+      checked: false,
+      layout: {
+        size: "default",
+        width: 3,
+      },
+      onClick: function () {
+        // NOTHING
+      },
+      onChange: function () {
+        // NOTHING
+      },
+      options: null,
+      feedback: {
+        show: false,
+        isValid: false,
+        valid: "Looks good!",
+        invalid: "Please enter a valid password.",
+      },
+    },
+    {
+      name: "profile_description",
+      label: "Describe Yourself",
+      placeholder: "Type some words here...",
+      type: "textarea",
+      instructions: "Tell us about your favorite things.",
+      disabled: false,
+      required: true,
+      dirty: false,
+      value: null,
+      checked: false,
+      layout: {
+        size: "default",
+        width: 12,
+      },
+      onClick: function () {
+        // NOTHING
+      },
+      onChange: function () {
+        // NOTHING
+      },
+      options: null,
+      feedback: {
+        show: false,
+        isValid: false,
+        valid: "Looks good!",
+        invalid: "Please provide some details.",
+      },
+    },
+  ];
+
+  //// Settings Form Design ////
+  const fd_settings = [
+    {
+      name: "is_darkmode",
+      label: "Dark Mode",
+      placeholder: null,
+      type: "switch",
+      instructions: null,
+      disabled: false,
+      required: false,
+      dirty: false,
+      value: true,
+      checked: session.experience.darkMode ? true : false,
+      layout: {
+        size: "default",
+        width: 3,
+      },
+      onClick: function () {
+        //handleDark();
+      },
+      onChange: function () {
+        // NOTHING
+      },
+      options: null,
+      feedback: null,
+    },
+  ];
+
+  ////////////////////////////////////
+  ////////////////////////////////////
+
+  // Handle session changes //
   function handleSession(event) {
     if (event.target.id === "darkToggle") {
       setSession((sessionObj) => ({
@@ -161,10 +342,11 @@ export default function App() {
     }
   }
 
-  // Profile State //
-  // const [profile, setProfile] = React.useState(false);
-
-  //// Rendering ////
+  //////////////////////////////////////////////////////
+  //////////////////////////////////////////////////////
+  ///////////    Main Rendering    /////////////////////
+  //////////////////////////////////////////////////////
+  //////////////////////////////////////////////////////
   return (
     <div id="advcte" className="container-sm-12" style={{ height: "100%" }}>
       {/* Modal */}
@@ -185,10 +367,14 @@ export default function App() {
       </div>
 
       {/* Profile */}
-      {session.loggedOn && <Profile session={session} />}
+      {session.loggedOn && (
+        <Profile session={session} formDesign={fd_profile} />
+      )}
 
       {/* Settings */}
-      {session.loggedOn && <Settings session={session} />}
+      {session.loggedOn && (
+        <Settings session={session} formDesign={fd_settings} />
+      )}
 
       {/* Splash Page */}
       {!session.loggedOn && (

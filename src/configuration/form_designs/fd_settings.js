@@ -66,8 +66,6 @@
 
     */
 
-import { session } from "../../App";
-
 export const fd_settings = [
   {
     name: "is_darkmode",
@@ -95,4 +93,4 @@ export const fd_settings = [
   },
 ];
 
-export default { fd_settings };
+export default fd_settings;
