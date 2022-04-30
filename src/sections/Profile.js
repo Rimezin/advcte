@@ -37,7 +37,7 @@ export default function Profile(props) {
     return (
       <div id="profile-content" className="container-fluid">
         <FormFactory
-          formArray={formDesign}
+          formDesign={formDesign}
           session={session}
           handleSubmit={handleSubmit}
           handleChange={handleChange}

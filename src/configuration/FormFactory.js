@@ -22,7 +22,7 @@ import { Toggle, InlineToggle } from "./form_elements/Toggle";
 
 // Default Render //
 export default function FormFactory(props) {
-  const { formArray, session, handleSumbit, formData, handleChange } = props;
+  const { formDesign, session, handleSumbit, formData, handleChange } = props;
 
   // Types //
   /*
@@ -53,9 +53,9 @@ export default function FormFactory(props) {
     */
 
   // Grab design array and convert to JSX objects
-  const deObjArray = Object.values(formArray)[0];
+  //const deObjArray = Object.values(formDesign)[0];
 
-  const renderForm = deObjArray.map((formElement) => {
+  const renderForm = formDesign.map((formElement) => {
     // Add formElementId //
     formElement.formElementId = nanoid();
     // Determine formElement rendering //

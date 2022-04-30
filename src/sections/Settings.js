@@ -33,7 +33,7 @@ export default function Settings(props) {
     return (
       <div id="settings-content" className="container-fluid">
         <FormFactory
-          formArray={formDesign}
+          formDesign={formDesign}
           session={session}
           handleSubmit={handleSubmit}
           handleChange={handleChange}
