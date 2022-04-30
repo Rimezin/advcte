@@ -186,9 +186,6 @@ export default function App() {
       onClick: function () {
         // NOTHING
       },
-      onChange: function () {
-        // NOTHING
-      },
       options: null,
       feedback: {
         show: false,
@@ -213,9 +210,6 @@ export default function App() {
         width: 3,
       },
       onClick: function () {
-        // NOTHING
-      },
-      onChange: function () {
         // NOTHING
       },
       options: null,
@@ -244,9 +238,6 @@ export default function App() {
       onClick: function () {
         // NOTHING
       },
-      onChange: function () {
-        // NOTHING
-      },
       options: null,
       feedback: {
         show: false,
@@ -273,9 +264,6 @@ export default function App() {
       onClick: function () {
         // NOTHING
       },
-      onChange: function () {
-        // NOTHING
-      },
       options: null,
       feedback: {
         show: false,
@@ -300,9 +288,6 @@ export default function App() {
         width: 12,
       },
       onClick: function () {
-        // NOTHING
-      },
-      onChange: function () {
         // NOTHING
       },
       options: null,
@@ -332,11 +317,8 @@ export default function App() {
         size: "default",
         width: 3,
       },
-      onClick: React.useEffect(() => {
-        handleDark();
-      }, [session.experience.darkMode]),
-      onChange: function () {
-        // NOTHING
+      onClick: function () {
+        console.log("dark toggled");
       },
       options: null,
       feedback: null,
